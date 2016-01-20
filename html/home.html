@@ -26,19 +26,17 @@
 				<!--购买输入框开始     class不能变 -->
 				<div class="mo_main">
 					<div>
-						<form action="" method="post" id="register">  <!--action的地址为妳要将表单信息提交到-->	
-							<div class="row">
+						<div class="row">
 					   	 		<div class="input_box">
 					   	 			<span>￥</span>
-					   	 			<input type="tel" name="phone" validation="phone" step="10" min="0" placeholder="可购买区间10~10000" >
+					   	 			<input class="heartNumber" type="tel" name="phone" validation="phone" step="10" min="0" placeholder="可购买区间10~10000" >
 					   	 		</div>
 								<!--购买按钮开始-->
 						   	 	<div class="btn">
-						   	 		<input type="submit" value="购买爱心" class="submit" />
+						   	 		<input type="button" value="购买爱心" class="submit" />
 						   	 	</div>
-					   	 	</div>
-					   	 	<!--购买按钮结束-->
-				   	    </form>    
+					   	 </div>
+					   	 <!--购买按钮结束-->	
 					</div>
 				</div>
 				<h6 class="protocol"><label id="check_box" for="check_box"></label><input type="checkbox" checked name="check_box"/><span>同意并接受《果仁宝爱心捐赠协议》</span></h6>
@@ -50,4 +48,7 @@
 	<script src="../js/zepto.min.js"></script>
 	<script src="../js/jquery-1.10.1.min.js"></script>
 	<script src="../js/validate.js"></script>
+	<script src="../js/home.js"></script>
+	<script src="../js/weixin.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </html>

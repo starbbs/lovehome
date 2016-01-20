@@ -5,10 +5,13 @@ $(function() {
 	 */
 	var parse = function(str) {
 		var data = {};
-		str.split('&').forEach(function(item) {
-			var arr = item.split('=');
-			data[arr[0]] = arr[1];
-		});
+		if(str.indexOf('?')>0){
+			str=str.split('?')[1];
+			str.split('&').forEach(function(item) {
+				var arr = item.split('=');
+				data[arr[0]] = arr[1];
+			});
+		}
 		return data;
 	};
 
@@ -27,11 +30,10 @@ $(function() {
 			window.location.href=setWxUrl(window.location.href);
 		}
 		$.ajax({
-			type : "POST",
+			type : 'post',
 			url : wxLoing,
 			data : JSON.stringify(param),
-			dataType : "json",
-			contentType : "application/json;charset=UTF-8",
+			dataType : 'json',
 			success : function(result) {
 				if(result.status==200){
 					if(result.data.hgToken){

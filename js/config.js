@@ -29,5 +29,19 @@ var register=baseUrl+"/hg/user/register";
  * 发送短信验证码
  * {phone:"15079817107"}
  */
-var sendCode=baseUrl+"/hg/common/sendCode"
+var sendCode=baseUrl+"/hg/common/sendCode";
+
+/**
+ * 购买爱心
+ * {heartNumber:200,hgToken:"ewwerwr32432fwefwe"}
+ * appId
+ * timeStamp
+ * nonceStr
+ * package
+ * signType
+ * paySign
+ */
+var buy=baseUrl+"/hg/buy/create";
+
+
 
