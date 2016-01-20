@@ -1,0 +1,162 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.wrap{
+	width: 100%;
+	height: 100%	
+}
+.bg{
+	width: 100%;
+	height: 70%;
+	background: url(../images/index_bg.png);
+	background-repeat: round;
+	background-size: cover;
+}
+.content{
+	width: 90%;
+	display: -webkit-box;
+	margin: 5% 0 0 5%;
+}
+.content_img{
+	width: 35%;
+	margin-right: 5%;
+}
+.content_img img{
+	display: block;
+	width: 100%;
+}
+.content_tit{
+	width: 60%;
+}
+.content_tit h3{
+	width: 100%;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: bold;
+	background: url(../images/index_pic1.png) no-repeat 90% center;
+	background-size: initial;
+}
+.content_tit p{
+	width:95%;
+	overflow: hidden;	
+	text-overflow:ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: #696969;
+	 line-height: 20px;
+}
+.buy_love_btn{
+	width: 90%;
+	background: #ff8309 url(../images/iconfont-aixin.png) 30% center;
+	background-repeat: no-repeat;
+	background-size: 10%;
+	border: none;
+	padding: 3%;
+	border-radius: 5px;
+	margin: 5% 0 0 5%;
+	color: white;
+	font-size: 16px;
+	padding-left: 10%;	
+}
+
+/*======*/
+.black_box{
+    display: none; 
+    position: absolute;  
+    top: 0%;  
+    left: 0%;  
+    width: 100%;  
+    height: 100%;  
+    background-color: black;  
+    z-index:1001;  
+    -moz-opacity: 0.8;  
+    opacity:.80;  
+    filter: alpha(opacity=80);  
+} 
+.white_box {
+	position: relative;
+    display: none; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 40%; 
+    background-color: white; 
+    z-index:1002;
+    overflow: auto; 
+    box-sizing: border-box;   
+}
+#close{
+	display: block;
+	width: 50px;
+	height: 45px;
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	text-align: center;
+	line-height: 45px;
+}
+#close:hover{
+	background: #eee;
+	color: white;
+}
+#light h3{
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+}
+#light .input_box{
+	height: 44px;
+	width: 90%;
+	line-height: 44px;
+	margin-left: 5%;
+	border: 1px solid #ccc;
+	margin-top: 2%;
+	font-size: 14px;
+}
+#light .input_box input{
+	border: 0;
+	color: #ccc;
+	outline: 0;
+	-webkit-appearance: none;
+}
+#light .input_box span{
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+#light .submit{
+	width: 90%;
+	height: 45px;
+	margin-left: 5%;
+	background: #ccc;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin-top: 3%;
+	font-size: 20px;
+}
+#light h6{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+#light h6 input{
+	display: none;
+}
+#light h6 span{
+	padding-left: 2%;
+	font-size: 14px;
+}
+#light h6 label{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: url(../images/checkbox.jpg) no-repeat center center;
+	background-size:cover;	
+}

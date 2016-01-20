@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>爱心到我家</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="bg"></div>
+			<div class="content">
+				<div class="content_img"><img src="images/index_pic2.jpg"></div>
+				<div class="content_tit">
+					<h3>大凉山母亲的希望</h3>
+					<p>在大凉山发送红丝带母婴平安包，培训妇保员，推动住院分娩，祝母婴平安。</p>
+				</div>
+			</div>
+			<div class="buy_love">
+				<button class="buy_love_btn">购买爱心</button>
+			</div>			
+			<div class="white_box">
+			<div id="light">
+				<h3><span>输入购买金额</span><a id="close">X</a></h3>
+				<!--购买输入框开始     class不能变 -->
+				<div class="mo_main">
+					<div>
+						<form action="" method="post" id="register">  <!--action的地址为妳要将表单信息提交到-->	
+							<div class="row">
+					   	 		<div class="input_box">
+					   	 			<span>￥</span>
+					   	 			<input type="tel" name="phone" validation="phone" step="10" min="0" placeholder="可购买区间10~10000" >
+					   	 		</div>
+								<!--购买按钮开始-->
+						   	 	<div class="btn">
+						   	 		<input type="submit" value="购买爱心" class="submit" />
+						   	 	</div>
+					   	 	</div>
+					   	 	<!--购买按钮结束-->
+				   	    </form>    
+					</div>
+				</div>
+				<h6 class="protocol"><label id="check_box" for="check_box"></label><input type="checkbox" checked name="check_box"/><span>同意并接受《果仁宝爱心捐赠协议》</span></h6>
+			</div>
+		</div>			
+			<div class="black_box"></div>			
+		</div>
+	</body>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script src="js/validate.js"></script>
+	<script src="js/index.js"></script>
+</html>

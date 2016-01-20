@@ -1,0 +1,225 @@
+html,body{
+	width: 100%;
+	height: auto;
+}
+.wrap{
+	width: 100%;
+	height: 100%;
+	background: #f7ecce;
+	position: relative;	
+	overflow: auto;
+}
+.banner_img{	
+	width: 100%;
+	height: auto;
+	background: url(../images/gy_bg_02.png);
+	background-repeat: round;
+	background-size: cover;	
+	padding-top: 15%;	
+}
+.banner_img img{
+	display: block;
+	width: 96%;
+	padding:0 2%;
+}
+.banner_info{
+	width: 96%;
+	margin-left: 2%;
+	background: white;
+}
+.banner_info_syn{
+	width: 85%;
+	height: auto;
+	padding: 2% 5%;
+}
+.banner_info_syn p{
+	line-height: 22px;
+	font-size: 14px;
+}
+.banner_info_syn span{
+	display: inline-block;
+	background: url(../images/pic1_03.png) no-repeat;
+	background-size: cover;
+	padding: 1% 5%;
+	text-align: center;
+	color: #fbfaf8;
+}
+.banner_info_con h3{
+	padding: 5%;
+	font-size: 16px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.banner_info_con h3 span{
+	padding-bottom: 5%;
+	border-bottom: 1px solid orange;
+}
+.banner_info_con p{
+	padding: 5% 5% 0 5%;
+	line-height: 20px;
+}
+#toTop .to{
+	position: fixed;
+	bottom: 12%;
+	right: 5%;
+	width:46px;
+    height:43px;
+    background:url(../images/go_top.png) no-repeat 0px 0px;
+    z-index: 500;
+    cursor: pointer;
+}
+.buy_love{
+	width: 100%;
+	height: auto;
+	padding: 5%;
+	background: white;
+	border-top: 1px solid #F8F8F8;
+	position: fixed;
+	left: 0%;
+	bottom: 0%;
+}
+.buy_love_btn{
+	width: 90%;
+	background: #ff8309 url(../images/iconfont-aixin.png) 30% center;
+	background-repeat: no-repeat;
+	background-size: 10%;
+	border: none;
+	padding: 3%;
+	border-radius: 5px;
+	color: white;
+	font-size: 16px;
+	padding-left: 10%;	
+	
+}
+.lantern_left{
+	width: 30%;
+	height: 10%;
+	position: absolute;
+	top: 0;
+	left: 2%;
+	background: url(../images/dl_left.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 1000;
+}
+.lantern_left a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding-top: 62%;
+}
+.lantern_right{
+	width: 30%;
+	height: 10%;
+	position: absolute;
+	top: 0;
+	right: 2%;
+	background: url(../images/dl_right.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.lantern_right a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding-top:62%;
+}
+/*======*/
+.black_box{
+    display: none; 
+    position: fixed;  
+    top: 0%;  
+    left: 0%;  
+    width: 100%;  
+    height: 100%;  
+    background-color: black;  
+    z-index:1001;  
+    -moz-opacity: 0.8;  
+    opacity:.80;  
+    filter: alpha(opacity=80);  
+} 
+.white_box {
+	position: relative;
+    display: none; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 40%; 
+    background-color: white; 
+    z-index:1002;
+    overflow: auto; 
+    box-sizing: border-box;   
+}
+#close{
+	display: block;
+	width: 50px;
+	height: 45px;
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	text-align: center;
+	line-height: 45px;
+}
+#close:hover{
+	background: #eee;
+	color: white;
+}
+#light h3{
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+}
+#light .input_box{
+	height: 44px;
+	width: 90%;
+	line-height: 44px;
+	margin-left: 5%;
+	border: 1px solid #ccc;
+	margin-top: 2%;
+	font-size: 14px;
+}
+#light .input_box input{
+	border: 0;
+	color: #ccc;
+	outline: 0;
+	-webkit-appearance: none;
+}
+#light .input_box span{
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+#light .submit{
+	width: 90%;
+	height: 45px;
+	margin-left: 5%;
+	background: #ccc;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin-top: 3%;
+	font-size: 20px;
+}
+#light h6{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+#light h6 input{
+	display: none;
+}
+#light h6 span{
+	padding-left: 2%;
+	font-size: 14px;
+}
+#light h6 label{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: url(../images/checkbox.jpg) no-repeat center center;
+	background-size:cover;	
+}

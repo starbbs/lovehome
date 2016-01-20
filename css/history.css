@@ -1,0 +1,78 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.wrap{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: #e8e8e8;
+	padding-top: 10%;
+	box-sizing: border-box;
+}
+.his{
+	width: 90%;
+	margin-left: 5%;
+	height: 15%;
+	display: -webkit-box;
+}
+.his_time{
+	width: 45%;
+	text-align: right;
+	padding: 2% 5% 0 0;	
+	box-sizing: border-box;
+	color: #797979;
+}
+.his_xin{
+	width: 10%;
+	height: 100%;
+}
+.his_xin_bg{
+	width: 100%;
+	height: 40%;
+	background: url(../images/his_xin.png) no-repeat;
+	background-size: 100% auto;	
+}
+.his_xin_line{
+	width: 2px;
+	height: 60%;
+	background:white;
+	margin: 0 auto;
+}
+.his_con{
+	width: 45%;	
+	background:url(../images/hisbg1.png) no-repeat;
+	background-size: 100% auto;
+	padding: 2% 0 0% 0;
+}
+.his_con p{
+	color: white;
+	padding:0 0 4% 10%;
+	
+}
+.his_con p span:nth-child(1){
+	padding-right: 5%;
+}
+.his_con2{
+	width: 45%;	
+	background:url(../images/hisbg2.png) no-repeat;
+	background-size: 100% auto;
+	padding: 5% 0 5% 0;
+	
+}
+.his_con2 p{
+	color: black;
+}
+.his_con2 p:nth-child(2){
+	color: red;
+}
+.his_xin_bg2{
+	width: 100%;
+	height: 40%;
+	background: url(../images/his_xin2.png) no-repeat;
+	background-size: 100% auto;		
+}
+.his_time2{
+	text-align: left;
+	padding: 2% 0 0 5%;
+}
