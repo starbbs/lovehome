@@ -1,37 +1,86 @@
 $(function(){	
-	function ajax(){		
+	var timer=0;//验证码倒计时
+	$(document).on('click', '.main_yanzheng_get', function() {
+		if(timer>0){
+			return;
+		}
+		var self = $(this);
 		var phone=$(".phone").val();
-		$.ajax({			
-			type:"post",
-			url:"https://www.goopal.com.cn/login/wxRegister",
-			data: JSON.stringify({
-				phone: phone
-			}),
-			dataType:"json",
-			success: function(data) {
-				
-				if (data.status == 300) { // {msg: "用户登录/验证失败，请重新登录", status: "300"}
-					if (window.location.href.indexOf('/index.html') === -1) {
-						return window.location.href = 'index.html';
-					}
-				} else if (data.status == 304) { // {msg: "服务器异常", status: "300"}
-					$.alert('服务器异常, 请联系后台人员!');
+		if(!phone){
+			alert("请输入手机号");
+			return;
+		}
+		var param = {
+				"phone" :phone
+			};
+		$.ajax({
+			type : "POST",
+			url : sendCode,
+			data : JSON.stringify(param),
+			dataType : "json",
+			contentType : "application/json;charset=UTF-8",
+			success : function(result) {
+				if(result.status==200){
+					alert(result.data);
+				}else{
+					alert(result.msg);
 				}
-				callback && callback.call(this, data);
-				success && success.call(this, data);
-			},
-			error: function(xhrObj, text, err) {
-				//console.log('Error: ', arguments);
-				if (text === 'timeout') {
-					$.alert('请求超时...<br>请检查您的网络');
-				}
-			},
-			complete: function() {
-				xhr = null;
-				isRequesting = false;
 			}
+		});	
 			
+		var timer = setInterval(function() {
+			time--;
+			if (time <= 0) {
+				clearInterval(timer);
+				self.html('重新发送');
+			} else {
+				self.html(time + '秒后重发');
+			}
+		}, 1000);
+	});
+
+	$(document).on('click', '.next_btn', function() {
+		var self = $(this);
+		var phone=$(".phone").val();
+		var identifyingCode=$(".identifyingCode").val();
+		if(!phone || !identifyingCode){
+			alert("请输入手机号或验证码");
+			return;
+		}
+		var data=parse(href);
+
+		var param = {
+				"phone" :phone,
+				"identifyingCode":identifyingCode,
+				"openId":data.openId,
+				"referUserId":data.referUserId
+			};
+		$.ajax({
+			type : "POST",
+			url : register,
+			data : JSON.stringify(param),
+			dataType : "json",
+			contentType : "application/json;charset=UTF-8",
+			success : function(result) {
+				if(result.status==200){
+					$.cookie("hgToken",result.data.hgToken);
+					window.location.href="html/home.html";
+				}else{
+					alert(result.msg);
+				}
+			}
+		});	
+	});
+	
+	/**
+	 * 参数存到data中
+	 */
+	var parse = function(str) {
+		var data = {};
+		str.split('&').forEach(function(item) {
+			var arr = item.split('=');
+			data[arr[0]] = arr[1];
 		});
-	}
-	ajax();
+		return data;
+	};
 });
