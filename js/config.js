@@ -43,5 +43,31 @@ var sendCode=baseUrl+"/hg/common/sendCode";
  */
 var buy=baseUrl+"/hg/buy/create";
 
+/**
+ * 分享爱心回报信息
+ * {hgToken:"ewwerwr32432fwefwe"}
+ * returnHeartNumber 分享回报金额
+ * list 分享贡献列表
+ * nick 用户昵称
+ * photo 头像
+ * hearNumber 贡献金额
+ */
+var shareReturnInfo=baseUrl+"hg/returnHeart/info";
 
+/**
+ * 分享回报提现申请
+ * {hgToken:"ewwerwr32432fwefwe"}
+ */
+var shareReturnWithdrawReq=baseUrl+"hg/returnHeart/withdrawReq";
 
+/**
+ * 分享回报提现申请
+ * {hgToken:"ewwerwr32432fwefwe"}
+ * list
+ * successTime
+ * createTime
+ * transferTime
+ * heartNumber
+ * status
+ */
+var transferHistory=baseUrl+"/hg/buy/list";
