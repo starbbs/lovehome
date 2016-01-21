@@ -58,17 +58,24 @@ $(function(){
 			}
 		},
 	};
-	api.weixinInfo({
-		url: (function() {
-			var href = window.location.href;
-			var i1 = href.indexOf('?');
-			var i2 = href.indexOf('#');
-			if (i1 > -1 && i2 > -1) {
-				Math.min(i1, i2);
-			}
-			return href;
-		})()
-	}, function(data) {
+	
+	var param={};
+	param.url=(function() {
+		var href = window.location.href;
+		var i1 = href.indexOf('?');
+		var i2 = href.indexOf('#');
+		if (i1 > -1 && i2 > -1) {
+			Math.min(i1, i2);
+		}
+		return href;
+	})();
+	
+	$.ajax({
+	type : "post",
+	url:wxSign,
+	data : JSON.stringify(param),
+	dataType : "json",
+	success : function(data) {
 		if (data.status == 200) {
 			var returnData = data.data.signatureData;
 			wx.config({
@@ -167,6 +174,6 @@ $(function(){
 		} else {
 			console.log(data);
 		}
+	}
 	});
-	return weixin;
 });

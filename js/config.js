@@ -71,3 +71,34 @@ var shareReturnWithdrawReq=baseUrl+"hg/returnHeart/withdrawReq";
  * status
  */
 var transferHistory=baseUrl+"/hg/buy/list";
+
+/**
+ * 详情页面
+ * {hgToken:"ewwerwr32432fwefwe"}
+ * BuyHeart
+ * heartNumber
+ * incomeNumber
+ * status
+ * createTime
+ * successTime
+ * transferTime
+ * matchNo
+ * outOrderCode
+ * payResult
+ * -----------------
+ * TransferHeart
+ * heartNumber
+ * incomeNumber
+ * status
+ * createTime
+ * successTime
+ * matchNo
+ * outOrderCode
+ * payResult
+ */
+var detail=baseUrl+"/hg/summary/detail";
+
+/**
+ * 
+ */
+var wxSign=baseUrl+"/hg/common/weixin/signature";

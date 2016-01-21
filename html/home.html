@@ -24,16 +24,16 @@
 			<div id="light">
 				<h3><span>输入购买金额</span><a id="close">X</a></h3>
 				<!--购买输入框开始     class不能变 -->
-				<div class="mo_main">
+				<div class="mo_main"  ms-controller="buying">
 					<div>
 						<div class="row">
 					   	 		<div class="input_box">
 					   	 			<span>￥</span>
-					   	 			<input class="heartNumber" type="tel" name="phone" validation="phone" step="10" min="0" placeholder="可购买区间10~10000" >
+					   	 			<input class="heartNumber" type="tel" name="phone" ms-on-input="check" ms-duplex="heartNumber" step="10" min="0" placeholder="可购买区间10~10000" >
 					   	 		</div>
 								<!--购买按钮开始-->
 						   	 	<div class="btn">
-						   	 		<input type="button" value="购买爱心" class="submit" />
+						   	 		<input type="button" value="购买爱心" class="submit" ms-click="submit_click"/>
 						   	 	</div>
 					   	 </div>
 					   	 <!--购买按钮结束-->	
@@ -45,10 +45,13 @@
 			<div class="black_box"></div>			
 		</div>
 	</body>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="../js/zepto.min.js"></script>
 	<script src="../js/jquery-1.10.1.min.js"></script>
-	<script src="../js/validate.js"></script>
+	<script src="../js/avalon.mobile.js"></script>
+	<script src="../js/config.js"></script>
+	<script src="../js/cookie.js"></script>
 	<script src="../js/home.js"></script>
 	<script src="../js/weixin.js"></script>
-	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	
 </html>

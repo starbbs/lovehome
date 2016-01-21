@@ -1,5 +1,5 @@
 $(function(){	
-	var timer=0;//验证码倒计时
+	var time=0;//验证码倒计时
 	$(document).on('click', '.main_yanzheng_get', function() {
 		if(timer>0){
 			return;
@@ -20,7 +20,7 @@ $(function(){
 			dataType : 'json',
 			success : function(result) {
 				if(result.status==200){
-					alert(result.data);
+					alert(result.data.identifyingCode);
 				}else{
 					alert(result.msg);
 				}
@@ -46,24 +46,25 @@ $(function(){
 			alert("请输入手机号或验证码");
 			return;
 		}
-		var data=parse(href);
+		var data=parse(window.location.href);
 
 		var param = {
 				"phone" :phone,
 				"identifyingCode":identifyingCode,
-				"openId":data.openId,
-				"referUserId":data.referUserId
+				"openId":data.openId
 			};
+		if(data.referUserId!='STATE'){
+			param.referUserId=data.referUserId;
+		}
 		$.ajax({
-			type : "POST",
+			type : "post",
 			url : register,
 			data : JSON.stringify(param),
 			dataType : "json",
-			contentType : "application/json;charset=UTF-8",
 			success : function(result) {
 				if(result.status==200){
 					$.cookie("hgToken",result.data.hgToken);
-					window.location.href="html/home.html";
+					window.location.href="../html/home.html";
 				}else{
 					alert(result.msg);
 				}

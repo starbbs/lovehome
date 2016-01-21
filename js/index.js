@@ -43,8 +43,10 @@ $(function() {
 						
 					}else{
 						//未注册
-						var openId=result.data.openId;
-						window.location.href="html/zhuce.html?openId"+openId+"&referUserId="+referUserId;
+						var openId=result.data.openid;
+						//alert(result.data);
+						var url="html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
+						window.location.href=url;
 					}
 				}else{
 					alert("授权失败"+result.msg);
