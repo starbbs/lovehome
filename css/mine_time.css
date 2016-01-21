@@ -22,7 +22,7 @@ html,body,.wrap{
 	border-radius: 100%;	
 	margin: 0 auto;
 }
-.menu_content .ding{
+.ding{
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
@@ -31,7 +31,7 @@ html,body,.wrap{
 	-webkit-box-pack: center;
 	padding-top: 15%;
 }
-.menu_content .ding p{
+.ding p{
 	width: 15%;
 	text-align: center;
 	color: white;
