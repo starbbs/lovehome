@@ -60,6 +60,7 @@ $(function(){
 			});
 		}
 	});
+
 	
 	var init = function() {
 		var param = {

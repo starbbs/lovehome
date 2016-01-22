@@ -84,11 +84,18 @@
 				<div><h3>待提现金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
 				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
-			<div class="btn" ms-visible="FAILURE">
-				<input type="button" value="提现" class="submit" ms-click="submit_click"/>
+			<div class="buy_love trans_success" ms-visible="SUCCESS">
+				<button class="buy_love_btn" ms-click="buy_click">购买爱心</button>
+			</div>
+			<div class="buy_love trans_success" ms-visible="FAILURE" >
+				<button class="buy_love_btn" ms-click="submit_click">提现</button>
 			</div>
 			<div class="history">
 				<a class="history_btn" href="../html/history.html">传递历史</a>
+			</div>
+			<div class="thank_wrok">
+				<h3>您的爱心传递失败</h3>
+				<p>感谢您对公益事业的支持</p>
 			</div>
 		</div>
 		

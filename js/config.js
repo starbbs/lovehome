@@ -58,7 +58,7 @@ var shareReturnInfo=baseUrl+"/hg/returnHeart/info";
  * 分享回报提现申请
  * {hgToken:"ewwerwr32432fwefwe"}
  */
-var shareReturnWithdrawReq=baseUrl+"hg/returnHeart/withdrawReq";
+var shareReturnWithdrawReq=baseUrl+"/hg/returnHeart/withdrawReq";
 
 /**
  * 分享回报提现申请
@@ -108,3 +108,21 @@ var wxSign=baseUrl+"/hg/common/weixin/signature";
  * {hgToken:"ewwerwr32432fwefwe"}
  */
 var sellApply=baseUrl+"/hg/transferOut/apply";
+
+/**
+ * 项目结束计算提现金额
+ */
+var getReward=baseUrl+"/hg/summary/getReward";
+
+/**
+ * 最后提现申请
+ */
+var reward=baseUrl+"/hg/summary/reward";
+
+
+/**
+ * 传递历史
+ */
+var transferHistory=baseUrl+"/hg/buy/list";
+
+

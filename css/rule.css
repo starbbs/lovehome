@@ -1,0 +1,38 @@
+html,body{
+	width: 100%;
+	height: 100%
+}
+.wrap{
+	width: 100%;
+	height: 100%;	
+	padding-bottom: 10%;
+	overflow: auto;
+}
+.rule_bg{
+	width: 100%;
+	height: 8%;
+	background: url(../images/rule_bg1.png);
+	background-repeat: round;
+	background-size: 100% auto;
+}
+.rule_img{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;;
+}
+.rule_img img{
+	display: block;
+	width: 100%;
+}
+.rule_con{
+	width: 94%;
+	margin-left: 3%;
+	margin-top: 10%;
+	padding-top: 5%;
+	border-top: 1px solid #e0e0e0;
+}
+.rule_con p{
+	line-height: 22px;
+	padding: 3%;
+
+}

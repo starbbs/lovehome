@@ -8,55 +8,24 @@
 		<link rel="stylesheet" href="../css/history.css"/>
 	</head>
 	<body>
-		<div class="wrap">
-			<div class="his">
-				<div class="his_time">2016.1.23</div>
+		<div class="wrap" ms-controller="history"> 
+			<div class="his" ms-repeat-item="list">
+				<div class="his_time">{{item.time | date("yyyy-MM-dd HH:mm:ss")}}</div>
 				<div class="his_xin">
 					<p class="his_xin_bg"></p>
 					<p class="his_xin_line"></p>
 				</div>
 				<div class="his_con">
-					<p><span>已传递</span><span>￥100.00</span></p>
-					<p><span>爱心基金</span><span>￥100.00</span></p>
-					<p><span>收益<span><span>￥100.00</span></p>
+					<p><span>{{item.statusStr}}</span><span>￥{{item.heartNumber}}</span></p>
+					<p><span>爱心基金</span><span>￥{{item.heartNumber}}</span></p>
+					<p><span>收益<span><span>￥{{item.incomeNumber}}</span></p>
 				</div>
-			</div>
-			<div class="his">
-				<div class="his_con his_con2">
-					<p><span>已传递</span><span>￥100.00</span></p>
-					<p><span>爱心基金</span><span>￥100.00</span></p>
-					<p><span>收益<span><span>￥100.00</span></p>
-				</div>			
-				<div class="his_xin">
-					<p class="his_xin_bg his_xin_bg2"></p>
-					<p class="his_xin_line"></p>
-				</div>
-				<div class="his_time his_time2">2016.1.23</div>
-			</div>
-			<div class="his">
-				<div class="his_time">2016.1.23</div>
-				<div class="his_xin">
-					<p class="his_xin_bg"></p>
-					<p class="his_xin_line"></p>
-				</div>
-				<div class="his_con">
-					<p><span>已传递</span><span>￥100.00</span></p>
-					<p><span>爱心基金</span><span>￥100.00</span></p>
-					<p><span>收益<span><span>￥100.00</span></p>
-				</div>
-			</div>
-			<div class="his">
-				<div class="his_con his_con2">
-					<p><span>已传递</span><span>￥100.00</span></p>
-					<p><span>爱心基金</span><span>￥100.00</span></p>
-					<p><span>收益<span><span>￥100.00</span></p>
-				</div>			
-				<div class="his_xin">
-					<p class="his_xin_bg his_xin_bg2"></p>
-					<p class="his_xin_line"></p>
-				</div>
-				<div class="his_time his_time2">2016.1.23</div>
 			</div>
 		</div>
+		<script src="../js/jquery-1.10.1.min.js"></script>
+		<script src="../js/avalon.mobile.js"></script>
+		<script src="../js/config.js"></script>
+		<script src="../js/cookie.js"></script>
+		<script src="../js/history.js"></script>
 	</body>
 </html>

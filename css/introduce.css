@@ -80,12 +80,8 @@ html,body{
 	line-height: 22px;
 }
 .int_info h4{
-	padding: 4% 5% 2% 5%;
+	padding: 5%;
 	font-weight: bold;
-}
-.int_info p img{
-	display: block;
-	width: 100%;
 }
 .int_end{
 	width: 90%;

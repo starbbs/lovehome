@@ -12,10 +12,9 @@ $(function(){
 				};
 				$.ajax({
 					type : "POST",
-					url : shareReturnInfo,
+					url : shareReturnWithdrawReq,
 					data : JSON.stringify(param),
 					dataType : "json",
-					contentType : "application/json;charset=UTF-8",
 					success : function(result) {
 						if(result.status==200){
 							alert("提现成功");

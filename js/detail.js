@@ -47,6 +47,10 @@ $(function() {
 		SUCCESS:false,
 		submit_click : function() {
 			//提现申请
+			
+		},
+		buy_click :function(){
+			window.location.href = "../html/home.html";
 		}
 	});
 	var init = function() {

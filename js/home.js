@@ -14,15 +14,11 @@ $(function(){
 	});	
 		
 	$(".content").on("tap",function(){
-		location.href = 'html/introduce.html';
+		location.href = '../html/introduce.html';
 	});	
 	
-//	$(".btn").on("tap",function(){
-//		location.href = 'html/mine.html';
-//	});
-	
 	$(".protocol").on("tap",function(){
-		location.href = 'html/protocol.html';
+		location.href = '../html/protocol.html';
 	});	
 	
 	var buying = avalon.define({
@@ -65,20 +61,20 @@ $(function(){
     						signType: result.data.WEIXIN_MP_PAY.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
     						paySign: result.data.WEIXIN_MP_PAY.paySign, // 支付签名
     						success: function(res) { // 成功
-    							alert('success:' + JSON.stringify(res));
+    							//alert('success:' + JSON.stringify(res));
     							location.href = '../html/detail.html';
     						},
     						fail: function(res) { // 失败
     							alert('fail:' + JSON.stringify(res));
     						},
     						cancel: function(res) { // 取消
-    							alert('cancel:' + JSON.stringify(res));
+    							//alert('cancel:' + JSON.stringify(res));
     						},
     						trigger: function(res) { // 菜单点击
-    							alert('trigger:' + JSON.stringify(res));
+    							//alert('trigger:' + JSON.stringify(res));
     						},
     						complete: function(res) { // 完成
-    							alert('complete:' + JSON.stringify(res));
+    							//alert('complete:' + JSON.stringify(res));
     							
     						}
     					});
