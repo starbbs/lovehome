@@ -39,7 +39,7 @@ $(function() {
 					if(result.data.hgToken){
 						//已注册
 						$.cookie("hgToken",result.data.hgToken);
-						window.location.href="html/home.html";
+						window.location.href="html/detail.html";
 						
 					}else{
 						//未注册
@@ -56,6 +56,6 @@ $(function() {
 
 	} else {
 		// 自动登录
-		window.location.href="html/home.html";
+		window.location.href="html/detail.html";
 	}
 });

@@ -14,9 +14,9 @@
 					<li><span>购买爱心</span><span>￥{{heartNumber}}</span></li>
 					<li><span>购买状态</span><span>{{statusStr}}</span></li>
 					<li><span>匹配编号</span><span>{{matchNo}}</span></li>
-					<li><span>购买时间</span><span>2016.1.22 14:30</span></li>
+					<li><span>购买时间</span><span>{{ createTime | date("yyyy-MM-dd HH:mm:ss")}}</span></li>
 				</ul>
-				<ul class="menu_content failure_view view" ms-visible="!BUY_PROCESSING">
+				<ul class="menu_content failure_view view" ms-visible="BUY_FAILURE">
 					<li><span>购买爱心</span><span>￥{{heartNumber}}</span></li>
 					<li><span>购买状态</span><span>{{statusStr}}</span></li>
 					<li><span>匹配编号</span><span>{{matchNo}}</span></li>
@@ -26,62 +26,77 @@
 					<h3>购买爱心匹配中</h3>
 					<p><img src="../images/yellow.png"/></p>
 				</div>
-				<div class="menu_tips failure_view view" ms-visible="!BUY_PROCESSING">
+				<div class="menu_tips failure_view view" ms-visible="BUY_FAILURE">
 					<h3>购买失败，已返还您的金额</h3>
 					<p><img src="../images/error.png"/></p>
-				</div>
+				</div>				
 			</div>
 			<div class="money">
 				<div><h3>已拥有爱心</h3><p>￥<span>{{ownerNumber}}</span></p></div>
-				<div><h3>爱心回报</h3><p>￥<span>{{heartIncome}}</span></p></div>
+				<div><h3>爱心回报</h3><p>￥<span>{{incomeNumber}}</span></p></div>
+			</div>
+			<div class="history">
+				<a class="history_btn" href="../html/history.html">传递历史</a>
 			</div>
 		</div>
 		<div class="wrap transfer" ms-controller="transfer" ms-visible="!BUYING">
 			<div class="menu">
-				<ul class="menu_content">
-					<li><span>传递爱心</span><span>￥10000.00</span></li>
+				<ul class="menu_content" ms-visible="PROCESSING">
+					<li><span>传递爱心</span><span>￥{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></li>
 					<li><span>传递状态</span><span>匹配中....</span></li>
-					<li><span>匹配编号</span><span>0000001</span></li>
-					<li><span>传递时间</span><span>2016.1.22 14:30</span></li>
+					<li><span>匹配编号</span><span>{{matchNo}}</span></li>
+					<li><span>传递时间</span><span>{{ createTime | date("yyyy-MM-dd HH:mm:ss")}}</span></li>
 				</ul>
-				<ul class="menu_content">
-					<li><span>传递爱心</span><span>￥10000.00</span></li>
+				<ul class="menu_content" ms-visible="FAILURE">
+					<li><span>传递爱心</span><span>￥{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></li>
 					<li><span>传递状态</span><span>未成功</span></li>
-					<li><span>获得收益</span><span>￥175.00</span></li>
-					<li><span>传递时间</span><span>2016.1.22 14:30</span></li>
+					<li><span>获得收益</span><span>￥{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></li>
+					<li><span>传递时间</span><span>{{ createTime | date("yyyy-MM-dd HH:mm:ss")}}</span></li>
 				</ul>
-				<ul class="menu_content">
-					<li><span>传递爱心</span><span>￥10000.00</span></li>
+				<ul class="menu_content" ms-visible="SUCCESS">
+					<li><span>传递爱心</span><span>￥{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></li>
 					<li><span>传递状态</span><span>成功</span></li>
-					<li><span>获得收益</span><span>￥175.00</span></li>
-					<li><span>传递时间</span><span>2016.1.22 14:30</span></li>
+					<li><span>获得收益</span><span>￥{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></li>
+					<li><span>传递时间</span><span>{{ createTime | date("yyyy-MM-dd HH:mm:ss")}}</span></li>
 				</ul>
-				<div class="menu_tips">
+				<div class="menu_tips" ms-visible="PROCESSING">
 					<h3>传递爱心匹配中</h3>
 					<p><img src="../images/green.png"/></p>
 				</div>
-				<div class="menu_tips">
+				<div class="menu_tips" ms-visible="FAILURE">
 					<h3>爱心传递未成功</h3>
 					<p><img src="../images/pink_xin.png"/></p>
 				</div>
-				<div class="menu_tips">
+				<div class="menu_tips" ms-visible="SUCCESS">
 					<h3>爱心传递成功，感谢您的捐赠</h3>
 					<p><img src="../images/pink_xin.png"/></p>
 				</div>
 			</div>
-			<div class="money">
-				<div><h3>匹配金额</h3><p>￥<span>5350.00</span></p></div>
-				<div><h3>待捐赠爱心</h3><p style="color: green;">￥<span>175.00</span></p></div>
+			<div class="money" ms-visible="PROCESSING">
+				<div><h3>匹配金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
+				<div><h3>待捐赠爱心</h3><p style="color: green;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
-			<div class="money">
-				<div><h3>带提现金额</h3><p>￥<span>5175.00</span></p></div>
-				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>175.00</span></p></div>
+			<div class="money" ms-visible="SUCCESS">
+				<div><h3>零钱已到账</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
+				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+			</div>
+			<div class="money" ms-visible="FAILURE">
+				<div><h3>待提现金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
+				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+			</div>
+			<div class="btn" ms-visible="FAILURE">
+				<input type="button" value="提现" class="submit" ms-click="submit_click"/>
+			</div>
+			<div class="history">
+				<a class="history_btn" href="../html/history.html">传递历史</a>
 			</div>
 		</div>
 		
 		<script src="../js/jquery-1.10.1.min.js"></script>
 		<script src="../js/avalon.mobile.js"></script>
+		<script src="../js/config.js"></script>
 		<script src="../js/cookie.js"></script>
+		<script src="../js/floatCal.js"></script>
 		<script src="../js/detail.js"></script>
 	</body>
 </html>

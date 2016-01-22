@@ -52,7 +52,7 @@ var buy=baseUrl+"/hg/buy/create";
  * photo 头像
  * hearNumber 贡献金额
  */
-var shareReturnInfo=baseUrl+"hg/returnHeart/info";
+var shareReturnInfo=baseUrl+"/hg/returnHeart/info";
 
 /**
  * 分享回报提现申请
@@ -96,9 +96,15 @@ var transferHistory=baseUrl+"/hg/buy/list";
  * outOrderCode
  * payResult
  */
-var detail=baseUrl+"/hg/summary/detail";
+var detailInfo=baseUrl+"/hg/summary/detail";
 
 /**
  * 
  */
 var wxSign=baseUrl+"/hg/common/weixin/signature";
+
+/**
+ * 转卖申请
+ * {hgToken:"ewwerwr32432fwefwe"}
+ */
+var sellApply=baseUrl+"/hg/transferOut/apply";
