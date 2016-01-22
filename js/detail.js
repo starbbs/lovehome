@@ -87,7 +87,7 @@ $(function() {
 							//失败
 							transfer.FAILURE=true;
 						}
-					} else {
+					} else if (result.data.type == 'BUY') {
 						// 买入
 						detail.BUYING = true;
 						buy.heartNumber = result.data.heartNumber;

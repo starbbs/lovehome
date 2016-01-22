@@ -16,7 +16,6 @@ $(function() {
 	};
 
 	
-
 	var hgToken = $.cookie("hgToken");
 	if (!hgToken) {
 		// 没有登录
@@ -39,12 +38,12 @@ $(function() {
 					if(result.data.hgToken){
 						//已注册
 						$.cookie("hgToken",result.data.hgToken);
-						window.location.href="html/detail.html";				
+						window.location.href="/html/detail.html";				
 					}else{
 						//未注册
 						var openId=result.data.openid;
 						//alert(result.data);
-						var url="html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
+						var url="/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
 						window.location.href=url;
 					}
 				}else{
@@ -68,14 +67,14 @@ $(function() {
 				if (result.status == 200) {
 					if (result.data.type == 'NOT_ACTIVITY') {
 						// 没有购买记录
-						window.location.href = "/html/home.html";
+						window.location.href = "/lovehome/html/home.html";
 					} else {
 						// 有购买记录
-						window.location.href = "/html/detail.html";
+						window.location.href = "/lovehome/html/detail.html";
 					}
 				} else if (result.status == 9999) {
 					// 没有购买记录
-					window.location.href = "/html/home.html";
+					window.location.href = "/lovehome/html/home1.html";
 				} else {
 					alert(result.msg);
 				}
