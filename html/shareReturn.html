@@ -1,95 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-	<title>分享回报</title>
-	<link rel="stylesheet" href="../css/reset.css" />
-	<link rel="stylesheet" href="../css/share return.css" />	
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<title>分享回报</title>
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/share return.css" />
 </head>
 <body>
-	<div class="wrap">
+	<div class="wrap" ms-controller="shareReturn">
 		<div class="return_money">
 			<p>当前回报金额</p>
-			<h3 class="return_money_num">￥<span>0.00</span></h3>
-			<div class="return_money_all">回报总收益<span>￥234.45</span></div>
+			<h3 class="return_money_num">
+				￥<span>{{returnHeartNumber}}</span>
+			</h3>
+			<div class="return_money_all">
+				回报总收益<span>￥{{totalReturnHeartNumber}}</span>
+			</div>
 		</div>
 		<div class="return_friend">
 			<div class="return_friend_til">
-				<p></p><p>提供收益的盆友们</p><p></p>
+				<p></p>
+				<p>提供收益的盆友们</p>
+				<p></p>
 			</div>
 			<ul class="return_friend_con">
 				<li>
 					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
+						<dt>
+							<img src="../images/icon.png">
+						</dt>
+						<dd>
+							<p class="return_friend_name">袋鼠</p>
+							<p class="return_friend_time">'2015055'</p>
 						</dd>
 					</dl>
-					<h3>￥34.44</h3>
+					<h3>￥1004</h3>
 				</li>
-				<li>
+				<li ms-repeat-item="list">
 					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
+						<dt>
+							<img ms-attr-src="item.photo||'../images/icon.png'">
+						</dt>
+						<dd>
+							<p class="return_friend_name">{{item.nick}}</p>
+							<p class="return_friend_time">{{item.createTime | date("yyyy-MM-dd HH:mm:ss")}}</p>
 						</dd>
 					</dl>
-					<h3>￥734.44</h3>
-				</li>
-				<li>
-					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
-						</dd>
-					</dl>
-					<h3>￥434.44</h3>
-				</li>
-				<li>
-					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
-						</dd>
-					</dl>
-					<h3>￥234.44</h3>
-				</li><li>
-					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
-						</dd>
-					</dl>
-					<h3>￥134.44</h3>
-				</li>
-				<li>
-					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
-						</dd>
-					</dl>
-					<h3>￥34.44</h3>
-				</li>
-				<li>
-					<dl>
-						<dt><img src="../images/icon.png"></dt>
-						<dd><p class="return_friend_name">安妮</p>
-							<p class="return_friend_time">2016.1.22  22:20</p>
-						</dd>
-					</dl>
-					<h3>￥34.44</h3>
-				</li>
+					<h3>￥{{item.hearNumber}}</h3>
+				</li>			
 			</ul>
-		</div>		
+		</div>
 		<div class="cash">
-			<a class="cash_btn" href="../html/mine_6.html">提现</a>
-		</div>		
+			<span class="cash_btn" ms-click="withdraw_click">提现</span>
+		</div>
 		<!--background: #ff8309;-->
 	</div>
 	<script src="../js/zepto.min.js"></script>
 	<script src="../js/jquery-1.10.1.min.js"></script>
+	<script src="../js/avalon.mobile.js"></script>
+	<script src="../js/config.js"></script>
+	<script src="../js/cookie.js"></script>
 	<script src="../js/shareReturn.js"></script>
 </body>
 </html>

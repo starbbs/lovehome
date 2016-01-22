@@ -1,42 +1,53 @@
 $(function(){
 	var hgToken=$.cookie("hgToken");
 	
-	
-	$(document).on('click', '.submit', function() {
-		var param = {
-			"hgToken":hgToken
-		};
-		$.ajax({
-			type : "POST",
-			url : shareReturnWithdrawReq,
-			data : JSON.stringify(param),
-			dataType : "json",
-			contentType : "application/json;charset=UTF-8",
-			success : function(result) {
-				if(result.status==200){
-					alert("提现成功");
-				}else{
-					alert(result.msg);
-				}
-			}
-		});	
+	var shareReturn = avalon.define({
+		$id : "shareReturn",
+		returnHeartNumber : 0.00,
+		totalReturnHeartNumber : 0.00,
+		list:[],
+		withdraw_click : function() {
+			var param = {
+					"hgToken":hgToken
+				};
+				$.ajax({
+					type : "POST",
+					url : shareReturnInfo,
+					data : JSON.stringify(param),
+					dataType : "json",
+					contentType : "application/json;charset=UTF-8",
+					success : function(result) {
+						if(result.status==200){
+							alert("提现成功");
+						}else{
+							alert(result.msg);
+						}
+					}
+				});	
+		}
 	});
+
 	
 	var init=function(){
 		var param = {
 			"hgToken":hgToken
 		};
 		$.ajax({
-			type : "POST",
+			type : "post",
 			url : shareReturnInfo,
 			data : JSON.stringify(param),
 			dataType : "json",
-			contentType : "application/json;charset=UTF-8",
 			success : function(result) {
 				if(result.status==200){
-					var returnHeartNumber=result.data.returnHeartNumber;
+					if(result.data.returnHeartNumber){
+						shareReturn.returnHeartNumber=result.data.returnHeartNumber;
+					}
+					if(result.data.totalReturnHeartNumber){
+						shareReturn.totalReturnHeartNumber=result.data.totalReturnHeartNumber;
+					}					
 					for(var i=0;i<result.data.list.length;i++){
 						var item=result.data.list[i];
+						shareReturn.list.push(item);
 					}
 				}else{
 					alert(result.msg);
@@ -44,5 +55,7 @@ $(function(){
 			}
 		});	
 	}
+	
+	init();
 });
 

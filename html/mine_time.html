@@ -8,7 +8,7 @@
 		<title>我的爱心</title>
 	</head>
 	<body>
-		<div class="wrap">
+		<div class="wrap" ms-controller="buy">
 			<div class="menu">
 				<div class="mag"></div>
 				<div class="menu_content">
@@ -18,13 +18,13 @@
 						<p><span id="time_m"></span>分</p>
 						<p><span id="time_s"></span>秒</p>
 					</div>				
-					<h3>爱心传递<br>倒计时</h3>
+					<h3>{{transferTip}}<br>倒计时</h3>
 				</div>
 				<div class="menu_tips"><img src="../images/hu.png"/></div>
 			</div>
 			<div class="money">
-				<div><h3>已拥有爱心</h3><p>￥<span>5000.00</span></p></div>
-				<div><h3>爱心回报</h3><p>￥<span>350.00</span></p></div>
+				<div><h3>已拥有爱心</h3><p>￥<span>{{ownerNumber}}</span></p></div>
+				<div><h3>爱心回报</h3><p>￥<span>{{heartIncome}}</span></p></div>
 			</div>
 			<div class="history">
 				<a class="history_btn" href="../html/history.html">传递历史</a>
@@ -34,13 +34,17 @@
 			</div>		
 			<div class="white_box">
 				<div id="light">
-					<h3>￥<span>5350.00</span><a id="close"></a></h3>				
+					<h3>￥<span>{{(parseFloat(ownerNumber)+parseFloat(heartIncome)).toFixed(2)}}</span><a id="close"></a></h3>				
 				</div>
-				<a class="yes_btn" href="../html/mine_4.html">确认传递</a>
+				<span class="yes_btn" ms-click="transfer_click">确认传递</span>
 			</div>			
 			<div class="black_box"></div>	
 		
 		</div>
+		<script src="../js/jquery-1.10.1.min.js"></script>
+		<script src="../js/avalon.mobile.js"></script>
+		<script src="../js/config.js"></script>
+		<script src="../js/cookie.js"></script>
 		<script src="../js/zepto.min.js"></script>
 		<script src="../js/mine_time.js"></script>
 	</body>
