@@ -9,9 +9,21 @@ html,body{
 .bg{
 	width: 100%;
 	height: 70%;
-	background: url(../images/index_bg.png);
+	background: url(../images/home-bg.png);
 	background-repeat: round;
 	background-size: cover;
+}
+.bg img{
+	display: block;
+}
+.bg img:nth-child(1){
+	width: 71%;
+	margin: 0 auto;
+	padding-top: 15%;
+}.bg img:nth-child(2){
+	width: 61%;
+	margin: 0 auto;
+	padding-top: 15%;
 }
 .content{
 	width: 90%;
