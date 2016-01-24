@@ -146,3 +146,7 @@ html,body,.wrap{
 .fina_success,.fina_fail,.fina_unsuccess{
 	display: none;
 }
+
+
+.mine { opacity: 0; }
+.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }

@@ -29,6 +29,11 @@ $(function(){
 				if(result.status==200){
 					for(var i=0;i<result.data.list.length;i++){
 						var item=result.data.list[i];
+						if((i+1)%2==0){
+							item.even=true;
+						}else{
+							item.even=false;
+						}
 						if(item.status=='BUY_PROCESSING'){
 							item.statusStr='购买中';
 							item.time=item.createTime;
@@ -60,5 +65,9 @@ $(function(){
 	}
 	
 	init();
+	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 });
 

@@ -181,3 +181,18 @@ html,body,.wrap{
 	font-size: 16px;
 }
 
+.no_btn{
+	display: block;
+	width: 90%;
+	margin: 5% 0 0 5%;
+	background: #797979;
+	opacity: 0.5;
+	color: white;
+	text-align: center;
+	padding: 3% 0;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.mine { opacity: 0; }
+.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }

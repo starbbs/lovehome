@@ -1,21 +1,15 @@
 $(".buy_love_btn").on("tap",function(){
-//	if(days>3){
-//		$(".white_box").show();
-//		$(".black_box").show();
-//	}	
-	$(".white_box").show();
-	$(".black_box").show();
+
 });		
 $("#close").on("tap",function(){
 	$(".white_box").hide();
 	$(".black_box").hide();
 });
-$(".btn").on("tap",function(){
-	location.href = 'html/mine.html';
-});
 
 var endDate;//创建时间
-var days;//过了有几天
+var transferDay=3;//传递封存天数
+var transferForceDay=7;//强制传递天数
+var buyIng;
 $(function(){ 
 	var hgToken = $.cookie("hgToken");
 
@@ -29,7 +23,7 @@ $(function(){
 		return dates;
 	}
 	
-	var buy = avalon.define({
+	buyIng = avalon.define({
 		$id : "buy",
 		heartNumber : 0.00,
 		statusStr : "",
@@ -41,23 +35,34 @@ $(function(){
 		transferTip:'爱心传递',
 		ownerNumber : 0.00,// 已拥有爱心
 		heartIncome : 0.00,// 爱心回报
+		days:0,
+		commit_click:function(){
+//			if(buyIng.days>transferDay){
+//			$(".white_box").show();
+//			$(".black_box").show();
+//			}	
+			$(".white_box").show();
+			$(".black_box").show();
+		},
 		transfer_click : function() {
-			var param = {
-				"hgToken" : hgToken
-			};
-			$.ajax({
-				type : "post",
-				url : sellApply,
-				data : JSON.stringify(param),
-				dataType : "json",
-				success : function(result) {
-					if (result.status == 200) {
-						window.location.href = "../html/detail.html";
-					}else {
-						alert(result.msg);
-					}
-				}
-			});
+			if(buyIng.days>=transferDay){
+				var param = {
+						"hgToken" : hgToken
+					};
+					$.ajax({
+						type : "post",
+						url : sellApply,
+						data : JSON.stringify(param),
+						dataType : "json",
+						success : function(result) {
+							if (result.status == 200) {
+								window.location.href = "../html/detail.html";
+							}else {
+								alert(result.msg);
+							}
+						}
+					});
+			}	
 		}
 	});
 
@@ -75,26 +80,30 @@ $(function(){
 				if (result.status == 200) {
 					if (result.data.type == 'BUY') {
 						// 买入
-						buy.heartNumber = result.data.heartNumber;
-						buy.status = result.data.status;
-						buy.BUY_PROCESSING = false;
-						buy.createTime = result.data.createTime;
-						buy.successTime = result.data.successTime;
-						buy.ownerNumber = 0.00;
-						buy.heartIncome = 0.00;
-						if (buy.status == 'BUY_SUCCESS') {
+						buyIng.heartNumber = result.data.heartNumber;
+						buyIng.status = result.data.status;
+						buyIng.BUY_PROCESSING = false;
+						buyIng.createTime = result.data.createTime;
+						buyIng.successTime = result.data.successTime;
+						buyIng.ownerNumber = 0.00;
+						buyIng.heartIncome = 0.00;
+						if (buyIng.status == 'BUY_SUCCESS') {
 							// 购买成功
-							buy.statusStr = "购买成功";
-							buy.ownerNumber = buy.heartNumber.toFixed(2);
-							var days=parseInt(dateDiff(new Date(),new Date(buy.createTime)));
-							if(days>7){
-								days=7;
+							buyIng.statusStr = "购买成功";
+							buyIng.ownerNumber = buyIng.heartNumber.toFixed(2);
+							if(buyIng.successTime){
+								buyIng.days=parseInt(dateDiff(new Date(),new Date(buyIng.successTime)));
 							}
-							buy.transferTip=(days>3?"强制传递":"爱心传递");
-							buy.heartIncome =(days*0.01*buy.ownerNumber).toFixed(2);
-							endDate=buy.createTime;//暂时用创建时间调试
-//							endDate=buy.successTime;
-							show_time();
+							if(buyIng.days>transferForceDay){
+								buyIng.days=transferForceDay;
+							}
+							buyIng.transferTip=(buyIng.days>=transferDay?"强制传递":"爱心传递");
+							buyIng.heartIncome =(buyIng.days*0.01*buyIng.ownerNumber).toFixed(2);							
+							endDate=buyIng.successTime;
+							if(buyIng.days>=transferDay){
+								$(".no_btn").css("background","orange");
+								$(".no_btn").css("opacity","1");
+							}
 						}
 					}
 				} else if (result.status == 9999) {
@@ -105,6 +114,8 @@ $(function(){
 				}
 			}
 		});
+		
+		show_time();
 	}
 
 	init();
@@ -114,8 +125,12 @@ $(function(){
 
 	function show_time(){ 
 	var time_start = new Date().getTime(); //设定当前时间
-	var time_end =  endDate+(1000*60*60*24*(days>3?7:3)); //设定目标时间
+	
+	var time_end =  endDate+(1000*60*60*24*(buyIng.days>=transferDay?transferForceDay:transferDay)); //设定目标时间
 	var time_distance = time_end - time_start; 
+	if(time_distance<0){
+		time_distance=-time_distance;
+	}
 	var int_day = Math.floor(time_distance/86400000) 
 	time_distance -= int_day * 86400000; 
 	var int_hour = Math.floor(time_distance/3600000) 
@@ -143,5 +158,7 @@ $(function(){
 	// 设置定时器
 	setTimeout("show_time()",1000); 
 	
-	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 }

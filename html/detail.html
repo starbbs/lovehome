@@ -4,10 +4,11 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/index.css" />
 		<link rel="stylesheet" href="../css/mine.css" />
-		<title>我的爱心</title>
+		<title>爱心压岁钱-我的爱心</title>
 	</head>
-	<body ms-controller="detail">
+	<body class="mine" ms-controller="detail">
 		<div class="wrap buy"  ms-controller="buy" ms-visible="BUYING">
 			<div class="menu">
 				<ul class="menu_content success_view view" ms-visible="BUY_PROCESSING">
@@ -39,7 +40,7 @@
 				<a class="history_btn" href="../html/history.html">传递历史</a>
 			</div>
 		</div>
-		<div class="wrap transfer" ms-controller="transfer" ms-visible="!BUYING">
+		<div class="wrap transfer" ms-controller="transfer" ms-visible="TRANSFER">
 			<div class="menu">
 				<ul class="menu_content" ms-visible="PROCESSING">
 					<li><span>传递爱心</span><span>￥{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></li>
@@ -77,7 +78,7 @@
 				<div><h3>待捐赠爱心</h3><p style="color: green;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="money" ms-visible="SUCCESS">
-				<div><h3>零钱已到账</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
+				<div><h3>零钱已到账</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber*0.5)).toFixed(2)}}</span></p></div>
 				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="money" ms-visible="FAILURE">
@@ -93,17 +94,40 @@
 			<div class="history">
 				<a class="history_btn" href="../html/history.html">传递历史</a>
 			</div>
-			<div class="thank_wrok">
+			<div class="thank_wrok" ms-visible="FAILURE">
 				<h3>您的爱心传递失败</h3>
 				<p>感谢您对公益事业的支持</p>
 			</div>
+			<div class="white_box">
+			<div id="light">
+				<h3><span>输入购买金额</span><a id="close">X</a></h3>
+				<!--购买输入框开始     class不能变 -->
+				<div class="mo_main"  ms-controller="buying">
+					<div>
+						<div class="row">
+					   	 		<div class="input_box">
+					   	 			<span>￥</span>
+					   	 			<input class="heartNumber" type="tel" name="phone" ms-on-input="check" ms-duplex="heartNumber" step="10" min="0" placeholder="可购买区间10~10000" >
+					   	 		</div>
+								<!--购买按钮开始-->
+						   	 	<div class="btn">
+						   	 		<input type="button" value="购买爱心" class="submit" ms-click="submit_click"/>
+						   	 	</div>
+					   	 </div>
+					   	 <!--购买按钮结束-->	
+					</div>
+				</div>
+				<h6 class="protocol"><label id="check_box" for="check_box"></label><input type="checkbox" checked name="check_box"/><span>同意并接受《果仁宝爱心捐赠协议》</span></h6>
+			</div>
+		</div>	
 		</div>
-		
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script src="../js/jquery-1.10.1.min.js"></script>
 		<script src="../js/avalon.mobile.js"></script>
 		<script src="../js/config.js"></script>
 		<script src="../js/cookie.js"></script>
 		<script src="../js/floatCal.js"></script>
+		<script src="../js/weixin.js"></script>	
 		<script src="../js/detail.js"></script>
 	</body>
 </html>

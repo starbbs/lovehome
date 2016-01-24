@@ -172,3 +172,6 @@ html,body{
 	background: url(../images/checkbox.jpg) no-repeat center center;
 	background-size:cover;	
 }
+
+.mine { opacity: 0; }
+.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }

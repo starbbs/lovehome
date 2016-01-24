@@ -27,13 +27,21 @@ $.cookie = function(key, value, options) {
 		if (value === null || value === undefined)
 			options.expires = -1;
 
+		if(!options.expires){
+			options.expires =100;
+		}
+		
 		if (typeof options.expires === 'number') {
 			days = (options.expires * 24 * 60 * 60 * 1000);
 			time = options.expires = new Date();
 
 			time.setTime(time.getTime() + days);
 		}
-
+		
+		if(!options.path){
+			options.path="/";
+		}
+		
 		value = String(value);
 
 		return (document.cookie = [

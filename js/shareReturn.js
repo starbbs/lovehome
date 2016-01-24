@@ -7,7 +7,8 @@ $(function(){
 		totalReturnHeartNumber : 0.00,
 		list:[],
 		withdraw_click : function() {
-			var param = {
+			if(shareReturn.returnHeartNumber>0){
+				var param = {
 					"hgToken":hgToken
 				};
 				$.ajax({
@@ -18,11 +19,13 @@ $(function(){
 					success : function(result) {
 						if(result.status==200){
 							alert("提现成功");
+							location.href = '../html/shareReturn.html';
 						}else{
 							alert(result.msg);
 						}
 					}
-				});	
+				});		
+			}			
 		}
 	});
 
@@ -41,6 +44,12 @@ $(function(){
 					if(result.data.returnHeartNumber){
 						shareReturn.returnHeartNumber=result.data.returnHeartNumber;
 					}
+					if(shareReturn.returnHeartNumber<=0){
+						$(".cash_btn").css({
+							"background":"#CDCDCD",
+							"color":"white"
+						});
+					}
 					if(result.data.totalReturnHeartNumber){
 						shareReturn.totalReturnHeartNumber=result.data.totalReturnHeartNumber;
 					}					
@@ -56,5 +65,9 @@ $(function(){
 	}
 	
 	init();
+	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 });
 

@@ -26,7 +26,8 @@ $(function() {
 			"code" : data.code
 		};
 		if(!data.code){
-			window.location.href=setWxUrl(window.location.href);
+			console.log(setWxUrl(window.location.href,data.referId));
+			window.location.href=setWxUrl(window.location.href,data.referId);
 		}
 		$.ajax({
 			type : 'post',
@@ -38,12 +39,12 @@ $(function() {
 					if(result.data.hgToken){
 						//已注册
 						$.cookie("hgToken",result.data.hgToken);
-						window.location.href="/html/detail.html";				
+						window.location.href = "/lovehome/html/home.html";			
 					}else{
 						//未注册
 						var openId=result.data.openid;
 						//alert(result.data);
-						var url="/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
+						var url="/lovehome/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
 						window.location.href=url;
 					}
 				}else{
@@ -53,32 +54,10 @@ $(function() {
 		});
 
 	} else {
-		// 自动登录
-		var param = {
-			"hgToken" : hgToken
-		};
-		$(".wrap").hide();
-		$.ajax({
-			type : "post",
-			url : detailInfo,
-			data : JSON.stringify(param),
-			dataType : "json",
-			success : function(result) {
-				if (result.status == 200) {
-					if (result.data.type == 'NOT_ACTIVITY') {
-						// 没有购买记录
-						window.location.href = "/lovehome/html/home.html";
-					} else {
-						// 有购买记录
-						window.location.href = "/lovehome/html/detail.html";
-					}
-				} else if (result.status == 9999) {
-					// 没有购买记录
-					window.location.href = "/lovehome/html/home1.html";
-				} else {
-					alert(result.msg);
-				}
-			}
-		});
+		window.location.href = "/lovehome/html/home.html";
 	}
+	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 });

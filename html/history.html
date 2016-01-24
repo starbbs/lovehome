@@ -3,29 +3,31 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-		<title>传递历史</title>
+		<title>爱心压岁钱-传递历史</title>
 		<link rel="stylesheet" href="../css/reset.css"/>
 		<link rel="stylesheet" href="../css/history.css"/>
 	</head>
 	<body>
-		<div class="wrap" ms-controller="history"> 
+		<div class="mine wrap" ms-controller="history"> 
 			<div class="his" ms-repeat-item="list">
 				<div class="his_time">{{item.time | date("yyyy-MM-dd HH:mm:ss")}}</div>
 				<div class="his_xin">
 					<p class="his_xin_bg"></p>
 					<p class="his_xin_line"></p>
 				</div>
-				<div class="his_con">
-					<p><span>{{item.statusStr}}</span><span>￥{{item.heartNumber}}</span></p>
-					<p><span>爱心基金</span><span>￥{{item.heartNumber}}</span></p>
-					<p><span>收益<span><span>￥{{item.incomeNumber}}</span></p>
+				<div class="his_con" ms-class="his_con2:item.even">
+					<p><span>{{item.statusStr}}</span><span>￥{{item.heartNumber+item.incomeNumber}}</span></p>
+					<p><span>爱心基金</span><span>￥{{(item.incomeNumber*0.5).toFixed(2)}}</span></p>
+					<p><span>收益<span><span>￥{{(item.incomeNumber*0.5).toFixed(2)}}</span></p>
 				</div>
 			</div>
 		</div>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script src="../js/jquery-1.10.1.min.js"></script>
 		<script src="../js/avalon.mobile.js"></script>
 		<script src="../js/config.js"></script>
 		<script src="../js/cookie.js"></script>
 		<script src="../js/history.js"></script>
+		<script src="../js/weixin.js"></script>	
 	</body>
 </html>

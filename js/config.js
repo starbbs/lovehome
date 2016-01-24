@@ -3,8 +3,13 @@ var baseUrl="http://116.213.142.87:8080";
 //var baseUrl="http://www.goopal.com.cn";
 
 
-var setWxUrl = function(url) {
-	return 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx55923db8dfb94e44&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+var setWxUrl = function(url,referId) {
+	var state='STATE';
+	if(referId){
+		state=referId;
+	}
+	var url='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx55923db8dfb94e44&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_userinfo&state='+state+'#wechat_redirect';
+	return url;
 };
 
 /**
@@ -125,4 +130,16 @@ var reward=baseUrl+"/hg/summary/reward";
  */
 var transferHistory=baseUrl+"/hg/buy/list";
 
+/**
+ * 我的用户信息
+ * {hgToken:"ewwerwr32432fwefwe"}
+ */
+var myUserInfo=baseUrl+"/hg/user/myInfo";
 
+
+
+/**
+ * 其他用户信息
+ * {"referUserId":1,hgToken:"ewwerwr32432fwefwe"}
+ */
+var otherUserInfo=baseUrl+"/hg/user/info";

@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/mine_time.css" />
-		<title>我的爱心</title>
+		<title>爱心压岁钱-我的爱心</title>
 	</head>
 	<body>
-		<div class="wrap" ms-controller="buy">
+		<div class="mine wrap" ms-controller="buy">
 			<div class="menu">
 				<div class="mag"></div>
 				<div class="menu_content">
@@ -29,9 +29,8 @@
 			<div class="history">
 				<a class="history_btn" href="../html/history.html">传递历史</a>
 			</div>
-			<div class="buy_love">
-				<a class="buy_love_btn">传递爱心</a>
-			</div>		
+			<span class="no_btn" ms-click="commit_click">传递爱心</span>	
+				
 			<div class="white_box">
 				<div id="light">
 					<h3>￥<span>{{(parseFloat(ownerNumber)+parseFloat(heartIncome)).toFixed(2)}}</span><a id="close"></a></h3>				
@@ -41,11 +40,13 @@
 			<div class="black_box"></div>	
 		
 		</div>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script src="../js/jquery-1.10.1.min.js"></script>
 		<script src="../js/avalon.mobile.js"></script>
 		<script src="../js/config.js"></script>
 		<script src="../js/cookie.js"></script>
 		<script src="../js/zepto.min.js"></script>
 		<script src="../js/mine_time.js"></script>
+		<script src="../js/weixin.js"></script>
 	</body>
 </html>
