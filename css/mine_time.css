@@ -42,11 +42,31 @@ html,body,.wrap{
 	padding-top: 10%;
 	color: white;
 }
-.menu_tips{
-	width: 20%;	
-	position: absolute;
-	left: 40%;
-	bottom: -2%;
+.menu_tips {
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    bottom: -2%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.menu_tips {
+        bottom: -8%;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:portrait),	only screen and (min-device-pixel-ratio : 1.5)  and (orientation:portrait) {
+	.menu_tips {
+        bottom: -8%;
+    }
+}
+@media only screen and (min-device-width: 321px){
+    .menu_tips {
+        bottom: -5%;
+    }
+}
+@media only screen and (device-width:320px) and (device-width:568px){
+	.menu_tips {
+        bottom: -5%;
+    }
 }
 .menu_tips img{
 	display: block;
@@ -194,5 +214,31 @@ html,body,.wrap{
 	font-size: 16px;
 }
 
+.menu_tips {
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    bottom: -2%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.menu_tips {
+        bottom: -8%;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:portrait),	only screen and (min-device-pixel-ratio : 1.5)  and (orientation:portrait) {
+	.menu_tips {
+        bottom: -8%;
+    }
+}
+@media only screen and (min-device-width: 321px){
+    .menu_tips {
+        bottom: -5%;
+    }
+}
+@media only screen and (device-width:320px) and (device-width:568px){
+	.menu_tips {
+        bottom: -5%;
+    }
+}
 .mine { opacity: 0; }
 .on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }

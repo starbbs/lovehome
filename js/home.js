@@ -144,7 +144,7 @@ $(function() {
 		if (data.referUserId) {
 			var params = {
 				"hgToken" : hgToken,
-				"referUserId":referUserId
+				"referUserId":data.referUserId
 			};
 			$.ajax({
 				type : "post",
@@ -153,9 +153,10 @@ $(function() {
 				dataType : "json",
 				success : function(result) {
 					if (result.status == 200) {
-						buying.photo=data.data.photo;
-						buying.nick=data.data.nick;
+						buying.photo=result.data.photo;
+						buying.nick=result.data.nick;
 						buying.shared=true;
+						$(".bg").css("background-image","url(../images/qiehuan.png)");
 					} else {
 						alert(result.msg);
 					}
