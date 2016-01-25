@@ -61,6 +61,7 @@ $(function() {
         btnName : '购买爱心',
 		hasActivity : false,
         shared:false,
+        buyFlag:false,
         check:function(){
 //        	if(this.value && this.value>9 && this.value%10==0){
         	if(this.value){
@@ -78,6 +79,10 @@ $(function() {
         	}
         },
         submit_click:function(){
+        	if(buyFlag){
+        		return false;
+        	}
+        	buyFlag=true;
     		var param = {
     			"heartNumber" :parseInt(buying.heartNumber),
     			"hgToken":hgToken
@@ -117,7 +122,14 @@ $(function() {
     				}else{
     					alert(result.msg);
     				}
-    			}
+    				buyFlag=false;
+    			},
+	    		error: function(xhrObj, text, err) {
+	    			buyFlag=false;
+				},
+				complete: function() {
+					buyFlag=false;
+				}
     		});	
         }
     });
