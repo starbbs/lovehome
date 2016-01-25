@@ -9,21 +9,63 @@ html,body{
 .bg{
 	width: 100%;
 	height: 70%;
-	background: url(../images/home-bg.png);
+	background-image: url(../images/index_bg.png);
 	background-repeat: round;
 	background-size: cover;
 }
-.bg img{
-	display: block;
+.textcontent {
+	color: white;
+    display: block;
+    text-align: center;
+    top: 82%;
+    position: relative;
+    font-size: 13px;
+    margin: 0 auto;
 }
-.bg img:nth-child(1){
-	width: 71%;
-	margin: 0 auto;
-	padding-top: 15%;
-}.bg img:nth-child(2){
-	width: 61%;
-	margin: 0 auto;
-	padding-top: 15%;
+.photo_line {
+	    position: absolute;
+    top: 30%;
+    margin: 0 auto;
+    width: 100%;
+    display: inline-flex;
+}
+.leftline {
+	    width: 50px;
+    height: 0px;
+    border: #fcd6ce 1px solid;
+    float: left;
+    left: 22%;
+    position: absolute;
+}
+.rightline {
+        width: 50px;
+    height: 0px;
+    border: #fcd6ce 1px solid;
+    float: right;
+    position: absolute;
+    right: 22%;
+}
+.photoimg {
+	    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    top: -24px;
+    margin: 0 auto;
+    display: inline;
+}
+.centerimg {
+        float: left;
+    height: 5px;
+    line-height: 5px;
+    /* margin: 0px 10px; */
+    /* left: 39%; */
+    top: 15%;
+    width: 50px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    display: inline;
 }
 .content{
 	width: 90%;
