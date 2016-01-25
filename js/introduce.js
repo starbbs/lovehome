@@ -1,6 +1,23 @@
 $(function() {
-
+	
+	var hgToken = $.cookie("hgToken");
+	
 	$("#toTop").css("top", window.screen.availHeight / 2 - 100 + "px");
+	
+	/**
+	 * 参数存到data中
+	 */
+	var parse = function(str) {
+		var data = {};
+		if (str.indexOf('?') > 0) {
+			str = str.split('?')[1];
+			str.split('&').forEach(function(item) {
+				var arr = item.split('=');
+				data[arr[0]] = arr[1];
+			});
+		}
+		return data;
+	};
 	
 	$(window).scroll(function() {
 		if ($(window).scrollTop() >= 100) {
@@ -18,9 +35,13 @@ $(function() {
 	});
 
 	$(".buy_love_btn").on("tap",function(){
-		$(".white_box").show();
-		$(".black_box").show();
-		$(this).hide();
+		if (buying.hasActivity) {
+			window.location.href = "/lovehome/html/detail.html";
+		} else {
+			$(".white_box").show();
+			$(".black_box").show();
+			$(this).hide();
+		}
 	});	
 	
 	$("#close").on("tap",function(){
@@ -37,6 +58,9 @@ $(function() {
         $id: "buying",
         newUser:true,//是否有交易的用户
         heartNumber:'',
+        btnName : '购买爱心',
+		hasActivity : false,
+        shared:false,
         check:function(){
 //        	if(this.value && this.value>9 && this.value%10==0){
         	if(this.value){
@@ -98,4 +122,39 @@ $(function() {
         }
     });
 
+	
+	var init=function(){
+		var data = parse(location.href);
+
+		// 爱心详情
+		var param = {
+			"hgToken" : hgToken
+		};
+		$.ajax({
+			type : "post",
+			url : detailInfo,
+			data : JSON.stringify(param),
+			dataType : "json",
+			success : function(result) {
+				if (result.status == 200) {
+					if (result.data.type != 'NOT_ACTIVITY') {
+						if (!data.buy) {
+							// 有购买记录,没有卖出
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;
+							
+						}
+					}
+				} else {
+					alert(result.msg);
+				}
+			}
+		});
+	}
+	
+	init();
+
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 });
