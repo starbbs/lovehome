@@ -64,11 +64,6 @@ $(function(){
 			success : function(result) {
 				if(result.status==200){
 					$.cookie("hgToken",result.data.hgToken);
-					if(data.referUserId!='STATE'){
-						window.location.href = "/lovehome/html/home.html?referUserId="+data.referUserId;	
-					}else{
-						window.location.href = "/lovehome/html/home.html";
-					}	
 					window.location.href="../html/home.html";
 				}else{
 					alert(result.msg);

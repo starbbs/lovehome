@@ -39,11 +39,7 @@ $(function() {
 					if(result.data.hgToken){
 						//已注册
 						$.cookie("hgToken",result.data.hgToken);
-						if(referUserId){
-							window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
-						}else{
-							window.location.href = "/lovehome/html/home.html";
-						}					
+						window.location.href = "/lovehome/html/home.html";			
 					}else{
 						//未注册
 						var openId=result.data.openid;
