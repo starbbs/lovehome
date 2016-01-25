@@ -33,7 +33,7 @@ $(function() {
 		$(".buy_love_btn").show();
 	});
 
-	$(".content").on("tap", function() {
+	$("body").on("tap", function() {
 		location.href = '../html/introduce.html';
 	});
 
