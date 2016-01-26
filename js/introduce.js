@@ -79,10 +79,10 @@ $(function() {
         	}
         },
         submit_click:function(){
-        	if(buyFlag){
+        	if(buying.buyFlag){
         		return false;
         	}
-        	buyFlag=true;
+        	buying.buyFlag=true;
     		var param = {
     			"heartNumber" :parseInt(buying.heartNumber),
     			"hgToken":hgToken
