@@ -11,8 +11,8 @@ var transferDay=3;//传递封存天数
 var transferForceDay=7;//强制传递天数
 var buyIng;
 $(function(){ 
-	var hgToken = $.cookie("hgToken");
-
+//	var hgToken = $.cookie("hgToken");
+	var hgToken = "09f5ca246c7244dfa32fdddb6fc8daad";
 	/**
 	 * 天数间隔
 	 */
