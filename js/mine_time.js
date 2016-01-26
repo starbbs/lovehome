@@ -7,7 +7,7 @@ $("#close").on("tap",function(){
 });
 
 var endDate;//创建时间
-var transferDay=3;//传递封存天数
+var transferDay=1;//传递封存天数-1天
 var transferForceDay=7;//强制传递天数
 var buyIng;
 $(function(){ 
