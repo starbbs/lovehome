@@ -9,16 +9,23 @@
 	</head>
 	<body>
 		<div class="mine wrap" ms-controller="history"> 
-			<div class="his" ms-repeat-item="list">
-				<div class="his_time">{{item.time | date("yyyy-MM-dd HH:mm:ss")}}</div>
-				<div class="his_xin">
-					<p class="his_xin_bg"></p>
-					<p class="his_xin_line"></p>
-				</div>
-				<div class="his_con" ms-class="his_con2:item.even">
-					<p><span>{{item.statusStr}}</span><span>￥{{item.heartNumber+item.incomeNumber}}</span></p>
-					<p><span>爱心基金</span><span>￥{{(item.incomeNumber*0.5).toFixed(2)}}</span></p>
-					<p><span>收益<span><span>￥{{(item.incomeNumber*0.5).toFixed(2)}}</span></p>
+			<div class="history">
+				<div class="history-item" ms-repeat-item="list">
+					<div class="history-time">{{item.time | date("yyyy-MM-dd HH:mm:ss")}}</div>
+					<div class="history-detail">
+						<div class="history-line-1">
+							<div class="history-line-left">{{item.statusStr}}</div>
+							<div class="history-line-right">￥{{item.heartNumber+item.incomeNumber}}</div>
+						</div>
+						<div class="history-line-2">
+							<div class="history-line-left">爱心基金</div>
+							<div class="history-line-right">￥{{(item.incomeNumber*0.5).toFixed(2)}}</div>
+						</div>
+						<div class="history-line-3">
+							<div class="history-line-left">收益</div>
+							<div class="history-line-right">￥{{(item.incomeNumber*0.5).toFixed(2)}}</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
