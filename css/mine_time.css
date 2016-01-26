@@ -15,31 +15,63 @@ html,body,.wrap{
 .mag{
 	padding-bottom: 10%;
 }
+.externalcircle {
+	    width: 158px;
+    height: 158px;
+    border: 1px solid #f46a54;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+}
+.mostexternalcircle {
+	width: 172px;
+    height: 172px;
+    border: 1px solid #f46a54;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+}
 .menu_content{
-	width: 45%;
-	height: 50%;
-	border:1px solid #ccc;
-	border-radius: 100%;	
-	margin: 0 auto;
+	    border: 2px solid #ccc;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
 }
 .ding{
-	width: 100%;
-	height: auto;
-	box-sizing: border-box;
-	display: -webkit-box;
-	-webkit-box-align: start;
-	-webkit-box-pack: center;
-	padding-top: 15%;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    text-align: center;
+    font-size: 16px;
 }
 .ding p{
-	width: 15%;
-	text-align: center;
-	color: white;
+	width: 24px;
+    text-align: center;
+    color: white;
+    display: inline-block;
 }
-.menu_content h3{
+.ding p span{
+    display: inline-block;
+    font-size: 16px;
+}
+.menu_content div.countdowntime{
 	text-align: center;
 	line-height: 22px;
-	padding-top: 10%;
+	padding-top: 85px;
 	color: white;
 }
 .menu_tips {
@@ -48,9 +80,13 @@ html,body,.wrap{
     left: 40%;
     bottom: -2%;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
 	.menu_tips {
         bottom: -8%;
+    }
+    .menu {
+    	height: 55%;
     }
 }
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:portrait),	only screen and (min-device-pixel-ratio : 1.5)  and (orientation:portrait) {
@@ -61,6 +97,9 @@ html,body,.wrap{
 @media only screen and (min-device-width: 321px){
     .menu_tips {
         bottom: -5%;
+    }
+    .menu {
+    	height: 58%;
     }
 }
 @media only screen and (device-width:320px) and (device-width:568px){
@@ -74,12 +113,13 @@ html,body,.wrap{
 }
 .money{
 	width: 90%;
-	height: 25%;
+	height: 117px;
 	margin-left: 5%;
 	border-bottom: 1px solid #e7e7e7;
 	display: -webkit-box;
 	-webkit-box-pack: justify;
 	-webkit-box-align: center;
+	margin-bottom: 18px;
 }
 .money>div{
 	width: 50%;
@@ -92,18 +132,24 @@ html,body,.wrap{
 .money>div:first-child{
 	border-right: 1px solid #e7e7e7;
 }
-.money>div>h3{
-	padding-bottom: 10%;
-	font-size: 14px;
-	font-weight: bold;
+.money>div>span.money_title{
+	padding-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
 }
 .money>div>p>span{
 	font-size: 16px;
 	font-weight: bold;
 }
 .money>div:last-child>p:last-child{
-	color: orange;
+	color: #ff8208;
 }
+.money_number {
+	color: #333333;
+}
+
+
 /*======*/
 
 .history{
@@ -113,9 +159,15 @@ html,body,.wrap{
 }
 .history_btn{
 	border: 1px solid #fe8208;
-	border-radius: 5px;
-	color: white;
-	padding: 4% 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    display: inline-block;
+    padding: 3px 6px;
+    height: 20px;
+    line-height: 20px;
+    width: 65px;
+    text-align: center;
 }
 /*========*/
 .buy_love{
@@ -212,33 +264,6 @@ html,body,.wrap{
 	padding: 3% 0;
 	border-radius: 5px;
 	font-size: 16px;
-}
-
-.menu_tips {
-    width: 20%;
-    position: absolute;
-    left: 40%;
-    bottom: -2%;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-	.menu_tips {
-        bottom: -8%;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:portrait),	only screen and (min-device-pixel-ratio : 1.5)  and (orientation:portrait) {
-	.menu_tips {
-        bottom: -8%;
-    }
-}
-@media only screen and (min-device-width: 321px){
-    .menu_tips {
-        bottom: -5%;
-    }
-}
-@media only screen and (device-width:320px) and (device-width:568px){
-	.menu_tips {
-        bottom: -5%;
-    }
 }
 .mine { opacity: 0; }
 .on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
