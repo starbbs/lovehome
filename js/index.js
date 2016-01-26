@@ -28,35 +28,35 @@ $(function() {
 		if(!data.code){
 			console.log(setWxUrl(window.location.href,data.referId));
 			window.location.href=setWxUrl(window.location.href,data.referId);
-		}
-		$.ajax({
-			type : 'post',
-			url : wxLoing,
-			data : JSON.stringify(param),
-			dataType : 'json',
-			success : function(result) {
-				if(result.status==200){
-					if(result.data.hgToken){
-						//已注册
-						$.cookie("hgToken",result.data.hgToken);
-						if(referUserId){
-							window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
+		}else{
+			$.ajax({
+				type : 'post',
+				url : wxLoing,
+				data : JSON.stringify(param),
+				dataType : 'json',
+				success : function(result) {
+					if(result.status==200){
+						if(result.data.hgToken){
+							//已注册
+							$.cookie("hgToken",result.data.hgToken);
+							if(referUserId && referUserId!="STATE"){
+								window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
+							}else{
+								window.location.href = "/lovehome/html/home.html";
+							}				
 						}else{
-							window.location.href = "/lovehome/html/home.html";
-						}				
+							//未注册
+							var openId=result.data.openid;
+							//alert(result.data);
+							var url="/lovehome/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
+							window.location.href=url;
+						}
 					}else{
-						//未注册
-						var openId=result.data.openid;
-						//alert(result.data);
-						var url="/lovehome/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
-						window.location.href=url;
+						alert("授权失败"+result.msg);
 					}
-				}else{
-					alert("授权失败"+result.msg);
 				}
-			}
-		});
-
+			});
+		}
 	} else {
 		window.location.href = "/lovehome/html/home.html";
 	}
