@@ -36,7 +36,7 @@ $(function() {
 
 	$(".buy_love_btn").on("tap",function(){
 		if (buying.hasActivity) {
-			window.location.href = "/lovehome/html/detail.html";
+			window.location.href = buying.url;
 		} else {
 			$(".white_box").show();
 			$(".black_box").show();
@@ -62,6 +62,7 @@ $(function() {
 		hasActivity : false,
         shared:false,
         buyFlag:false,
+        url:'/lovehome/html/detail.html',
         check:function(){
 //        	if(this.value && this.value>9 && this.value%10==0){
         	if(this.value){
@@ -149,12 +150,18 @@ $(function() {
 			dataType : "json",
 			success : function(result) {
 				if (result.status == 200) {
-					if (result.data.type != 'NOT_ACTIVITY') {
-						if (!data.buy) {
+					if (result.data.type == 'TRANSFER') {
+						if (result.data.status!="SUCCESS") {
+							
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;							
+						}
+					}else if (result.data.type == 'BUY') {
+						if(result.data.status=="BUY_SUCCESS"){
 							// 有购买记录,没有卖出
 							buying.btnName = '我的爱心';
-							buying.hasActivity = true;
-							
+							buying.hasActivity = true;	
+							buying.url="/lovehome/html/mine_time.html";
 						}
 					}
 				} else {
