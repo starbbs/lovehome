@@ -84,7 +84,8 @@ var init=function(){
 			if (data.status == 200) {
 				weixin.title='果仁宝-爱心压岁钱';
 				weixin.desc ='我是'+data.data.nick+', 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!';
-				weixin.link='http://www.goopal.com.cn/lovehome/index.html?referId='+data.data.userId;
+				//weixin.link='http://www.goopal.com.cn/lovehome/index.html?referId='+data.data.userId;
+				weixin.link='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx55923db8dfb94e44&redirect_uri=' + encodeURIComponent('http://www.goopal.com.cn/lovehome/index.html') + '&response_type=code&scope=snsapi_userinfo&state='+data.data.userId+'#wechat_redirect';
 				weixin.imgUrl=data.data.photo;
 				weixin.setShare();
 			} else {
