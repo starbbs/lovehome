@@ -1,10 +1,10 @@
-html,body{
+html, body {
 	width: 100%;
 	height: 100%;
 }
-.wrap{
+.wrap {
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 	background: #f6e8cb url(../images/intr_bg2.png) no-repeat;
 	background-size: 100% auto;
 	display: -webkit-box;
@@ -12,7 +12,7 @@ html,body{
 	-webkit-box-pack: justify;
 	-webkit-box-align: center;
 }
-.int_btn{
+.int_btn {
 	width: 96%;
 	height: 10%;
 	margin-left: 1%;
@@ -21,43 +21,45 @@ html,body{
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 }
-.int_btn img{
+.int_btn img {
 	display: block;
 	width: 100%;
 }
-.int_btn p:nth-child(1){
+.int_btn p:nth-child(1) {
 	width: 25%;
 }
-.int_btn p:nth-child(2){
+.int_btn p:nth-child(2) {
 	width: 37%;
 }
-.int_btn p:nth-child(3){
+.int_btn p:nth-child(3) {
 	width: 25%;
 }
-.int_con{
+.int_con {
 	width: 94%;
 	-webkit-box-flex: 1;
 	background: white;
 	overflow: auto;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
-.int_img{
+.int_img {
 	width: 100%;
 	margin-bottom: 3%;
 }
-.int_img img{
+.int_img img {
 	display: block;
 	width: 100%;
 }
-.int_tit{
+.int_tit {
 	width: 100%;
 	padding: 3%;
 	box-sizing: border-box;
 }
-.int_tit p{
+.int_tit p {
 	line-height: 22px;
 	font-size: 14px;
 }
-.int_tit p span{
+.int_tit p span {
 	display: inline-block;
 	background: #ae9689;
 	padding: 1% 2%;
@@ -65,56 +67,56 @@ html,body{
 	margin-right: 2%;
 	font-size: 12px;
 }
-.int_info h3{
+.int_info h3 {
 	padding: 5%;
 	font-size: 16px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
-.int_info h3 span{
+.int_info h3 span {
 	padding-bottom: 5%;
 	border-bottom: 4px solid orange;
 }
-.int_info p{
+.int_info p {
 	padding: 5% 5% 0 5%;
 	line-height: 22px;
 }
-.int_info h4{
+.int_info h4 {
 	padding: 5%;
 	font-weight: bold;
 }
-.int_end{
+.int_end {
 	width: 90%;
 	margin-left: 5%;
 	height: auto;
 }
-.int_end p:nth-child(1){
+.int_end p:nth-child(1) {
 	padding: 5% 0% 3% 3%;
 	line-height: 22px;
 }
-.int_end p:nth-child(1) span{
+.int_end p:nth-child(1) span {
 	background: #ae9789;
 	padding: 1% 2%;
 	color: white;
 	margin-right: 2%;
 }
-.int_end p:nth-child(2){
+.int_end p:nth-child(2) {
 	line-height: 22px;
 	padding: 0 3%;
 }
-.int_end p:nth-child(2) span{
+.int_end p:nth-child(2) span {
 	background: #ae9789;
 	padding: 1% 2%;
 	color: white;
 	margin-right: 2%;
 }
-.buy_love{
+.buy_love {
 	width: 100%;
 	height: 10%;
 	background: white;
 	border-top: 1px solid #eee;
 }
-.buy_love_btn{
+.buy_love_btn {
 	width: 90%;
 	background: #ff8309 url(../images/iconfont-aixin.png) 35% center;
 	background-repeat: no-repeat;
@@ -124,37 +126,37 @@ html,body{
 	border-radius: 5px;
 	color: white;
 	font-size: 16px;
-	padding-left: 10%;	
+	padding-left: 10%;
 	margin-left: 5%;
 	margin-top: 2%;
 }
 
 /*===弹出框===*/
-.black_box{
-    display: none; 
-    position: fixed;  
-    top: 0%;  
-    left: 0%;  
-    width: 100%;  
-    height: 100%;  
-    background-color: black;  
-    z-index:1001;    
-    opacity:.80;   
-} 
+.black_box {
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	opacity: .80;
+}
 .white_box {
 	position: relative;
-    display: none; 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 40%; 
-    background-color: white; 
-    z-index:1002;
-    overflow: auto; 
-    box-sizing: border-box;   
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	box-sizing: border-box;
 }
-#close{
+#close {
 	display: block;
 	width: 50px;
 	height: 45px;
@@ -164,17 +166,17 @@ html,body{
 	text-align: center;
 	line-height: 45px;
 }
-#close:hover{
+#close:hover {
 	background: #eee;
 	color: white;
 }
-#light h3{
+#light h3 {
 	height: 45px;
 	line-height: 45px;
 	text-align: center;
 	font-size: 14px;
 }
-#light .input_box{
+#light .input_box {
 	height: 44px;
 	width: 90%;
 	line-height: 44px;
@@ -183,18 +185,18 @@ html,body{
 	margin-top: 2%;
 	font-size: 14px;
 }
-#light .input_box input{
+#light .input_box input {
 	border: 0;
 	color: #ccc;
 	outline: 0;
 	-webkit-appearance: none;
 }
-#light .input_box span{
+#light .input_box span {
 	display: inline-block;
 	width: 20%;
 	text-align: center;
 }
-#light .submit{
+#light .submit {
 	width: 90%;
 	height: 45px;
 	margin-left: 5%;
@@ -205,27 +207,32 @@ html,body{
 	margin-top: 3%;
 	font-size: 20px;
 }
-#light h6{
+#light h6 {
 	width: 100%;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
 }
-#light h6 input{
+#light h6 input {
 	display: none;
 }
-#light h6 span{
+#light h6 span {
 	padding-left: 2%;
 	font-size: 14px;
 }
-#light h6 label{
+#light h6 label {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
 	border-radius: 100%;
 	background: url(../images/checkbox.jpg) no-repeat center center;
-	background-size:cover;	
+	background-size: cover;
 }
-
-.mine { opacity: 0; }
-.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
+.mine {
+	opacity: 0;
+}
+.on.mine {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 1;
+}
