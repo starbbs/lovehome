@@ -1,14 +1,16 @@
-html,body{
+html, body {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
-.wrap{
+.wrap {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	overflow: auto;
+	overflow: hidden;
+	font-family: Helvetica;
 }
-.return_money{
+.return_money {
 	width: 100%;
 	height: 35%;
 	background: url(../images/renturn_bg.jpg) no-repeat;
@@ -17,64 +19,79 @@ html,body{
 	color: white;
 	position: relative;
 }
-.return_money p{
-	padding: 10% 0 5% 0;
+.return_money p {
+	position: absolute;
+	left: 0;
+	top: 18%;
+	width: 100%;
 	opacity: 0.6;
+	text-align: center;
 }
-.return_money_num span{
-	font-size: 30px;
+.return_money_num {
+	position: absolute;
+	left: 0;
+	top: 39%;
+	width: 100%;
+	text-align: center;
 }
-.return_money_all{
+.return_money_num span {
+	font-size: 44px;
+}
+.return_money_all {
 	position: absolute;
 	bottom: 5%;
-	right:5%;
-	background: rgba(0,0,0,0.5);
+	right: 5%;
+	background: rgba(0, 0, 0, 0.5);
 	border-radius: 10px;
 	padding: 1% 4%;
 }
-.return_money_all span{
+.return_money_all span {
 	opacity: 0.6;
 }
-.return_friend{
+.return_friend {
 	width: 100%;
-	height: auto;
-	margin-top: 5%;
+	height: 65%;
+	overflow: auto;
 }
-.return_friend_til{
-	width: 100%;	
+.return_friend_scroll {
+	padding-top: 28px;
+	padding-bottom: 100px;
+}
+.return_friend_til {
+	width: 100%;
 	display: -webkit-box;
 	-webkit-box-align: center;
 	-webkit-box-pack: center;
 }
-.return_friend_til p:nth-child(1){
+.return_friend_til p:nth-child(1) {
 	width: 30%;
 	height: 10px;
-	background:url(../images/return_bg2_03.jpg) no-repeat center;
+	background: url(../images/return_bg2_03.jpg) no-repeat center;
 	background-size: 70% auto;
 	box-sizing: border-box;
 }
-.return_friend_til p:nth-child(2){
+.return_friend_til p:nth-child(2) {
 	width: 40%;
 	display: block;
 	color: white;
 	border-radius: 10px;
 	background: #ff8309;
-	padding: 1% 0;;
+	padding: 1px 0;
 	text-align: center;
 }
-.return_friend_til p:nth-child(3){
+.return_friend_til p:nth-child(3) {
 	width: 30%;
 	height: 10px;
-	background:url(../images/return_bg3_05.jpg) no-repeat center;
+	background: url(../images/return_bg3_05.jpg) no-repeat center;
 	background-size: 70% auto;
 	box-sizing: border-box;
 }
-.return_friend_con{
+.return_friend_con {
 	width: 90%;
-	margin:5% 0 0 5%;
+	margin: 5% 0 0 5%;
 	height: 30%;
 }
-.return_friend_con li{
+.return_friend_con li {
 	display: -webkit-box;
 	-webkit-box-pack: justify;
 	-webkit-box-align: center;
@@ -82,44 +99,47 @@ html,body{
 	margin-bottom: 3%;
 	padding-bottom: 2%;
 }
-.return_friend_con li dl{
+.return_friend_con li dl {
 	display: -webkit-box;
 	-webkit-box-align: center;
 	-webkit-box-pack: center;
 }
-.return_friend_con li dl dt{
-	width: 25%;
-	padding-right: 2%;
+.return_friend_con li dl dt {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 12px;
 }
-.return_friend_con li dl dt img{
+.return_friend_con li dl dt img {
 	display: block;
 	width: 100%;
+	height: 100%;
 }
-.return_friend_con li dl dd p{
-	padding:2% 0;
+.return_friend_con li dl dd p {
+	padding: 2% 0;
 }
-.return_friend_time{
+.return_friend_time {
 	color: #dddddd;
 }
-.return_friend_con li h3{
+.return_friend_con li h3 {
 	color: #ff8309;
 	font-weight: bold;
 }
-.cash{
+.cash {
 	width: 100%;
-	height: 12%;
+	height: 66px;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	border-top: 1px solid #ccc;
 	background: white;
 }
-.cash_btn{
+.cash_btn {
 	display: block;
-	width: 90%;
-	margin: 5% 0 0 5%;
-	padding: 3%;
-	box-sizing: border-box;
+	height: 43px;
+	line-height: 43px;
+	margin: 10px 15px;
 	text-align: center;
 	background: #ff8309;
 	border-radius: 5px;
@@ -127,6 +147,11 @@ html,body{
 	font-size: 16px;
 	font-weight: bold;
 }
-
-.mine { opacity: 0; }
-.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
+.mine {
+	opacity: 0;
+}
+.on.mine {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 1;
+}

@@ -1,57 +1,60 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-<title>爱心压岁钱-分享回报</title>
-<link rel="stylesheet" href="../css/reset.css" />
-<link rel="stylesheet" href="../css/share return.css" />
-</head>
-<body>
-	<div class="mine wrap" ms-controller="shareReturn">
-		<div class="return_money">
-			<p>当前回报金额</p>
-			<h3 class="return_money_num">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>爱心压岁钱-分享回报</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/share return.css" />
+	</head>
+	<body>
+		<div class="mine wrap" ms-controller="shareReturn">
+			<div class="return_money">
+				<p>当前回报金额</p>
+				<h3 class="return_money_num">
 				￥<span>{{returnHeartNumber}}</span>
-			</h3>
-			<div class="return_money_all">
-				回报总收益<span>￥{{totalReturnHeartNumber}}</span>
+				</h3>
+				<div class="return_money_all">
+					回报总收益<span>￥{{totalReturnHeartNumber}}</span>
+				</div>
+			</div>
+			<div class="return_friend">
+				<div class="return_friend_none" ms-visible="!list.length">
+					<img src="../images/return_none.jpg" width="100%" alt="">
+				</div>
+				<div class="return_friend_scroll" ms-visible="list.length">
+					<div class="return_friend_til">
+						<p></p>
+						<p>提供收益的小伙伴</p>
+						<p></p>
+					</div>
+					<ul class="return_friend_con">
+						<li ms-repeat-item="list">
+							<dl>
+								<dt>
+								<img width="35px" ms-attr-src="item.photo||'../images/icon.png'">
+								</dt>
+								<dd>
+								<p class="return_friend_name">{{item.nick}}</p>
+								<p class="return_friend_time">{{item.createTime | date("yyyy-MM-dd HH:mm:ss")}}</p>
+								</dd>
+							</dl>
+							<h3>￥{{item.hearNumber.toFixed(2)}}</h3>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cash">
+				<span class="cash_btn" ms-click="withdraw_click">提现</span>
 			</div>
 		</div>
-		<div class="return_friend">
-			<div class="return_friend_til">
-				<p></p>
-				<p>提供收益的盆友们</p>
-				<p></p>
-			</div>
-			<ul class="return_friend_con">
-				<li ms-repeat-item="list">
-					<dl>
-						<dt style="width:35px;padding:0;border-radius:50%; overflow:hidden;">
-							<img width="35px" ms-attr-src="item.photo||'../images/icon.png'">
-						</dt>
-						<dd>
-							<p class="return_friend_name">{{item.nick}}</p>
-							<p class="return_friend_time">{{item.createTime | date("yyyy-MM-dd HH:mm:ss")}}</p>
-						</dd>
-					</dl>
-					<h3>￥{{item.hearNumber}}</h3>
-				</li>			
-			</ul>
-		</div>
-		<div class="cash">
-			<span class="cash_btn" ms-click="withdraw_click">提现</span>
-		</div>
-		<!--background: #ff8309;-->
-	</div>
-	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-	<script src="../js/zepto.min.js"></script>
-	<script src="../js/jquery-1.10.1.min.js"></script>
-	<script src="../js/avalon.mobile.js"></script>
-	<script src="../js/config.js"></script>
-	<script src="../js/cookie.js"></script>
-	<script src="../js/shareReturn.js"></script>
-	<script src="../js/weixin.js"></script>
-</body>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/jquery-1.10.1.min.js"></script>
+		<script src="../js/avalon.mobile.js"></script>
+		<script src="../js/config.js"></script>
+		<script src="../js/cookie.js"></script>
+		<script src="../js/shareReturn.js"></script>
+		<script src="../js/weixin.js"></script>
+	</body>
 </html>
