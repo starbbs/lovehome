@@ -74,18 +74,19 @@ $(function() {
 	        $("body").append(htmlStr);
 	        $(".warnWin").css({
 	            position: "fixed",
-	            top: "40%",
+	            top: "26%",
 	            left: "50%",
 	            width: "150px",
-	            height: "40px",
-	            "line-height":"20px",
+	            height: "60px",
+	            "line-height":"22px",
 	            margin: "-20px 0px 0px -75px",
 	            "border-radius": "5px",
 	            "vertical-align":"middle",
 	            background: "#000000",
-	            color: "#fff",
+	            color: "#333333",
 	            "text-align": "center",
-	            opacity:"0.7"
+	            opacity:"0.7",
+	            "z-index":"10000"
 	        });
 	        $(".warn_icon").css({
 	            display: "block",
