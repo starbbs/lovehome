@@ -163,7 +163,6 @@ $(function() {
 						buying.photo=result.data.photo;
 						buying.nick=result.data.nick;
 						buying.shared=true;
-						$(".bg").css("background-image","url(../images/qiehuan.png)");
 					} else {
 						alert(result.msg);
 					}
