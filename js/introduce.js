@@ -227,8 +227,7 @@ $(function() {
 			success : function(result) {
 				if (result.status == 200) {
 					if (result.data.type == 'TRANSFER') {
-						if (result.data.status!="SUCCESS") {
-							
+						if (!data.buy) {
 							buying.btnName = '我的爱心';
 							buying.hasActivity = true;							
 						}
@@ -238,6 +237,10 @@ $(function() {
 							buying.btnName = '我的爱心';
 							buying.hasActivity = true;	
 							buying.url="/lovehome/html/mine_time.html";
+						}else{
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;	
+							buying.url="/lovehome/html/detail.html";
 						}
 					}
 				} else {
