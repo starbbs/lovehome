@@ -215,47 +215,48 @@ html,body,.wrap{
     height: 100%;  
     background-color: black;  
     z-index:1001;  
-    opacity:.80;    
-} 
+    opacity:.85;    
+}
 .white_box {
 	    position: absolute;
-    bottom: 20%;
+    top: 40px;
     left: 5%;
     width: 90%;
-    height: 60%;
-    /* background: white; */
+    height: 72%;
     z-index: 1002;
     overflow: auto;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 #close{
-	display: block;
-	width: 45px;
-	height: 55px;
-	position: absolute;
-	right: 5%;
-	top: 0%;
-	text-align: center;
-	line-height: 45px;
-	background: url(../images/close.png) no-repeat;
-	background-size: 100% auto;
+	    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 5%;
+    bottom: -19px;
+    text-align: center;
+    background: url(../images/popup_close.png) no-repeat;
+    background-size: 100% auto;
+    color: white;
 }
 #light{
 	width: 100%;
-	height: 75%;
-	background: url(../images/popup_love.png) no-repeat;
-	background-size: 100% auto;
+    height: 86%;
+    background: url(../images/popup_love.png) no-repeat;
+    background-size: 100% auto;
 }
 #light h3{
 	text-align: center;
-	padding-top: 30%;
-	font-size: 14px;
-	color: white;
+    padding-top: 70px;
+    font-size: 20px;
+    color: white;
+    position: relative;
 }
 #light h3 span{
-	font-weight: bold;
-	font-size: 20px;
-	color: white;
+	    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    position: relative;
 }
 .yes_btn{
 	    display: block;

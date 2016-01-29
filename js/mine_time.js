@@ -6,11 +6,57 @@ $("#close").on("tap", function() {
     $(".black_box").hide();
 });
 
+$(".black_box").on('tap',function(){
+    $(".white_box").hide();
+    $(".black_box").hide();
+});
+
 var endDate; //创建时间
 var transferDay = 1; //传递封存天数-1天
 var transferForceDay = 7; //强制传递天数
 var buyIng;
 var radialObj;
+
+var showWarnWin = function(mes, time) {
+        var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
+        var time = time ? time : 1e3;
+        if (!$(".warnWin").length) {
+            $("body").append(htmlStr);
+            $(".warnWin").css({
+                position: "fixed",
+                top: "40%",
+                left: "50%",
+                width: "150px",
+                height: "40px",
+                "line-height":"20px",
+                margin: "-20px 0px 0px -75px",
+                "border-radius": "5px",
+                "vertical-align":"middle",
+                background: "#000000",
+                color: "#fff",
+                "text-align": "center",
+                opacity:"0.7"
+            });
+            $(".warn_icon").css({
+                display: "block",
+                width: "32px",
+                height: "32px",
+                "text-align": "center",
+                margin: "10px auto 0",
+                "font-size": "30px"
+            });
+            $(".warn_font").css({
+                display: "block",
+                "font-family": "黑体",
+                "margin-top": "10px",
+                "font-size": "15px"
+            });
+            setTimeout(function() {
+                $(".warnWin").remove();
+            }, time);
+        }
+    };
+
 $(function() {
     //var hgToken = $.cookie("hgToken");
     	var hgToken = "09f5ca246c7244dfa32fdddb6fc8daad";
@@ -57,7 +103,7 @@ $(function() {
                         if (result.status == 200) {
                             window.location.href = "../html/detail.html";
                         } else {
-                            alert(result.msg);
+                            showWarnWin(result.msg, 1e3);
                         }
                     }
                 });
@@ -117,7 +163,7 @@ $(function() {
                     // 没有购买记录
                     window.location.href = "../html/home.html";
                 } else {
-                    alert(result.msg);
+                    showWarnWin(result.msg, 1e3);
                 }
             }
         });
