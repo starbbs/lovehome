@@ -145,9 +145,9 @@ html,body{
     opacity:.80;   
 } 
 .white_box {
-	    position: absolute;
+	position: absolute;
     display: block;
-    top: 79px;
+    top: 34px;
     width: 96%;
     height: 250px;
     background-color: white;
