@@ -38,7 +38,7 @@ html,body,.wrap{
     position: relative;
 }
 .menu_content{
-	    border: 2px solid #ccc;
+	/*    border: 2px solid #ccc;
     border-radius: 50%;
     box-sizing: border-box;
     margin: 0 auto;
@@ -46,17 +46,28 @@ html,body,.wrap{
     top: 3px;
     left: 3px;
     right: 3px;
+    bottom: 3px;*/
+    
+
+        position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
     bottom: 3px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
 }
 .ding{
-    width: 100%;
+       width: 100%;
     height: auto;
     box-sizing: border-box;
-    display: inline-block;
-    position: absolute;
-    top: 26px;
+    display: inline;
+    position: relative;
+    top: 35px;
     text-align: center;
     font-size: 16px;
+    left: 15px;
+    z-index: 999;
 }
 .ding p{
 	width: 24px;
@@ -69,10 +80,17 @@ html,body,.wrap{
     font-size: 16px;
 }
 .menu_content div.countdowntime{
-	text-align: center;
-	line-height: 22px;
-	padding-top: 85px;
-	color: white;
+	    text-align: center;
+    line-height: 22px;
+    padding-top: 50px;
+    color: white;
+    position: relative;
+    /* margin: 0 auto; */
+    display: block;
+    z-index: 999;
+}
+.menu_content {
+	background-color: #f0584c;
 }
 .menu_tips {
     width: 20%;
@@ -267,3 +285,12 @@ html,body,.wrap{
 }
 .mine { opacity: 0; }
 .on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
+
+.menu_content canvas {
+	    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    background-color: #f0584c;
+    border-radius: 50%;
+}

@@ -17,10 +17,11 @@ $(function() {
 
 	
 	var hgToken = $.cookie("hgToken");
-	var data=parse(window.location.href);
-	var referUserId= data.state;
 	if (!hgToken) {
-		// 没有登录		
+		// 没有登录
+		var href = window.location.href;
+		var data=parse(href);
+		var referUserId= data.state;
 		var param = {
 			"code" : data.code
 		};
@@ -57,11 +58,7 @@ $(function() {
 			});
 		}
 	} else {
-		if(referUserId && referUserId!="STATE"){
-			window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
-		}else{
-			window.location.href = "/lovehome/html/home.html";
-		}
+		window.location.href = "/lovehome/html/home.html";
 	}
 	
 	setTimeout(function() {

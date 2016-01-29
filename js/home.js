@@ -16,12 +16,29 @@ $(function() {
 		return data;
 	};
 
-	$(".buy_love").on("tap", function() {
-		window.location.href = buying.url;
+	$(".buy_love_btn").on("tap", function() {
+		if (buying.hasActivity) {
+			window.location.href = "/lovehome/html/detail.html";
+		} else {
+			$(".white_box").show();
+			$(".black_box").show();
+			$(this).hide();
+		}
+
 	});
 
-	$(".introduce-div").on("tap", function() {
+	$("#close").on("tap", function() {
+		$(".white_box").hide();
+		$(".black_box").hide();
+		$(".buy_love_btn").show();
+	});
+
+	$("body").on("tap", function() {
 		location.href = '../html/introduce.html';
+	});
+
+	$(".protocol").on("tap", function() {
+		location.href = '../html/protocol.html';
 	});
 
 	var buying = avalon.define({
@@ -32,7 +49,6 @@ $(function() {
 		hasActivity : false,
 		photo:'',
 		nick:'',
-		url:'/lovehome/html/detail.html',
 		shared:false,
 		check : function() {
 			// if(this.value && this.value>9 && this.value%10==0){
@@ -150,7 +166,7 @@ $(function() {
 						buying.photo=result.data.photo;
 						buying.nick=result.data.nick;
 						buying.shared=true;
-						// $(".bg").css("background-image","url(../images/qiehuan.png)");
+						$(".bg").css("background-image","url(../images/qiehuan.png)");
 					} else {
 						alert(result.msg);
 					}
