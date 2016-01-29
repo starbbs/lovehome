@@ -40,6 +40,8 @@ html,body{
 	-webkit-box-flex: 1;
 	background: white;
 	overflow: auto;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
 .int_img{
 	width: 100%;
