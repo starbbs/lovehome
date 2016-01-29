@@ -1,11 +1,10 @@
-html,body{
+html, body {
 	width: 100%;
 	height: 100%;
-	text-align: center;
 }
-.wrap{
+.wrap {
 	width: 100%;
-	height: 100%;	
+	height: 100%;
 	background: #f6e8cb url(../images/intr_bg2.png) no-repeat;
 	background-size: 100% auto;
 	display: -webkit-box;
@@ -13,54 +12,52 @@ html,body{
 	-webkit-box-pack: justify;
 	-webkit-box-align: center;
 }
-.int_btn{
-	width: 96%;
-	height: 10%;
-	margin-left: 1%;
+.int_btn {
+	margin: 18px 5px 12px;
 	box-sizing: border-box;
 	display: -webkit-box;
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 }
-.int_btn img{
+.int_btn img {
 	display: block;
 	width: 100%;
 }
-.int_btn p:nth-child(1){
+.int_btn p:nth-child(1) {
 	width: 25%;
 }
-.int_btn p:nth-child(2){
+.int_btn p:nth-child(2) {
 	width: 37%;
 }
-.int_btn p:nth-child(3){
+.int_btn p:nth-child(3) {
 	width: 25%;
 }
-.int_con{
-	width: 94%;
+.int_con {
+	margin: 0 5px;
 	-webkit-box-flex: 1;
 	background: white;
 	overflow: auto;
 	overflow-scrolling: touch;
 	-webkit-overflow-scrolling: touch;
 }
-.int_img{
+.int_img {
 	width: 100%;
 	margin-bottom: 3%;
 }
-.int_img img{
+.int_img img {
 	display: block;
 	width: 100%;
 }
-.int_tit{
+.int_tit {
 	width: 100%;
 	padding: 3%;
 	box-sizing: border-box;
 }
-.int_tit p{
+.int_tit p {
 	line-height: 22px;
 	font-size: 14px;
 }
-.int_tit p span{
+.int_label {
 	display: inline-block;
 	background: #ae9689;
 	padding: 1% 2%;
@@ -68,125 +65,92 @@ html,body{
 	margin-right: 2%;
 	font-size: 12px;
 }
-.int_info h3{
+.int_info h3 {
 	padding: 5%;
 	font-size: 16px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
-.int_info h3 span{
+.int_info h3 span {
 	padding-bottom: 5%;
 	border-bottom: 4px solid orange;
 }
-.int_info p{
+.int_info p {
 	padding: 5% 5% 0 5%;
 	line-height: 22px;
 }
-.int_info h4{
+.int_info h4 {
 	padding: 5%;
 	font-weight: bold;
 }
-.int_end{
+.int_end {
 	width: 90%;
 	margin-left: 5%;
 	height: auto;
 }
-.int_end p:nth-child(1){
+.int_end p:nth-child(1) {
 	padding: 5% 0% 3% 3%;
 	line-height: 22px;
 }
-.int_end p:nth-child(1) span{
-	background: #ae9789;
-	padding: 1% 2%;
-	color: white;
-	margin-right: 2%;
-}
-.int_end p:nth-child(2){
+.int_end p:nth-child(2) {
 	line-height: 22px;
 	padding: 0 3%;
 }
-.int_end p:nth-child(2) span{
-	background: #ae9789;
-	padding: 1% 2%;
-	color: white;
-	margin-right: 2%;
-}
-.buy_love{
-	width: 100%;
-	height: 10%;
-	background: white;
-	border-top: 1px solid #eee;
-}
-.buy_love_btn{
-	width: 90%;
-	background: #ff8309 url(../images/iconfont-aixin.png) 35% center;
-	background-repeat: no-repeat;
-	background-size: 8%;
-	border: none;
-	padding: 3%;
-	border-radius: 5px;
-	color: white;
-	font-size: 16px;
-	padding-left: 10%;	
-	margin-left: 5%;
-	margin-top: 2%;
-}
+
 
 /*===弹出框===*/
-.black_box{
-    display: block; 
-    position: fixed;  
-    top: 0%;  
-    left: 0%;  
-    width: 100%;  
-    height: 100%;  
-    background-color: black;  
-    z-index:1001;    
-    opacity: 0.85;
+.black_box {
+	display: block;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	opacity: 0.85;
 }
-
 .popup_btn {
-	    z-index: 1010;
-    opacity: 0.8;
-    position: absolute;
-    top: 20px;
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    margin-left: 10%;
+	z-index: 1010;
+	opacity: 0.8;
+	position: absolute;
+	top: 20px;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	margin-left: 10%;
 }
-.popup_btn img{
+.popup_btn img {
+
 	/*width:256px;
 	background-size: 100%;
 	background: #ff8309 url(../images/popup_btn.png) 100% center;*/
-
-
 }
 .white_box {
 	position: absolute;
-    display: none;
-    top: 34px;
-    width: 96%;
-    height: 250px;
-    background-color: white;
-    z-index: 1002;
-    overflow: auto;
-    box-sizing: border-box;
-    border-radius: 6px;
-    text-align: center;
-    margin-left: 2%;
+	display: none;
+	top: 34px;
+	width: 96%;
+	height: 250px;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	box-sizing: border-box;
+	border-radius: 6px;
+	text-align: center;
+	margin-left: 2%;
 }
 .lightspan {
 	font-size: 13px;
-    color: #ff8208;
+	color: #ff8208;
 }
 .btn {
 	width: 100%;
-    text-align: center;
-    margin-top: 16px;
+	text-align: center;
+	margin-top: 16px;
 }
-#close{
+#close {
 	display: block;
 	width: 50px;
 	height: 45px;
@@ -196,98 +160,102 @@ html,body{
 	text-align: center;
 	line-height: 45px;
 }
-#close:hover{
+#close:hover {
 	background: #eee;
 	color: white;
 }
-#light h3{
+#light h3 {
 	height: 60px;
-    line-height: 60px;
-    text-align: center;
-    font-size: 14px;
-    width: 85%;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    margin: 0 auto;
-}
-#light .input_box{
-	height: 47px;
-    width: 85%;
-    line-height: 47px;
-    border: 1px solid #ff8208;
-    /* margin-left: 5%; */
-    font-size: 14px;
-    margin: 0 auto;
-    margin-top: 18px;
-    border-radius: 5px;
-    position: relative;
-}
-#light .input_box input{
-	border: 0;
-    color: #ccc;
-    outline: 0;
-    -webkit-appearance: none;
-    font-size: 17px;
-    height: 22px;
-    line-height: 22px;
-    width: 80%;
-    margin-left: 18px;
-    position: relative;
-    top: 2px;
-}
-#light .input_box span{
-	font-size: 19px;
-    font-weight: 600;
-    position: absolute;
-    left: 10px;
-    display: inline-block;
-}
-#light .submit{
+	line-height: 60px;
+	text-align: center;
+	font-size: 14px;
 	width: 85%;
-    height: 42px;
-    line-height: 42px;
-    background: #ccc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    margin: 0 auto;
-    text-align: center;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	margin: 0 auto;
 }
-#light h6{
+#light .input_box {
+	height: 47px;
+	width: 85%;
+	line-height: 47px;
+	border: 1px solid #ff8208;    /* margin-left: 5%; */
+	font-size: 14px;
+	margin: 0 auto;
+	margin-top: 18px;
+	border-radius: 5px;
+	position: relative;
+}
+#light .input_box input {
+	border: 0;
+	color: #ccc;
+	outline: 0;
+	-webkit-appearance: none;
+	font-size: 17px;
+	height: 22px;
+	line-height: 22px;
+	width: 80%;
+	margin-left: 18px;
+	position: relative;
+	top: 2px;
+}
+#light .input_box span {
+	font-size: 19px;
+	font-weight: 600;
+	position: absolute;
+	left: 10px;
+	display: inline-block;
+}
+#light .submit {
+	width: 85%;
+	height: 42px;
+	line-height: 42px;
+	background: #ccc;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+#light h6 {
 	width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    padding-top: 10px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	padding-top: 10px;
 }
-#light h6 input{
+#light h6 input {
 	display: none;
 }
-#light h6 span{
-	    padding-left: 2%;
-    font-size: 13px;
-    position: relative;
-    top: -3px;
+#light h6 span {
+	padding-left: 2%;
+	font-size: 13px;
+	position: relative;
+	top: -3px;
 }
-#light h6 label{
+#light h6 label {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
 	border-radius: 100%;
 	background: url(../images/checkbox.jpg) no-repeat center center;
-	background-size:cover;	
+	background-size: cover;
 }
 .popupclosebtn {
-	    width: 15px;
-    height: 15px;
-    background: url(../images/popup_close.png) no-repeat center center;
-    background-size: cover;
-    display: inline-block;
-    position: absolute;
-    right: 7%;
-    top: 22px;
+	width: 15px;
+	height: 15px;
+	background: url(../images/popup_close.png) no-repeat center center;
+	background-size: cover;
+	display: inline-block;
+	position: absolute;
+	right: 7%;
+	top: 22px;
 }
-
-.mine { opacity: 0; }
-.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
+.mine {
+	opacity: 0;
+}
+.on.mine {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 1;
+}
