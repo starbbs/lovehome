@@ -64,7 +64,7 @@ $(function() {
 			
 		},
 		buy_click :function(){
-			window.location.href = "../html/home.html?buy=true";
+			window.location.href = "../html/introduce.html?buy=true";
 		}
 	});
 	
