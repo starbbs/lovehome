@@ -129,11 +129,8 @@ $(function() {
 				if (result.status == 200) {
 					if (result.status == 200) {
 						if (result.data.type == 'TRANSFER') {
-							if (result.data.status!="SUCCESS") {
-								
-								buying.btnName = '我的爱心';
-								buying.hasActivity = true;							
-							}
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;	
 						}else if (result.data.type == 'BUY') {
 							if(result.data.status=="BUY_SUCCESS"){
 								// 有购买记录,没有卖出
