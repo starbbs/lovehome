@@ -84,7 +84,7 @@ $(function() {
         heartIncome: 0.00, // 爱心回报
         days: 0,
         commit_click: function() {
-            if (buyIng.days > transferDay) {
+            if (buyIng.days >= transferDay) {
                 $(".white_box").show();
                 $(".black_box").show();
             }

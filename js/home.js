@@ -139,6 +139,10 @@ $(function() {
 								buying.btnName = '我的爱心';
 								buying.hasActivity = true;	
 								buying.url="/lovehome/html/mine_time.html";
+							}else{
+								buying.btnName = '我的爱心';
+								buying.hasActivity = true;	
+								buying.url="/lovehome/html/detail.html";
 							}
 						}
 					} else {
