@@ -1,6 +1,6 @@
 $(function(){
 	var hgToken=$.cookie("hgToken");
-	hgToken = '09f5ca246c7244dfa32fdddb6fc8daad';
+	// hgToken = '09f5ca246c7244dfa32fdddb6fc8daad';
 
 	/**
 	 * 天数间隔
