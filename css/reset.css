@@ -101,3 +101,8 @@ header, nav, section, footer {
 	border-top: 1px solid #eee;
 	background: white;
 }
+.img-w {
+	display: block;
+	width: 100%;
+	position: relative;
+}
