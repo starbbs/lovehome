@@ -10,7 +10,7 @@
 	<body>
 		<div class="mine wrap" ms-controller="buying">
 			<div class="box">
-				<div class="bg">
+				<div class="bg introduce-div">
 					<div class="bg-home"><img src="../images/home.png" alt=""></div>
 					<div class="bg-home-1" ms-visible="!shared"><img src="../images/home-1.png" alt=""></div>
 					<div class="bg-home-2"><img src="../images/home-2.png" alt=""></div>
@@ -22,20 +22,20 @@
 					</div>
 					<div class="textcontent" ms-visible="shared">来自于 {{nick}} 的分享</div>
 				</div>
-				<div class="content">
+				<div class="content introduce-div">
 					<div class="content_img"><img src="../images/index_pic2.jpg"></div>
 					<div class="content_tit">
 						<h3>大凉山母亲的希望</h3>
 						<p>在大凉山发送红丝带母婴平安包，培训妇保员，推动住院分娩，祝母婴平安。</p>
 					</div>
 				</div>
-				<div class="btn buy_love">我的爱心</div>
-				<!-- <div class="btn">看看怎么玩</div> -->
+				<div class="btn buy_love" ms-visible="hasActivity">我的爱心</div>
+				<div class="btn introduce-div" ms-visible="!hasActivity">看看怎么玩</div>
 			</div>
-			<div class="white_box">
+			<!-- <div class="white_box">
 				<div id="light">
 					<h3><span>输入购买金额</span><a id="close">X</a></h3>
-					<!--购买输入框开始 class不能变 -->
+					购买输入框开始 class不能变
 					<div class="mo_main">
 						<div>
 							<div class="row">
@@ -43,18 +43,18 @@
 									<span>￥</span>
 									<input class="heartNumber" type="tel" name="phone" ms-on-input="check" ms-duplex="heartNumber" step="10" min="0" placeholder="可购买区间10~10000" >
 								</div>
-								<!--购买按钮开始-->
+								购买按钮开始
 								<div class="btn">
 									<input type="button" value="购买爱心" class="submit" ms-click="submit_click"/>
 								</div>
 							</div>
-							<!--购买按钮结束-->
+							购买按钮结束
 						</div>
 					</div>
 					<h6 class="protocol"><label id="check_box" for="check_box"></label><input type="checkbox" checked name="check_box"/><span>同意并接受《果仁宝爱心捐赠协议》</span></h6>
 				</div>
-			</div>
-			<div class="black_box"></div>
+			</div> -->
+			<!-- <div class="black_box"></div> -->
 		</div>
 	</body>
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -63,6 +63,6 @@
 	<script src="../js/avalon.mobile.js"></script>
 	<script src="../js/config.js"></script>
 	<script src="../js/cookie.js"></script>
-	<script src="../js/weixin.js"></script>
+	<script src="../js/weixin.js?version-2016012820"></script>
 	<script src="../js/home.js"></script>
 </html>
