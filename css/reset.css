@@ -81,6 +81,16 @@ header, nav, section, footer {
 .button.heart {
 	font-size: 16px;
 }
+.button.heart:before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 21px;
+	height: 19px;
+	background-image: url(../images/iconfont-aixin.png);
+	background-size: 21px 19px;
+	margin-right: 10px;
+}
 .button-box {
 	height: 43px;
 	width: 100%;

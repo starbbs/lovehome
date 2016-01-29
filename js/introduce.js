@@ -34,7 +34,7 @@ $(function() {
 		}, 800);
 	});
 
-	$(".buy_love_btn").on("tap",function(){
+	$(".button-box").on("tap",function(){
 		if (buying.hasActivity) {
 			window.location.href = buying.url;
 		} else {
@@ -191,13 +191,13 @@ $(function() {
     				}else{
     					showWarnWin(result.msg, 1e3);
     				}
-    				buyFlag=false;
+    				buying.buyFlag=false;
     			},
 	    		error: function(xhrObj, text, err) {
-	    			buyFlag=false;
+	    			buying.buyFlag=false;
 				},
 				complete: function() {
-					buyFlag=false;
+					buying.buyFlag=false;
 				}
     		});	
         }

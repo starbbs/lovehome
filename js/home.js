@@ -49,6 +49,7 @@ $(function() {
 		hasActivity : false,
 		photo:'',
 		nick:'',
+		url:'/lovehome/html/introduce.html',
 		shared:false,
 		check : function() {
 			// if(this.value && this.value>9 && this.value%10==0){
@@ -131,6 +132,7 @@ $(function() {
 						if (result.data.type == 'TRANSFER') {
 							buying.btnName = '我的爱心';
 							buying.hasActivity = true;	
+							buying.url="/lovehome/html/detail.html";
 						}else if (result.data.type == 'BUY') {
 							if(result.data.status=="BUY_SUCCESS"){
 								// 有购买记录,没有卖出
