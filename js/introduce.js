@@ -44,27 +44,35 @@ $(function() {
 		}
 	});	
 	
-	$("#popupclose").on("tap",function(){
+	$("#popupclose,.popupspan").on("tap",function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
 		$(".popup_btn").hide();
 		$(".buy_love_btn").show();
+		$(".button-box").show();
 	});
+
 	$(".black_box").on('tap',function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
 		$(".popup_btn").hide();
 		$(".buy_love_btn").show();
+		$(".button-box").show();
 	});
 	$("#know").on("tap",function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
 		$(".popup_btn").hide();
 		$(".buy_love_btn").show();
+		$(".button-box").show();
 	});
 	
 	$(".protocol").on("tap",function(){
 		location.href = '../html/protocol.html';
+	});
+
+	$(".heart").on("tap",function(){
+		$(".heartNumber")[0].focus();
 	});
 
 	var showWarnWin = function(mes, time) {
