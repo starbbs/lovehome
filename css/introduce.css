@@ -159,13 +159,17 @@ html,body{
     margin-left: 2%;
 }
 .lightspan {
-	    font-size: 16px;
+	font-size: 13px;
     font-weight: 600;
+    color: #ff8208;
 }
 .btn {
 	width: 100%;
     text-align: center;
     margin-top: 16px;
+}
+.btn span {
+    color: red;
 }
 #close{
 	display: block;

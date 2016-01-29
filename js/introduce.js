@@ -49,10 +49,55 @@ $(function() {
 		$(".black_box").hide();
 		$(".buy_love_btn").show();
 	});
+	$(".black_box").on('tap',function(){
+		$(".white_box").hide();
+		$(".black_box").hide();
+		$(".buy_love_btn").show();
+	})
 	
 	$(".protocol").on("tap",function(){
 		location.href = '../html/protocol.html';
-	});	
+	});
+
+	var showWarnWin = function(mes, time) {
+	    var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
+	    var time = time ? time : 1e3;
+	    if (!$(".warnWin").length) {
+	        $("body").append(htmlStr);
+	        $(".warnWin").css({
+	            position: "fixed",
+	            top: "40%",
+	            left: "50%",
+	            width: "150px",
+	            height: "40px",
+	            "line-height":"20px",
+	            margin: "-20px 0px 0px -75px",
+	            "border-radius": "5px",
+	            "vertical-align":"middle",
+	            background: "#000000",
+	            color: "#fff",
+	            "text-align": "center",
+	            opacity:"0.7"
+	        });
+	        $(".warn_icon").css({
+	            display: "block",
+	            width: "32px",
+	            height: "32px",
+	            "text-align": "center",
+	            margin: "10px auto 0",
+	            "font-size": "30px"
+	        });
+	        $(".warn_font").css({
+	            display: "block",
+	            "font-family": "黑体",
+	            "margin-top": "10px",
+	            "font-size": "15px"
+	        });
+	        setTimeout(function() {
+	            $(".warnWin").remove();
+	        }, time);
+	    }
+	};
 	
 	var buying = avalon.define({
         $id: "buying",
@@ -64,32 +109,35 @@ $(function() {
         buyFlag:false,
         url:'/lovehome/html/detail.html',
         check:function(){
-//        	if(this.value && this.value>9 && this.value%10==0){
-        	if(this.value){
-        		$(".submit").css({
-					"background":"#FF8309",
-					"color":"white"
-				});
-				// console.log(this.value);
-				// if(this.value.length==0){
-				// 	console.log("ddd")
-				// 	$(".heartNumber").css({"color":"#ff8208"});
-				// }
-				if(this.value.length>0){
-					$(".heartNumber").css({"color":"#333333"});
-				}
-        		buying.checked=true;
-        	}else{
-        		$(".submit").css({
-					"background":"#CDCDCD",
-					"color":"white"
-				});
-				$(".heartNumber").css({"color":"#ff8208"});
-        		buying.checked=false;
-        	}
-        },
+	        	if(this.value){
+	        		if(this.value.length>0){
+						$(".heartNumber").css({"color":"#333333"});
+					} else if(this.value.length==""){
+						$(".heartNumber").css({"color":"#ff8208"});
+					}
+	        		if(this.value && this.value>9 && this.value%10==0){
+		        		$(".submit").css({
+							"background":"#FF8309",
+							"color":"white"
+						});
+		        		buying.checked=true;
+	        		} else {
+	        			$(".submit").css({
+							"background":"#CDCDCD",
+							"color":"white"
+						});
+						buying.checked=false;
+	        		}
+	        	}else{
+	        		$(".heartNumber").css({"color":"#ff8208"});
+	        		$(".submit").css({
+						"background":"#CDCDCD",
+						"color":"white"
+					});
+	        		buying.checked=false;
+        		}
+    	},
         submit_click:function(){
-        	alert("hi")
         	if(buying.buyFlag){
         		return false;
         	}
@@ -98,7 +146,6 @@ $(function() {
     			"heartNumber" :parseInt(buying.heartNumber),
     			"hgToken":hgToken
     		};
-    		console.log("avalon.mobile.js")
     		$.ajax({
     			type : "post",
     			url : buy,
@@ -118,7 +165,8 @@ $(function() {
     							location.href = '../html/detail.html';
     						},
     						fail: function(res) { // 失败
-    							alert('fail:' + JSON.stringify(res));
+    							//alert('fail:' + JSON.stringify(res));
+    							showWarnWin('fail:' + JSON.stringify(res), 1e3);
     						},
     						cancel: function(res) { // 取消
     							//alert('cancel:' + JSON.stringify(res));
@@ -132,7 +180,7 @@ $(function() {
     						}
     					});
     				}else{
-    					alert(result.msg);
+    					showWarnWin(result.msg, 1e3);
     				}
     				buyFlag=false;
     			},
@@ -176,7 +224,7 @@ $(function() {
 						}
 					}
 				} else {
-					alert(result.msg);
+					showWarnWin(result.msg, 1e3);
 				}
 			}
 		});
