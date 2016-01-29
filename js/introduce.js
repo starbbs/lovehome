@@ -44,7 +44,7 @@ $(function() {
 		}
 	});	
 	
-	$("#close").on("tap",function(){
+	$("#popupclose").on("tap",function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
 		$(".buy_love_btn").show();
@@ -70,12 +70,21 @@ $(function() {
 					"background":"#FF8309",
 					"color":"white"
 				});
+				// console.log(this.value);
+				// if(this.value.length==0){
+				// 	console.log("ddd")
+				// 	$(".heartNumber").css({"color":"#ff8208"});
+				// }
+				if(this.value.length>0){
+					$(".heartNumber").css({"color":"#333333"});
+				}
         		buying.checked=true;
         	}else{
         		$(".submit").css({
 					"background":"#CDCDCD",
 					"color":"white"
 				});
+				$(".heartNumber").css({"color":"#ff8208"});
         		buying.checked=false;
         	}
         },
