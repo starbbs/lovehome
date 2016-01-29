@@ -1,6 +1,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 .wrap {
 	width: 100%;
@@ -13,7 +14,7 @@ html, body {
 	-webkit-box-align: center;
 }
 .int_btn {
-	margin: 18px 5px 12px;
+	margin: 15px 5px 10px;
 	box-sizing: border-box;
 	display: -webkit-box;
 	-webkit-box-align: center;
@@ -59,42 +60,56 @@ html, body {
 }
 .int_label {
 	display: inline-block;
-	background: #ae9689;
-	padding: 1% 2%;
+	background: #bb947c;
+	padding: 0 6px;
 	color: #fbfaf8;
-	margin-right: 2%;
+	margin-right: 12px;
 	font-size: 12px;
+	position: relative;
+}
+.int_label:after {
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: 100%;
+	border: solid transparent;
+	border-width: 4px 5px;
+	border-left-color: #bb947c;
+	border-right-width: 0;
 }
 .int_info h3 {
-	padding: 5%;
-	font-size: 16px;
+	padding: 15px 12px 9px;
+	font-size: 14px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
 .int_info h3 span {
-	padding-bottom: 5%;
-	border-bottom: 4px solid orange;
+	padding-bottom: 8px;
+	border-bottom: 2px solid orange;
 }
 .int_info p {
-	padding: 5% 5% 0 5%;
+	padding: 15px 12px 0;
 	line-height: 22px;
+	font-size: 14px;
 }
 .int_info h4 {
-	padding: 5%;
+	padding: 15px 12px;
 	font-weight: bold;
+	font-size: 14px;
 }
 .int_end {
-	width: 90%;
-	margin-left: 5%;
-	height: auto;
+	margin-top: 16px;
+	border-top: 1px solid #d7d7d7;
+	font-size: 14px;
+	padding: 0 12px 100px;
 }
 .int_end p:nth-child(1) {
-	padding: 5% 0% 3% 3%;
+	padding-top: 15px;
+	padding-bottom: 9px;
 	line-height: 22px;
 }
 .int_end p:nth-child(2) {
 	line-height: 22px;
-	padding: 0 3%;
 }
 
 
