@@ -143,10 +143,29 @@ html,body{
     background-color: black;  
     z-index:1001;    
     opacity:.80;   
-} 
+}
+
+.popup_btn {
+	    z-index: 1010;
+    opacity: 0.8;
+    position: absolute;
+    top: 20px;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 10%;
+}
+.popup_btn img{
+	/*width:256px;
+	background-size: 100%;
+	background: #ff8309 url(../images/popup_btn.png) 100% center;*/
+
+
+}
 .white_box {
 	position: absolute;
-    display: block;
+    display: none;
     top: 34px;
     width: 96%;
     height: 250px;
@@ -160,16 +179,12 @@ html,body{
 }
 .lightspan {
 	font-size: 13px;
-    font-weight: 600;
     color: #ff8208;
 }
 .btn {
 	width: 100%;
     text-align: center;
     margin-top: 16px;
-}
-.btn span {
-    color: red;
 }
 #close{
 	display: block;

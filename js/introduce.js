@@ -47,13 +47,21 @@ $(function() {
 	$("#popupclose").on("tap",function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
+		$(".popup_btn").hide();
 		$(".buy_love_btn").show();
 	});
 	$(".black_box").on('tap',function(){
 		$(".white_box").hide();
 		$(".black_box").hide();
+		$(".popup_btn").hide();
 		$(".buy_love_btn").show();
-	})
+	});
+	$("#know").on("tap",function(){
+		$(".white_box").hide();
+		$(".black_box").hide();
+		$(".popup_btn").hide();
+		$(".buy_love_btn").show();
+	});
 	
 	$(".protocol").on("tap",function(){
 		location.href = '../html/protocol.html';
