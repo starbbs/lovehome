@@ -16,9 +16,9 @@ $(function() {
 		return data;
 	};
 
-	$(".buy_love_btn").on("tap", function() {
+	$(".buy_love").on("tap", function() {
 		if (buying.hasActivity) {
-			window.location.href = "/lovehome/html/detail.html";
+			window.location.href =buying.url;
 		} else {
 			$(".white_box").show();
 			$(".black_box").show();
@@ -33,7 +33,7 @@ $(function() {
 		$(".buy_love_btn").show();
 	});
 
-	$("body").on("tap", function() {
+	$(".introduce-div").on("tap", function() {
 		location.href = '../html/introduce.html';
 	});
 
