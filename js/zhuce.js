@@ -1,7 +1,7 @@
 $(function(){	
 	var time=0;//验证码倒计时
-	$(document).on('click', '.main_yanzheng_get', function() {
-		if(timer>0){
+	$(document).on('click', '.main_yanzheng_get_btn', function() {
+		if(time>0){
 			return;
 		}
 		var self = $(this);
@@ -26,7 +26,7 @@ $(function(){
 				}
 			}
 		});	
-			
+		time=60;	
 		var timer = setInterval(function() {
 			time--;
 			if (time <= 0) {
