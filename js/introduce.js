@@ -80,6 +80,7 @@ $(function() {
         	}
         },
         submit_click:function(){
+        	alert("hi")
         	if(buying.buyFlag){
         		return false;
         	}
@@ -88,6 +89,7 @@ $(function() {
     			"heartNumber" :parseInt(buying.heartNumber),
     			"hgToken":hgToken
     		};
+    		console.log("avalon.mobile.js")
     		$.ajax({
     			type : "post",
     			url : buy,
