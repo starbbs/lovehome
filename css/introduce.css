@@ -142,7 +142,7 @@ html,body{
     height: 100%;  
     background-color: black;  
     z-index:1001;    
-    opacity:.80;   
+    opacity: 0.85;
 }
 
 .popup_btn {
