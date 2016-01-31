@@ -41,7 +41,7 @@
 				<div><h3>爱心回报</h3><p>￥<span>{{incomeNumber}}</span></p></div>
 			</div>
 			<div class="buy_love trans_success" ms-visible="BUY_FAILURE">
-				<button class="buy_love_btn" ms-click="buy_click">购买爱心</button>
+				<button class="buy_love_btn" ms-click="buy_click" ms-visible="activityStatus=='NORMAL'">购买爱心</button>
 			</div>
 			<div class="history" ms-visible="HISTORY">
 				<a class="history_btn" href="../html/history.html">传递历史</a>
@@ -93,7 +93,7 @@
 				<div><h3>已捐赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="buy_love trans_success" ms-visible="SUCCESS">
-				<button class="buy_love_btn" ms-click="buy_click">购买爱心</button>
+				<button class="buy_love_btn" ms-click="buy_click" ms-visible="activityStatus=='NORMAL'">购买爱心</button>
 			</div>
 			<div class="buy_love trans_success" ms-visible="FAILURE" >
 				<button class="buy_love_btn" ms-click="submit_click">提现</button>
