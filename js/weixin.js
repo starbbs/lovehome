@@ -72,26 +72,29 @@ param.url = (function() {
 
 var init=function(){
 	var hgToken = $.cookie("hgToken");
-	var params = {
-			"hgToken":hgToken
-		};
-	$.ajax({
-		type : "post",
-		url : myUserInfo,
-		data : JSON.stringify(params),
-		dataType : "json",
-		success : function(data) {
-			if (data.status == 200) {
-				weixin.title='果仁宝-爱心压岁钱';
-				weixin.desc ='我是'+data.data.nick+', 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!';
-				weixin.link='http://www.goopal.com.cn/lovehome/index.html?referId='+data.data.userId;
-				weixin.imgUrl=data.data.photo;
-				weixin.setShare();
-			} else {
-				console.log(data);
+	if(hgToken){
+		var params = {
+				"hgToken":hgToken
+			};
+		$.ajax({
+			type : "post",
+			url : myUserInfo,
+			data : JSON.stringify(params),
+			dataType : "json",
+			success : function(data) {
+				if (data.status == 200) {
+					weixin.title='果仁宝-爱心压岁钱';
+					weixin.desc ='我是'+data.data.nick+', 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!';
+					weixin.link='http://www.goopal.com.cn/lovehome/index.html?referId='+data.data.userId;
+					weixin.imgUrl=data.data.photo;
+					weixin.setShare();
+				} else {
+					console.log(data);
+				}
 			}
-		}
-	});
+		});
+	}
+	
 };
 
 $.ajax({

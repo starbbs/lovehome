@@ -167,7 +167,6 @@ $(function() {
 		
 		if (data.referUserId) {
 			var params = {
-				"hgToken" : hgToken,
 				"referUserId":data.referUserId
 			};
 			$.ajax({
