@@ -1,55 +1,60 @@
 $(function() {
-    var time = 0; //验证码倒计时
     $(document).on('click', '.main_yanzheng_get_btn', function() {
-        if (time > 0) {
-            return;
-        }
-        var self = $(this);
-        var phone = $(".phone").val();
-        if (!phone) {
-            alert("请输入手机号");
-            return;
-        }
-        var param = {
-            "phone": phone
-        };
-        $.ajax({
-            type: 'post',
-            url: sendCode,
-            data: JSON.stringify(param),
-            dataType: 'json',
-            success: function(result) {
-                if (result.status == 200) {
-                    alert(result.data.identifyingCode);
+        var thisObj = $(this);
+        var sendCodeUrl = sendCode;
+        var tel = $(".phone").val();
+        var verTel = "";
+        if (thisObj.hasClass('sending')) {
+            if (tel) {
+                verTel = verify(tel, "tel");
+                var datavalue = {
+                    "phone": tel
+                };
+                if (verTel === true) {
+                    isTimer = true;
+                    var aj = $.ajax({
+                        url: sendCodeUrl,
+                        data: JSON.stringify(datavalue),
+                        type: 'post',
+                        cache: false,
+                        dataType: 'json',
+                        success: function(data) {
+                            if (data.status == "200") {
+                                showWarnWin("验证码已发送", 1e3);
+                            } else {
+                                showWarnWin("验证码已发送", 1e3);
+                            }
+                        },
+                        error: function() {
+                            showWarnWin("网络异常", 1e3);
+                        }
+                    });
+                    thisObj.removeClass("sending");
+                    timer(thisObj, 60);
                 } else {
-                    alert(result.msg);
+                    showWarnWin(verTel, 1e3);
+                    return false;
                 }
-            }
-        });
-        time = 60;
-        var timer = setInterval(function() {
-            time--;
-            if (time <= 0) {
-                clearInterval(timer);
-                self.html('重新发送');
             } else {
-                self.html(time + '秒后重发');
+                showWarnWin("请输入手机号码", 1e3);
+                return false;
             }
-        }, 1000);
+        }
+
     });
-
-
-
     $(document).on('click', '.next_btn', function() {
         var self = $(this);
         var phone = $(".phone").val();
         var identifyingCode = $(".identifyingCode").val();
-        if (!phone || !identifyingCode) {
-            alert("请输入手机号或验证码");
+        if (!phone) {
+            showWarnWin("请输入手机号", 1e3);
+            return;
+        }
+        if(!identifyingCode) {
+        	showWarnWin("请输入验证码", 1e3);
             return;
         }
         var data = parse(window.location.href);
-
         var param = {
             "phone": phone,
             "identifyingCode": identifyingCode,
@@ -72,12 +77,11 @@ $(function() {
                         window.location.href = "/lovehome/html/home.html";
                     }
                 } else {
-                    alert(result.msg);
+                    showWarnWin(result.msg, 1e3);
                 }
             }
         });
     });
-
     /**
      * 参数存到data中
      */
@@ -93,8 +97,47 @@ $(function() {
         return data;
     };
 });
-
-
+var time = 0; //验证码倒计时
+var showWarnWin = function(mes, time) {
+    var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
+    var time = time ? time : 1e3;
+    if (!$(".warnWin").length) {
+        $("body").append(htmlStr);
+        $(".warnWin").css({
+            position: "fixed",
+            top: "26%",
+            left: "50%",
+            width: "150px",
+            height: "60px",
+            "line-height": "22px",
+            margin: "-20px 0px 0px -75px",
+            "border-radius": "5px",
+            "vertical-align": "middle",
+            background: "#000000",
+            color: "#333333",
+            "text-align": "center",
+            opacity: "0.7",
+            "z-index": "10000"
+        });
+        $(".warn_icon").css({
+            display: "block",
+            width: "32px",
+            height: "32px",
+            "text-align": "center",
+            margin: "10px auto 0",
+            "font-size": "30px"
+        });
+        $(".warn_font").css({
+            display: "block",
+            "font-family": "黑体",
+            "margin-top": "10px",
+            "font-size": "15px"
+        });
+        setTimeout(function() {
+            $(".warnWin").remove();
+        }, time);
+    }
+};
 var verify = function(inputData, dataType) {
     var reg = "";
     var varMes = "";
@@ -116,13 +159,38 @@ var verify = function(inputData, dataType) {
     return reg.test(inputData) ? reg.test(inputData) : varMes
 };
 
-// function checkNum(thisobj) {
-//     var mobilenum = thisobj.value;
-//     console.log(mobilenum);
-//     var flag = verify(mobilenum, "tel");
-//     if (flag) {
+var isTimer = "";
+var timer = function(o, wait) {
+    if (wait == 0 || isTimer == false) {
+        o.addClass("sending");
+        o.text("获取验证码");
+        isTimer = true;
+    } else {
+        o.text(wait + " s");
+        wait--;
+        setTimeout(function() {
+            timer(o, wait);
+        }, 1e3);
+    }
+};
 
-//     } else {
-
-//     }
-// }
+function checkNum(thisobj) {
+    var phone = $(".phone").val();
+    mobilenum = phone;
+    console.log(mobilenum);
+    var flag = verify(mobilenum, "tel");
+    var sendNode = $(".main_yanzheng_get_btn");
+    if (flag == true) {
+        if (flag === true) {
+            sendNode.addClass('sending');
+            $(".main_yanzheng_get_btn").css("color", "#6888D9");
+        } else {
+            sendNode.removeClass('sending');
+            $(".main_yanzheng_get_btn").css("color", "#ccc");
+            isTimer = false;
+        }
+    } else {
+        //sendNode.removeClass('sending');
+        //$(".main_yanzheng_get_btn").css("color", "#ccc");
+    }
+}
