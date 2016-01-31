@@ -19,6 +19,26 @@ html,body,.wrap{
 	border-bottom: 1px solid #f39282;
 	padding:2% 0;
 }
+.timercountdown {
+	color: #ffffff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background-color: #6d1712;
+    z-index: 111;
+    border-radius: 30px;
+    height: 25px;
+    line-height: 25px;
+    padding: 2px 15px;
+}
+.timercountdown img {
+	position: relative;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-size: 100%;
+}
 .menu_content li span{
 	color: white;
 }
@@ -86,14 +106,15 @@ html,body,.wrap{
 }
 .history{
 	position: absolute;
-	top: 3%;
+	top: 2%;
 	right: 5%;
 }
 .history_btn{
 	border: 1px solid #fe8208;
 	border-radius: 5px;
 	color: white;
-	padding: 4% 0;
+	padding: 4px 5px;
+	display: inline-block;
 }
 .buy_love_btn{
 	width: 90%;
