@@ -12,10 +12,10 @@
 			<div class="return_money">
 				<p>当前回报金额</p>
 				<h3 class="return_money_num">
-				￥<span>{{returnHeartNumber}}</span>
+				￥<span>{{returnHeartNumber.toFixed(2)}}</span>
 				</h3>
 				<div class="return_money_all">
-					回报总收益<span>￥{{totalReturnHeartNumber}}</span>
+					回报总收益<span>￥{{totalReturnHeartNumber.toFixed(2)}}</span>
 				</div>
 			</div>
 			<div class="return_friend">
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<div class="button-box">
-				<span class="button" ms-click="withdraw_click">提现</span>
+				<div class="button" ms-click="withdraw_click">提现</div>
 			</div>
 		</div>
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

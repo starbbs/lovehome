@@ -10,7 +10,7 @@ $(function(){
 		totalReturnHeartNumber : 0.00,
 		list:[],
 		withdraw_click : function() {
-			if(shareReturn.returnHeartNumber>0){
+			if(shareReturn.returnHeartNumber>=1){
 				var param = {
 					"hgToken":hgToken
 				};
@@ -52,6 +52,12 @@ $(function(){
 							"background":"#CDCDCD",
 							"color":"white"
 						});
+					}
+					if(Number(shareReturn.returnHeartNumber)<1){
+						$(".button").css({
+							"background":"#cecece",
+							"color":"#cccccc"
+						})
 					}
 					if(result.data.totalReturnHeartNumber){
 						shareReturn.totalReturnHeartNumber=result.data.totalReturnHeartNumber;
