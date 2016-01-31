@@ -6,7 +6,7 @@ var weixin = {
 	signature : null,
 	// 分享
 	title : '果仁宝-爱心压岁钱',
-	desc : '我是袋鼠, 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!',
+	desc : '我是果仁萌, 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!',
 	link : 'http://www.goopal.com.cn/lovehome/index.html',
 	imgUrl : 'http://wx.qlogo.cn/mmopen/I54xE2sNh84J6ymOgAVJMufK6xs0EbRPql4vbmFTjo76NYrBLuY0HiaOicDibxNeqiahvCPYtKotCoUW0vfdEfdxHfXuicRUYEsxP/0',
 	type : '',
