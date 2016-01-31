@@ -31,7 +31,9 @@ $(function() {
 		$id : "detail",
 		BUYING : false,
 		TRANSFER:false,
-		HISTORY:false
+		HISTORY:false,
+		finishTime:null,
+		activityStatus:'NORMAL',
 	});
 
 	var buy = avalon.define({
@@ -150,6 +152,8 @@ $(function() {
 			dataType : "json",
 			success : function(result) {
 				if (result.status == 200) {
+					detail.finishTime=result.data.finishTime;
+					detail.activityStatus=result.data.activityStatus;
 					if (result.data.type == 'TRANSFER') {
 						// 传递
 						detail.TRANSFER = true;
