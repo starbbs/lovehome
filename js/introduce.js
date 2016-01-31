@@ -125,6 +125,7 @@ $(function() {
         shared:false,
         buyFlag:false,
         whetherJump:false,
+        shareBtn:false,
         url:'/lovehome/html/detail.html',
         check:function(){
 	        	if(this.value){
@@ -263,6 +264,14 @@ $(function() {
 				}
 			}
 		});
+		
+		var shareBtn=$.cookie("shareBtn");
+		if(!shareBtn){
+			buying.shareBtn=true;
+			var options={};
+    		options.expires =1;
+    		$.cookie("shareBtn","shareBtn",options);
+		}
 	}
 	
 	init();
