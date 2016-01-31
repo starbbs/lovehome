@@ -30,7 +30,8 @@ $(function() {
 	var detail = avalon.define({
 		$id : "detail",
 		BUYING : false,
-		TRANSFER:false
+		TRANSFER:false,
+		HISTORY:false
 	});
 
 	var buy = avalon.define({
@@ -221,6 +222,26 @@ $(function() {
 				}
 			}
 		});
+		
+		$.ajax({
+			type : "POST",
+			url : transferHistory,
+			data : JSON.stringify(param),
+			dataType : "json",
+			success : function(result) {
+				if(result.status==200){
+					if(result.data.list.length>0){
+						detail.HISTORY=true;
+					}
+				}else{
+					console.log(result.msg);
+					var options={};
+					options.expires =0;
+					$.cookie("hgToken",null,options);
+					window.location.href="/lovehome/index.html";
+				}
+			}
+		});	
 	}
 
 	init();

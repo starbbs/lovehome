@@ -83,6 +83,7 @@ $(function() {
         ownerNumber: 0.00, // 已拥有爱心
         heartIncome: 0.00, // 爱心回报
         days: 0,
+        HISTORY:false,
         commit_click: function() {
             if (buyIng.days >= transferDay) {
                 $(".white_box").show();
@@ -173,6 +174,26 @@ $(function() {
             }
         });
 
+        $.ajax({
+			type : "POST",
+			url : transferHistory,
+			data : JSON.stringify(param),
+			dataType : "json",
+			success : function(result) {
+				if(result.status==200){
+					if(result.data.list.length>0){
+						buyIng.HISTORY=true;
+					}
+				}else{
+					console.log(result.msg);
+					var options={};
+					options.expires =0;
+					$.cookie("hgToken",null,options);
+					window.location.href="/lovehome/index.html";
+				}
+			}
+		});	
+        
         show_time();
     }
     init();
