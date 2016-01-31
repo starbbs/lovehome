@@ -45,6 +45,7 @@ $(function() {
 		failureReason : "失败",
 		BUY_PROCESSING : true,// 买入进行中
 		BUY_FAILURE:false,//购买失败
+		heartStr:'已拥有爱心',
 		createTime : '',
 		ownerNumber : 0.00,// 已拥有爱心
 		heartIncome : 0.00,// 爱心回报
@@ -205,6 +206,8 @@ $(function() {
 						} else if (buy.status == 'BUY_FAILURE') {
 							// 购买失败
 							buy.statusStr = "购买失败";
+							buy.heartStr="零钱已到账";
+							buy.ownerNumber = buy.heartNumber;
 							buy.BUY_FAILURE=true;
 						} else if (buy.status == 'TRANSFER') {
 							// 进行中
