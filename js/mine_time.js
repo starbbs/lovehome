@@ -163,7 +163,9 @@ $(function() {
                     // 没有购买记录
                     window.location.href = "../html/home.html";
                 } else {
-                    showWarnWin(result.msg, 1e3);
+//                    showWarnWin(result.msg, 1e3);
+                	console.log(result.msg);
+					window.location.href="/lovehome/index.html";
                 }
             }
         });

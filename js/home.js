@@ -1,6 +1,9 @@
 $(function() {
 	var hgToken = $.cookie("hgToken");
-
+	if(!hgToken){
+		window.location.href="/lovehome/index.html";
+	}
+	
 	/**
 	 * 参数存到data中
 	 */
@@ -149,7 +152,9 @@ $(function() {
 						alert(result.msg);
 					}
 				} else {
-					alert(result.msg);
+//					alert(result.msg);
+					console.log(result.msg);
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});

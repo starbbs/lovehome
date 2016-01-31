@@ -1,7 +1,10 @@
 $(function() {
 
 	var hgToken = $.cookie("hgToken");
-
+	if(!hgToken){
+		window.location.href="/lovehome/index.html";
+	}
+	
 	$(".buy_love_btn").on("tap",function(){
 		$(".white_box").show();
 		$(".black_box").show();
@@ -210,7 +213,8 @@ $(function() {
 					// 没有购买记录
 					window.location.href = "../html/home.html";
 				} else {
-					alert(result.msg);
+					console.log(result.msg);
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});

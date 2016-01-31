@@ -1,5 +1,8 @@
 $(function(){
 	var hgToken=$.cookie("hgToken");
+	if(!hgToken){
+		window.location.href="/lovehome/index.html";
+	}
 	
 	var shareReturn = avalon.define({
 		$id : "shareReturn",
@@ -58,7 +61,8 @@ $(function(){
 						shareReturn.list.push(item);
 					}
 				}else{
-					alert(result.msg);
+					console.log(result.msg);
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});	

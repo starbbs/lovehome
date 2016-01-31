@@ -1,7 +1,9 @@
 $(function(){
 	var hgToken=$.cookie("hgToken");
 	// hgToken = '09f5ca246c7244dfa32fdddb6fc8daad';
-
+	if(!hgToken){
+		window.location.href="/lovehome/index.html";
+	}
 	/**
 	 * 天数间隔
 	 */
@@ -59,7 +61,8 @@ $(function(){
 						history.list.push(item);
 					}
 				}else{
-					alert(result.msg);
+					console.log(result.msg);
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});	
