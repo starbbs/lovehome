@@ -57,6 +57,9 @@ $(function() {
 		activityStatus:'NORMAL',
 		url:'/lovehome/html/introduce.html',
 		shared:false,
+		go_click:function(){
+			window.location.href =buying.url;
+		},
 		check : function() {
 			// if(this.value && this.value>9 && this.value%10==0){
 			if (this.value) {
@@ -137,6 +140,7 @@ $(function() {
 						if (result.status == 200) {
 							buying.finishTime=result.data.finishTime;
 							buying.activityStatus=result.data.activityStatus;
+//							alert("activityStatus"+buying.activityStatus);
 							if (result.data.type == 'TRANSFER') {
 								buying.btnName = '我的爱心';
 								buying.hasActivity = true;	
