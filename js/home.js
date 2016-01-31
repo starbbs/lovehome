@@ -1,9 +1,6 @@
 $(function() {
 	var hgToken = $.cookie("hgToken");
-	if(!hgToken){
-		window.location.href="/lovehome/index.html";
-	}
-	
+
 	/**
 	 * 参数存到data中
 	 */
@@ -37,6 +34,10 @@ $(function() {
 	});
 
 	$(".introduce-div").on("tap", function() {
+		if(!hgToken){
+			location.href="/lovehome/index.html";
+			return;
+		}
 		location.href = '../html/introduce.html';
 	});
 
@@ -118,8 +119,7 @@ $(function() {
 	});
 
 	var init = function() {
-		var data = parse(location.href);
-
+		var data = parse(location.href);		
 		// 爱心详情
 		var param = {
 			"hgToken" : hgToken
