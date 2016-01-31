@@ -46,6 +46,7 @@ $(function() {
         var self = $(this);
         var phone = $(".phone").val();
         var identifyingCode = $(".identifyingCode").val();
+        $(this).css("background","#5977c5");
         if (!phone) {
             showWarnWin("请输入手机号", 1e3);
             return;
@@ -201,9 +202,12 @@ function checkCode(thisObj) {
     var verCode = thisObj.value;
     var verCodeflag = verify(verCode,"verCode");
     var next_btn = $(".next_btn");
-    if(verCode&&verCodeflag){
+    console.log(verCode);
+    console.log(verCodeflag);
+    if(flag==true&&verCodeflag==true){
     	$(".next_btn").css("color","white");
     } else {
-    	$(".next_btn").css("color","white");
+    	$(".next_btn").css("color","#aabff5");
     }
 }
+

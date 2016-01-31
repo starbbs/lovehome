@@ -59,7 +59,7 @@ var showWarnWin = function(mes, time) {
 
 $(function() {
     var hgToken = $.cookie("hgToken");
-//    	var hgToken = "80ef501d08084ff6943ba5374f10819e";
+   	//var hgToken = "80ef501d08084ff6943ba5374f10819e";
     /**
      * 天数间隔
      */
