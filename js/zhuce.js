@@ -194,3 +194,16 @@ function checkNum(thisobj) {
         //$(".main_yanzheng_get_btn").css("color", "#ccc");
     }
 }
+
+function checkCode(thisObj) {
+    var mobilenum = $(".phone").val();
+    var flag = verify(mobilenum, "tel");
+    var verCode = thisObj.value;
+    var verCodeflag = verify(verCode,"verCode");
+    var next_btn = $(".next_btn");
+    if(verCode&&verCodeflag){
+    	$(".next_btn").css("color","white");
+    } else {
+    	$(".next_btn").css("color","white");
+    }
+}
