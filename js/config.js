@@ -66,16 +66,15 @@ var shareReturnInfo=baseUrl+"/hg/returnHeart/info";
 var shareReturnWithdrawReq=baseUrl+"/hg/returnHeart/withdrawReq";
 
 /**
- * 分享回报提现申请
+ * 传递历史
  * {hgToken:"ewwerwr32432fwefwe"}
  * list
  * successTime
  * createTime
- * transferTime
  * heartNumber
  * status
  */
-var transferHistory=baseUrl+"/hg/buy/list";
+var transferHistory=baseUrl+"/hg/transferOut/list";
 
 /**
  * 详情页面
@@ -124,11 +123,6 @@ var getReward=baseUrl+"/hg/summary/getReward";
  */
 var reward=baseUrl+"/hg/summary/reward";
 
-
-/**
- * 传递历史
- */
-var transferHistory=baseUrl+"/hg/buy/list";
 
 /**
  * 我的用户信息

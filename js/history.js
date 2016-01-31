@@ -1,6 +1,6 @@
 $(function(){
 	var hgToken=$.cookie("hgToken");
-	// hgToken = '09f5ca246c7244dfa32fdddb6fc8daad';
+//	 hgToken = '61533c3b48ed45718aa8d3151e7799e4';
 	if(!hgToken){
 		window.location.href="/lovehome/index.html";
 	}
@@ -37,26 +37,15 @@ $(function(){
 						}else{
 							item.even=false;
 						}
-						if(item.status=='BUY_PROCESSING'){
-							item.statusStr='购买中';
+						if(item.status=='PROCESSING'){
+							item.statusStr='传递中';
 							item.time=item.createTime;
-						}else if(item.status=='BUY_SUCCESS'){
-							item.statusStr='购买成功';
-							item.time=item.successTime;
-						}else if(item.status=='BUY_FAILURE'){
-							item.statusStr='购买失败';
-							item.time=item.createTime;
-						}else if(item.status=='TRANSFER'){
+						}else if(item.status=='SUCCESS'){
 							item.statusStr='已传递';
-							item.time=item.transferTime;
-						}
-						if(!item.incomeNumber){
-							var days=parseInt(dateDiff(new Date(),new Date(item.createTime)));
-							if(days>7){
-								days=7;
-							}
-							item.incomeNumber =days*0.01*item.heartNumber;	
-							
+							item.time=item.successTime;
+						}else if(item.status=='FAILURE'){
+							item.statusStr='传递失败';
+							item.time=item.createTime;
 						}
 						history.list.push(item);
 					}
