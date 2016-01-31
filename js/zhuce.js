@@ -20,23 +20,23 @@ $(function() {
                         dataType: 'json',
                         success: function(data) {
                             if (data.status == "200") {
-                                showWarnWin("验证码已发送", 1e3);
+                                showWarnWin("验证码已发送", 500);
                             } else {
-                                showWarnWin("验证码已发送", 1e3);
+                                showWarnWin("验证码已发送", 500);
                             }
                         },
                         error: function() {
-                            showWarnWin("网络异常", 1e3);
+                            showWarnWin("网络异常", 500);
                         }
                     });
                     thisObj.removeClass("sending");
                     timer(thisObj, 60);
                 } else {
-                    showWarnWin(verTel, 1e3);
+                    showWarnWin(verTel, 500);
                     return false;
                 }
             } else {
-                showWarnWin("请输入手机号码", 1e3);
+                showWarnWin("请输入手机号码", 500);
                 return false;
             }
         }
@@ -48,11 +48,11 @@ $(function() {
         var identifyingCode = $(".identifyingCode").val();
         $(this).css("background","#5977c5");
         if (!phone) {
-            showWarnWin("请输入手机号", 1e3);
+            showWarnWin("请输入手机号", 500);
             return;
         }
         if(!identifyingCode) {
-        	showWarnWin("请输入验证码", 1e3);
+        	showWarnWin("请输入验证码", 500);
             return;
         }
         var data = parse(window.location.href);
@@ -78,7 +78,7 @@ $(function() {
                         window.location.href = "/lovehome/html/home.html";
                     }
                 } else {
-                    showWarnWin(result.msg, 1e3);
+                    showWarnWin(result.msg, 500);
                 }
             }
         });
@@ -100,39 +100,33 @@ $(function() {
 });
 var time = 0; //验证码倒计时
 var showWarnWin = function(mes, time) {
-    var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
-    var time = time ? time : 1e3;
+    var htmlStr = "<div class='warnWin'><div class='warn_font'>" + mes + "</div></div>";
+    var time = time ? time : 500;
     if (!$(".warnWin").length) {
         $("body").append(htmlStr);
         $(".warnWin").css({
             position: "fixed",
-            top: "26%",
+            width:"150px",
+            top: "16%",
             left: "50%",
-            width: "150px",
-            height: "60px",
-            "line-height": "22px",
+            height: "34px",
+            "line-height": "34px",
             margin: "-20px 0px 0px -75px",
             "border-radius": "5px",
             "vertical-align": "middle",
             background: "#000000",
             color: "#333333",
             "text-align": "center",
-            opacity: "0.7",
+            opacity: "0.9",
             "z-index": "10000"
         });
-        $(".warn_icon").css({
-            display: "block",
-            width: "32px",
-            height: "32px",
-            "text-align": "center",
-            margin: "10px auto 0",
-            "font-size": "30px"
-        });
         $(".warn_font").css({
-            display: "block",
-            "font-family": "黑体",
+            display: "inline",
             "margin-top": "10px",
-            "font-size": "15px"
+            "font-size": "15px",
+            "font-weight":"400",
+            "width":"100%",
+            "color":"#ffffff"
         });
         setTimeout(function() {
             $(".warnWin").remove();
@@ -171,7 +165,7 @@ var timer = function(o, wait) {
         wait--;
         setTimeout(function() {
             timer(o, wait);
-        }, 1e3);
+        }, 500);
     }
 };
 
