@@ -165,6 +165,9 @@ $(function() {
                 } else {
 //                    showWarnWin(result.msg, 1e3);
                 	console.log(result.msg);
+                	var options={};
+            		options.expires =0;
+            		$.cookie("hgToken",null,options);
 					window.location.href="/lovehome/index.html";
                 }
             }

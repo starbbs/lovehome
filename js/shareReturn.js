@@ -62,6 +62,9 @@ $(function(){
 					}
 				}else{
 					console.log(result.msg);
+                	var options={};
+            		options.expires =0;
+            		$.cookie("hgToken",null,options);
 					window.location.href="/lovehome/index.html";
 				}
 			}
