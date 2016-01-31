@@ -124,6 +124,7 @@ $(function() {
 		hasActivity : false,
         shared:false,
         buyFlag:false,
+        whetherJump:false,
         url:'/lovehome/html/detail.html',
         check:function(){
 	        	if(this.value){
@@ -137,6 +138,7 @@ $(function() {
 							"background":"#FF8309",
 							"color":"white"
 						});
+						buying.whetherJump = true;
 		        		buying.checked=true;
 	        		} else {
 	        			$(".submit").css({
@@ -144,6 +146,7 @@ $(function() {
 							"color":"white"
 						});
 						buying.checked=false;
+						buying.whetherJump = false;
 	        		}
 	        	}else{
 	        		$(".heartNumber").css({"color":"#ff8208"});
@@ -152,9 +155,14 @@ $(function() {
 						"color":"white"
 					});
 	        		buying.checked=false;
+	        		buying.whetherJump = false;
         		}
     	},
         submit_click:function(){
+        	if(!buying.whetherJump){
+        		showWarnWin("请输入购买金额", 1e3);
+        		return;
+        	}
         	if(buying.buyFlag){
         		return false;
         	}

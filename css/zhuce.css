@@ -38,7 +38,10 @@ html,body{
     display: inline;
     color: #333333;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
+}
+#telphone::-webkit-input-placeholder {
+    color: #ddd; text-overflow: ellipsis; 
 }
 .main_tel{
 	display: -webkit-box;
@@ -50,7 +53,7 @@ html,body{
     height: 100%;
     font-size: 16px;
     color: #181818;
-    font-weight: 600;
+    font-weight: normal;
 }
 .main_yanzheng{
 	    width: 100%;
@@ -59,10 +62,10 @@ html,body{
     box-sizing: border-box;
 }
 .main_yanzheng_zi{
-	width: 75%;
+	width: 70%;
     font-size: 16px;
     color: #181818;
-    font-weight: 600;
+    font-weight: normal;
     display: inline-block;
     float: left;
     padding-left: 5%;
@@ -70,7 +73,7 @@ html,body{
     border-right: 1px solid #eee;
 }
 .main_yanzheng_get_btn {
-    width: 25%;
+    width: 30%;
     font-size: 12px;
     color: #6888D9;
     display: inline-block;
@@ -105,11 +108,14 @@ html,body{
 	width: 90%;
 	height: 44px;
 	background: #6888d9;
-	border-radius: 10px;
+	border-radius: 5px;
 	border:none;
 	outline: 0;
 	-webkit-appearance: none;
 	margin-left: 5%;
 	color: white;
-	font-size: 16px;	
+	font-size: 16px;
+	text-align: center;
+	line-height: 44px;
+
 }

@@ -4,24 +4,24 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 		<link rel="stylesheet" href="../css/reset.css"/>
-		<link rel="stylesheet" href="../css/zhuce.css" />		
-		<title>爱心压岁钱-用户绑定</title>
+		<link rel="stylesheet" href="../css/zhuce.css?v=20160131" />		
+		<title>绑定手机号</title>
 	</head>
 	<body>
 		<div class="wrap">
 			<div class="main">
 				<form action="">
 					<div class="main_tel">
-						<label for="telphone">手机号<input id="telphone" class="phone" type="tel" placeholder="请填写注册所用手机号" maxlength="11" value=""/></label>
+						<label for="telphone">手机号<input id="telphone" class="phone" type="tel" placeholder="仅支持中国大陆" maxlength="11" value="" oninput="checkNum(this)"/></label>
 					</div>
 					<div class="main_yanzheng">
-						<label class="main_yanzheng_zi" for="yanzhengmacode">验证码<input class="identifyingCode" style="width:55%" type="tel" placeholder="请填写验证码" maxlength="6" id="yanzhengmacode"/>
+						<label class="main_yanzheng_zi" for="yanzhengmacode">验证码<input class="identifyingCode" style="width:55%" type="tel" placeholder="" maxlength="6" id="yanzhengmacode"/>
 						</label>
 						<a class="main_yanzheng_get_btn" href="javascript:void(0);">获取验证码</a>
 					</div>
 				</form>
 				<div class="next">
-					<button class="next_btn">下一步</button>
+					<div class="next_btn">下一步</div>
 				</div>
 			</div>			
 		</div>		

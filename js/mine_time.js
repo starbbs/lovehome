@@ -58,8 +58,8 @@ var showWarnWin = function(mes, time) {
     };
 
 $(function() {
-    var hgToken = $.cookie("hgToken");
-    	//var hgToken = "09f5ca246c7244dfa32fdddb6fc8daad";
+    //var hgToken = $.cookie("hgToken");
+    	var hgToken = "80ef501d08084ff6943ba5374f10819e";
     /**
      * 天数间隔
      */
