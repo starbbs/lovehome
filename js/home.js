@@ -119,49 +119,52 @@ $(function() {
 	});
 
 	var init = function() {
-		var data = parse(location.href);		
-		// 爱心详情
-		var param = {
-			"hgToken" : hgToken
-		};
-		$.ajax({
-			type : "post",
-			url : detailInfo,
-			data : JSON.stringify(param),
-			dataType : "json",
-			success : function(result) {
-				if (result.status == 200) {
+		var data = parse(location.href);
+		if(hgToken){
+			// 爱心详情
+			var param = {
+				"hgToken" : hgToken
+			};
+			$.ajax({
+				type : "post",
+				url : detailInfo,
+				data : JSON.stringify(param),
+				dataType : "json",
+				success : function(result) {
 					if (result.status == 200) {
-						if (result.data.type == 'TRANSFER') {
-							buying.btnName = '我的爱心';
-							buying.hasActivity = true;	
-							buying.url="/lovehome/html/detail.html";
-						}else if (result.data.type == 'BUY') {
-							if(result.data.status=="BUY_SUCCESS"){
-								// 有购买记录,没有卖出
-								buying.btnName = '我的爱心';
-								buying.hasActivity = true;	
-								buying.url="/lovehome/html/mine_time.html";
-							}else{
+						if (result.status == 200) {
+							if (result.data.type == 'TRANSFER') {
 								buying.btnName = '我的爱心';
 								buying.hasActivity = true;	
 								buying.url="/lovehome/html/detail.html";
+							}else if (result.data.type == 'BUY') {
+								if(result.data.status=="BUY_SUCCESS"){
+									// 有购买记录,没有卖出
+									buying.btnName = '我的爱心';
+									buying.hasActivity = true;	
+									buying.url="/lovehome/html/mine_time.html";
+								}else{
+									buying.btnName = '我的爱心';
+									buying.hasActivity = true;	
+									buying.url="/lovehome/html/detail.html";
+								}
 							}
+						} else {
+							alert(result.msg);
 						}
 					} else {
-						alert(result.msg);
+//						alert(result.msg);
+						console.log(result.msg);
+						var options={};
+						options.expires =0;
+						$.cookie("hgToken",null,options);
+						window.location.href="/lovehome/index.html";
 					}
-				} else {
-//					alert(result.msg);
-					console.log(result.msg);
-					var options={};
-					options.expires =0;
-					$.cookie("hgToken",null,options);
-					window.location.href="/lovehome/index.html";
 				}
-			}
-		});
+			});
 
+		}
+		
 		if (data.referUserId) {
 			var params = {
 				"hgToken" : hgToken,
