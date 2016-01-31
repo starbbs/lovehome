@@ -45,8 +45,8 @@ $(function() {
 		createTime : '',
 		ownerNumber : 0.00,// 已拥有爱心
 		heartIncome : 0.00,// 爱心回报
-		click : function() {
-
+		buy_click :function(){
+			window.location.href = "../html/introduce.html?buy=true";
 		}
 	});
 

@@ -240,15 +240,17 @@ $(function() {
 							buying.hasActivity = true;							
 						}
 					}else if (result.data.type == 'BUY') {
-						if(result.data.status=="BUY_SUCCESS"){
-							// 有购买记录,没有卖出
-							buying.btnName = '我的爱心';
-							buying.hasActivity = true;	
-							buying.url="/lovehome/html/mine_time.html";
-						}else{
-							buying.btnName = '我的爱心';
-							buying.hasActivity = true;	
-							buying.url="/lovehome/html/detail.html";
+						if (!data.buy) {
+							if(result.data.status=="BUY_SUCCESS"){
+								// 有购买记录,没有卖出
+								buying.btnName = '我的爱心';
+								buying.hasActivity = true;	
+								buying.url="/lovehome/html/mine_time.html";
+							}else{
+								buying.btnName = '我的爱心';
+								buying.hasActivity = true;	
+								buying.url="/lovehome/html/detail.html";
+							}						
 						}
 					}
 				} else {
