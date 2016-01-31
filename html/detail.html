@@ -82,11 +82,11 @@
 			</div>
 			<div class="money" ms-visible="SUCCESS">
 				<div><h3>零钱已到账</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber*0.5)).toFixed(2)}}</span></p></div>
-				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+				<div><h3>已捐赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="money" ms-visible="FAILURE">
 				<div><h3>待提现金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
-				<div><h3>已赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+				<div><h3>已捐赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="buy_love trans_success" ms-visible="SUCCESS">
 				<button class="buy_love_btn" ms-click="buy_click">购买爱心</button>

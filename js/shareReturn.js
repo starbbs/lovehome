@@ -56,7 +56,7 @@ $(function(){
 					if(Number(shareReturn.returnHeartNumber)<1){
 						$(".button").css({
 							"background":"#cecece",
-							"color":"#cccccc"
+							"color":"#ffffff"
 						})
 					}
 					if(result.data.totalReturnHeartNumber){

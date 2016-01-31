@@ -180,7 +180,7 @@ var timer = function(o, wait) {
 
 function checkNum(thisobj) {
     var phone = $(".phone").val();
-    mobilenum = phone;
+    mobilenum = phone.trim();
     var flag = verify(mobilenum, "tel");
     var sendNode = $(".main_yanzheng_get_btn");
     if (flag == true) {

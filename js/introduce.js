@@ -128,13 +128,15 @@ $(function() {
         shareBtn:false,
         url:'/lovehome/html/detail.html',
         check:function(){
+        		//this.value=this.value.replace(//D/g,'');
+        		this.value = this.value.replace("//D/g",'');
 	        	if(this.value){
 	        		if(this.value.length>0){
 						$(".heartNumber").css({"color":"#333333"});
 					} else if(this.value.length==""){
 						$(".heartNumber").css({"color":"#ff8208"});
 					}
-	        		if(this.value && this.value>9 && this.value%10==0){
+	        		if(this.value && this.value%10==0){
 		        		$(".submit").css({
 							"background":"#FF8309",
 							"color":"white"
@@ -163,6 +165,16 @@ $(function() {
         	if(!buying.whetherJump){
         		showWarnWin("请输入购买金额", 1e3);
         		return;
+        	}
+        	if(buying.heartNumber>300) {
+        		showWarnWin("最多只能购买300", 1e3);
+        		buying.heartNumber = 300;
+        		return;
+        	}
+        	if(buying.heartNumber && buying.heartNumber%10==0) {
+
+        	} else {
+        		showWarnWin("只能是10的倍数", 1e3);
         	}
         	if(buying.buyFlag){
         		return false;
