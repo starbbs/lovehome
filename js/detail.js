@@ -2,7 +2,7 @@ $(function() {
 
 	var hgToken = $.cookie("hgToken");
 	if(!hgToken){
-		//window.location.href="/lovehome/index.html";
+		window.location.href="/lovehome/index.html";
 	}
 	hgToken = '80ef501d08084ff6943ba5374f10819e';
 	
@@ -226,7 +226,7 @@ $(function() {
 					var options={};
 					options.expires =0;
 					$.cookie("hgToken",null,options);
-					//window.location.href="/lovehome/index.html";
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});
@@ -246,7 +246,7 @@ $(function() {
 					var options={};
 					options.expires =0;
 					$.cookie("hgToken",null,options);
-					//window.location.href="/lovehome/index.html";
+					window.location.href="/lovehome/index.html";
 				}
 			}
 		});	

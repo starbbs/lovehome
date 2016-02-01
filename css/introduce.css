@@ -185,10 +185,18 @@ html, body {
 	text-align: center;
 	font-size: 14px;
 	width: 90%;
-	border-bottom: 1px solid #ddd;
+	/*border-bottom: 1px solid #ddd;*/
 	text-align: center;
 	margin: 0 auto;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 .popupspan {
 	    display: block;
     width: 30px;

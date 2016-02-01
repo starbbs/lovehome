@@ -75,6 +75,12 @@ $(function() {
 		$(".heartNumber")[0].focus();
 	});
 
+	// $(".heartNumber").keyup(function(){
+ //        $(this).val($(this).val().replace("//D|^0/g",''));
+ //    }).bind("paste",function(){
+ //        $(this).val($(this).val().replace("//D|^0/g",''));     
+ //    }).css("ime-mode", "disabled");
+
 	var showWarnWin = function(mes, time) {
 	    var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
 	    var time = time ? time : 1e3;
