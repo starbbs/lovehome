@@ -28,7 +28,7 @@
 					<li><span>失败原因</span><span>未匹配成功</span></li>
 				</ul>
 				<div class="menu_tips success_view view" ms-visible="BUY_PROCESSING">
-					<h3>购买爱心匹配中</h3>
+					<h3>购买爱心匹配中, 请稍候</h3>
 					<p><img src="../images/yellow.png"/></p>
 				</div>
 				<div class="menu_tips failure_view view" ms-visible="BUY_FAILURE">
@@ -38,7 +38,7 @@
 			</div>
 			<div class="money">
 				<div><h3>{{heartStr}}</h3><p>￥<span>{{ownerNumber}}</span></p></div>
-				<div><h3>爱心回报</h3><p>￥<span>{{incomeNumber}}</span></p></div>
+				<div><h3>爱心回报</h3><p style="#ff8208;">￥<span>{{incomeNumber}}</span></p></div>
 			</div>
 			<div class="buy_love trans_success" ms-visible="BUY_FAILURE">
 				<button class="buy_love_btn" ms-click="buy_click" ms-visible="activityStatus=='NORMAL'">购买爱心</button>
@@ -68,7 +68,7 @@
 					<li><span>传递时间</span><span>{{ createTime | date("yyyy-MM-dd HH:mm:ss")}}</span></li>
 				</ul>
 				<div class="menu_tips" ms-visible="PROCESSING">
-					<h3>传递爱心匹配中</h3>
+					<h3>传递爱心匹配中, 请稍候</h3>
 					<p><img src="../images/green.png"/></p>
 				</div>
 				<div class="menu_tips" ms-visible="FAILURE">
@@ -82,15 +82,15 @@
 			</div>
 			<div class="money" ms-visible="PROCESSING">
 				<div><h3>匹配金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
-				<div><h3>待捐赠爱心</h3><p style="color: green;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+				<div><h3>待捐赠爱心</h3><p style="color: #06a106;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="money" ms-visible="SUCCESS">
 				<div><h3>零钱已到账</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber*0.5)).toFixed(2)}}</span></p></div>
-				<div><h3>已捐赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+				<div><h3>已捐赠金额</h3><p style="color: #ec484b;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="money" ms-visible="FAILURE">
 				<div><h3>待提现金额</h3><p>￥<span>{{(parseFloat(heartNumber)+parseFloat(incomeNumber)).toFixed(2)}}</span></p></div>
-				<div><h3>已捐赠金额</h3><p style="color: palevioletred;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
+				<div><h3>已捐赠金额</h3><p style="color: #ec484b;">￥<span>{{FloatCalFun.floatDiv(parseFloat(incomeNumber),2).toFixed(2)}}</span></p></div>
 			</div>
 			<div class="buy_love trans_success" ms-visible="SUCCESS">
 				<button class="buy_love_btn" ms-click="buy_click" ms-visible="activityStatus=='NORMAL'">购买爱心</button>
