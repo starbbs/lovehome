@@ -177,3 +177,127 @@ html, body, .wrap {
 	transition: 0.3s;
 	opacity: 1;
 }
+
+.white_box {
+	position: absolute;
+    display: none;
+    top: 76px;
+    width: 96%;
+    height: 250px;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+    box-sizing: border-box;
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 2%;
+}
+.lightspan {
+	font-size: 16px;
+	color: #333;
+}
+.btn_mine {
+	width: 100%;
+	text-align: center;
+	margin-top: 16px;
+}
+
+#light h3 {
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 14px;
+	width: 90%;
+	/*border-bottom: 1px solid #ddd;*/
+	text-align: center;
+	margin: 0 auto;
+}
+
+.popupspan {
+	    display: block;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: relative;
+    top: 9px;
+}
+#light .input_box {
+	    height: 47px;
+    width: 90%;
+    line-height: 47px;
+    border: 1px solid #8c8c8c;
+    /* margin-left: 5%; */
+    font-size: 14px;
+    margin: 0 auto;
+    margin-top: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+}
+#light .input_box input {
+	border: 0;
+	color: #ccc;
+	outline: 0;
+	-webkit-appearance: none;
+	font-size: 17px;
+	height: 22px;
+	line-height: 22px;
+	width: 80%;
+	margin-left: 18px;
+	position: relative;
+	top: 2px;
+}
+#light .input_box span {
+	font-size: 19px;
+	font-weight: 600;
+	width: 0;
+	position: absolute;
+	left: 10px;
+	display: inline-block;
+}
+#light .submit {
+	width: 90%;
+    height: 42px;
+    line-height: 42px;
+    background: #ccc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+}
+#light h6 {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	padding-top: 10px;
+}
+#light h6 input {
+	display: none;
+}
+#light h6 span {
+	padding-left: 2%;
+	font-size: 13px;
+	position: relative;
+	top: -3px;
+}
+#light h6 label {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: url(../images/checkbox.jpg) no-repeat center center;
+	background-size: cover;
+}
+.popupclosebtn {
+	width: 15px;
+    height: 15px;
+    background: url(../images/popup_close.png) no-repeat center center;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
