@@ -1,8 +1,8 @@
-html,body,.wrap{
+html, body, .wrap {
 	width: 100%;
 	height: 100%;
 }
-.menu{
+.menu {
 	width: 100%;
 	height: 60%;
 	background: url(../images/bg.png);
@@ -10,39 +10,39 @@ html,body,.wrap{
 	background-size: cover;
 	position: relative;
 }
-.menu_content{
+.menu_content {
 	width: 80%;
 	margin-left: 10%;
 	padding-top: 12%;
 }
-.menu_content li{
+.menu_content li {
 	border-bottom: 1px solid rgba(255, 255, 255, .1);
-	padding:2% 0;
+	padding: 2% 0;
 }
 .timercountdown {
 	color: #ffffff;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border: none;
-    background-color: #6d1712;
-    z-index: 111;
-    border-radius: 30px;
-    height: 25px;
-    line-height: 25px;
-    padding: 2px 15px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border: none;
+	background-color: #6d1712;
+	z-index: 111;
+	border-radius: 30px;
+	height: 25px;
+	line-height: 25px;
+	padding: 2px 15px;
 }
 .timercountdown img {
 	position: relative;
-    top: 5px;
-    width: 15px;
-    height: 15px;
-    background-size: 100%;
+	top: 5px;
+	width: 15px;
+	height: 15px;
+	background-size: 100%;
 }
-.menu_content li span{
+.menu_content li span {
 	color: white;
 }
-.menu_content li span:first-child{
+.menu_content li span:first-child {
 	display: inline-block;
 	width: 25%;
 	margin-right: 15%;
@@ -50,33 +50,34 @@ html,body,.wrap{
 	border: 1px solid rgba(255, 255, 255, .15);
 	border-radius: 10px;
 	text-align: center;
-	padding:1% 0;
+	padding: 1% 0;
 }
-.menu_tips h3{
+.menu_tips h3 {
 	width: 100%;
 	position: absolute;
 	bottom: 25%;
 	color: white;
-	font-size:16px ;	
+	font-size: 16px;
 	text-align: center;
 	letter-spacing: 1px;
+	font-weight: bold;
 }
-.menu_tips h3 span{
+.menu_tips h3 span {
 	display: block;
 	font-size: 16px;
 	padding-bottom: 4%;
 }
-.menu_tips p{
-	width: 16%;	
+.menu_tips p {
+	width: 16%;
 	position: absolute;
 	left: 42%;
 	bottom: 0%;
 }
-.menu_tips p img{
+.menu_tips p img {
 	display: block;
 	width: 100%;
 }
-.money{
+.money {
 	width: 90%;
 	height: 22%;
 	margin-left: 5%;
@@ -85,39 +86,39 @@ html,body,.wrap{
 	-webkit-box-pack: justify;
 	-webkit-box-align: center;
 }
-.money>div{
+.money>div {
 	width: 50%;
 	height: 100%;
-	text-align:center;
+	text-align: center;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-box-pack: center;
 	-webkit-box-align: center;
 }
-.money>div:first-child{
+.money>div:first-child {
 	border-right: 1px solid #f7f7f7;
 }
-.money>div>h3{
+.money>div>h3 {
 	padding-bottom: 10%;
 	font-size: 14px;
 	font-weight: bold;
 }
-.money>div>p>span{
+.money>div>p>span {
 	font-size: 24px;
 }
-.history{
+.history {
 	position: absolute;
 	top: 2%;
 	right: 5%;
 }
-.history_btn{
+.history_btn {
 	border: 1px solid #fe8208;
-	border-radius: 5px;
+	border-radius: 12px;
 	color: white;
 	padding: 4px 5px;
 	display: inline-block;
 }
-.buy_love_btn{
+.buy_love_btn {
 	width: 90%;
 	background: #ff8309 url(../images/iconfont-aixin.png) 35% center;
 	background-repeat: no-repeat;
@@ -128,28 +129,28 @@ html,body,.wrap{
 	margin: 5% 0 0 5%;
 	color: white;
 	font-size: 16px;
-	padding-left: 10%;	
+	padding-left: 10%;
 }
-.thank_wrok{
+.thank_wrok {
 	width: 100%;
 	text-align: center;
 	padding: 4% 0 2% 0;
 	color: #969696;
 }
-.thank_wrok span{
+.thank_wrok span {
 	color: #eb484b;
 }
-.timer{
+.timer {
 	width: 60%;
 	height: 4%;
 	border-radius: 10px;
 	background: yellow;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	top: 2%;
 	left: 5%;
 }
-.work_summary{
+.work_summary {
 	width: 30%;
 	padding: 2% 0 2% 2%;
 	text-align: center;
@@ -159,16 +160,20 @@ html,body,.wrap{
 	color: #ffdddc;
 	margin-top: 3%;
 }
-.buy_fail{
+.buy_fail {
 	display: none;
 }
-.trans_doing{
+.trans_doing {
 	display: none;
 }
-.fina_success,.fina_fail,.fina_unsuccess{
+.fina_success, .fina_fail, .fina_unsuccess {
 	display: none;
 }
-
-
-.mine { opacity: 0; }
-.on.mine { -webkit-transition: 0.3s; transition: 0.3s; opacity: 1; }
+.mine {
+	opacity: 0;
+}
+.on.mine {
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 1;
+}
