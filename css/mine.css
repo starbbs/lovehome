@@ -48,7 +48,7 @@ html, body, .wrap {
 	margin-right: 15%;
 	color: rgba(255, 255, 255, .5);
 	border: 1px solid rgba(255, 255, 255, .15);
-	border-radius: 10px;
+	border-radius: 20px;
 	text-align: center;
 	padding: 1% 0;
 }
@@ -113,10 +113,13 @@ html, body, .wrap {
 }
 .history_btn {
 	border: 1px solid #fe8208;
-	border-radius: 12px;
+	border-radius: 20px;
 	color: white;
 	padding: 4px 5px;
 	display: inline-block;
+}
+.history_btn:hover {
+	color: white;
 }
 .buy_love_btn {
 	width: 90%;

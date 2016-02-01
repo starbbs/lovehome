@@ -1,7 +1,7 @@
 $(function() {
 
 	var gotoIndex = function() {
-		// return;
+		return;
 		window.location.href="/lovehome/index.html";
 	};
 
