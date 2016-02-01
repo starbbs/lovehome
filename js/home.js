@@ -36,7 +36,7 @@ $(function() {
 	$(".introduce-div").on("tap", function() {
 		if(!hgToken){
 			window.location.href =buying.url;
-			alert(buying.url);
+			//alert(buying.url);
 			return;
 		}
 		location.href = '../html/introduce.html';
@@ -138,29 +138,24 @@ $(function() {
 				dataType : "json",
 				success : function(result) {
 					if (result.status == 200) {
-						if (result.status == 200) {
-							buying.finishTime=result.data.finishTime;
-							buying.activityStatus=result.data.activityStatus;
-//							alert("activityStatus"+buying.activityStatus);
-							if (result.data.type == 'TRANSFER') {
+						buying.finishTime=result.data.finishTime;
+						buying.activityStatus=result.data.activityStatus;
+						if (result.data.type == 'TRANSFER') {
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;	
+							buying.url="/lovehome/html/detail.html";
+						}else if (result.data.type == 'BUY') {
+							if(result.data.status=="BUY_SUCCESS" && buying.activityStatus=='NORMAL'){
+								// 有购买记录,没有卖出
+								buying.btnName = '我的爱心';
+								buying.hasActivity = true;	
+								buying.url="/lovehome/html/mine_time.html";
+							}else{
 								buying.btnName = '我的爱心';
 								buying.hasActivity = true;	
 								buying.url="/lovehome/html/detail.html";
-							}else if (result.data.type == 'BUY') {
-								if(result.data.status=="BUY_SUCCESS" && buying.activityStatus=='NORMAL'){
-									// 有购买记录,没有卖出
-									buying.btnName = '我的爱心';
-									buying.hasActivity = true;	
-									buying.url="/lovehome/html/mine_time.html";
-								}else{
-									buying.btnName = '我的爱心';
-									buying.hasActivity = true;	
-									buying.url="/lovehome/html/detail.html";
-								}
 							}
-						} else {
-							alert(result.msg);
-						}
+						}					
 					} else {
 //						alert(result.msg);
 						console.log(result.msg);

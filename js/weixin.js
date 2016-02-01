@@ -87,7 +87,8 @@ var init=function(){
 					userId=data.data.userId;
 					weixin.title='果仁宝 爱心压岁钱';
 					weixin.desc ='我是'+data.data.nick+', 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!';
-					weixin.link='http://www.goopal.com.cn/lovehome/index.html?state='+data.data.userId;
+//					weixin.link='http://www.goopal.com.cn/lovehome/index.html?state='+data.data.userId;
+					weixin.link=setWxUrl("http://www.goopal.com.cn/lovehome/index.html",data.data.userId);
 					weixin.imgUrl=data.data.photo;
 					weixin.setShare();
 					//alert(weixin.link);

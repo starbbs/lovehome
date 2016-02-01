@@ -26,8 +26,8 @@ $(function() {
 				"code" : data.code
 			};
 			if(!data.code){
-				console.log(setWxUrl(window.location.href,referUserId));
-				window.location.href=setWxUrl(window.location.href,data.referId);
+//				alert("!data.code:"+referUserId);
+				window.location.href=setWxUrl(window.location.href,referUserId);
 			}else{
 				$.ajax({
 					type : 'post',
@@ -38,6 +38,7 @@ $(function() {
 						if(result.status==200){
 							var openId=result.data.openid;
 							if(result.data.hgToken){
+//								alert("已注册:"+referUserId);
 								//已注册
 								$.cookie("hgToken",result.data.hgToken);
 								if(referUserId && referUserId!="STATE"){
@@ -47,6 +48,7 @@ $(function() {
 								}			
 							}else{
 								//未注册
+//								alert("未注册:"+referUserId);
 								if(referUserId && referUserId!="STATE"){
 									window.location.href = "/lovehome/html/home.html?openId="+openId+"&referUserId="+referUserId;
 								}else{
@@ -60,6 +62,7 @@ $(function() {
 				});
 			}
 		} else {
+//			alert("没有token:"+referUserId);
 			if(referUserId && referUserId!="STATE"){
 				window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;
 			}else{
