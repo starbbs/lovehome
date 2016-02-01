@@ -141,18 +141,26 @@ $(function() {
 						buying.finishTime=result.data.finishTime;
 						buying.activityStatus=result.data.activityStatus;
 						if (result.data.type == 'TRANSFER') {
+							// 活动结束
 							buying.btnName = '我的爱心';
 							buying.hasActivity = true;	
-							buying.url="/lovehome/html/detail.html";
+							if(buying.activityStatus!='NORMAL' && result.data.status!='SUCCESS'){							
+								//传递失败的进入活动结束失败页面
+								buying.url="/lovehome/html/final_withdraw.html";
+							}else{
+								buying.url="/lovehome/html/detail.html";
+							}
+							
 						}else if (result.data.type == 'BUY') {
-							if(result.data.status=="BUY_SUCCESS" && buying.activityStatus=='NORMAL'){
+							buying.btnName = '我的爱心';
+							buying.hasActivity = true;	
+							if(buying.activityStatus!='NORMAL'){
+								// 活动结束
+								buying.url="/lovehome/html/final_withdraw.html";
+							}else if(result.data.status=="BUY_SUCCESS" && buying.activityStatus=='NORMAL'){
 								// 有购买记录,没有卖出
-								buying.btnName = '我的爱心';
-								buying.hasActivity = true;	
 								buying.url="/lovehome/html/mine_time.html";
 							}else{
-								buying.btnName = '我的爱心';
-								buying.hasActivity = true;	
 								buying.url="/lovehome/html/detail.html";
 							}
 						}					
