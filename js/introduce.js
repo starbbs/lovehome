@@ -88,19 +88,19 @@ $(function() {
 	        $("body").append(htmlStr);
 	        $(".warnWin").css({
 	            position: "fixed",
-	            top: "26%",
+	            width:"150px",
+	            top: "16%",
 	            left: "50%",
-	            width: "150px",
-	            height: "60px",
-	            "line-height":"22px",
+	            height: "34px",
+	            "line-height": "34px",
 	            margin: "-20px 0px 0px -75px",
 	            "border-radius": "5px",
-	            "vertical-align":"middle",
+	            "vertical-align": "middle",
 	            background: "#000000",
 	            color: "#333333",
 	            "text-align": "center",
-	            opacity:"0.7",
-	            "z-index":"10000"
+	            opacity: "0.9",
+	            "z-index": "10000"
 	        });
 	        $(".warn_icon").css({
 	            display: "block",

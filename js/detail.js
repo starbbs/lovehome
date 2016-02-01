@@ -10,7 +10,7 @@ $(function() {
     }
     // hgToken = '80ef501d08084ff6943ba5374f10819e';
     /**
-     * 天数间隔
+     * 天数间隔	
      */
     var dateDiff = function(startDate, endDate) {
         var startTime = startDate.getTime();
@@ -144,6 +144,7 @@ $(function() {
         ownerNumber: 0.00, // 已拥有爱心
         heartIncome: 0.00, // 爱心回报
         buy_click: function() {
+        	//alert("buy+++buy_click")
             //window.location.href = "../html/introduce.html?buy=true";
             $(".white_box").show();
             $(".black_box").show();
@@ -186,6 +187,7 @@ $(function() {
         //     //提现申请
         // },
         buy_click: function() {
+        	//alert("transfer+++buy_click")
             //window.location.href = "../html/introduce.html?buy=true";
             $(".white_box").show();
             $(".black_box").show();
@@ -199,19 +201,19 @@ $(function() {
             $("body").append(htmlStr);
             $(".warnWin").css({
                 position: "fixed",
-                top: "26%",
-                left: "50%",
-                width: "150px",
-                height: "60px",
-                "line-height": "22px",
-                margin: "-20px 0px 0px -75px",
-                "border-radius": "5px",
-                "vertical-align": "middle",
-                background: "#000000",
-                color: "#333333",
-                "text-align": "center",
-                opacity: "0.7",
-                "z-index": "10000"
+	            width:"150px",
+	            top: "16%",
+	            left: "50%",
+	            height: "34px",
+	            "line-height": "34px",
+	            margin: "-20px 0px 0px -75px",
+	            "border-radius": "5px",
+	            "vertical-align": "middle",
+	            background: "#000000",
+	            color: "#333333",
+	            "text-align": "center",
+	            opacity: "0.9",
+	            "z-index": "10000"
             });
             $(".warn_icon").css({
                 display: "block",
