@@ -23,7 +23,7 @@ $(function() {
         BUYING: false,
         TRANSFER: false,
         HISTORY: false,
-        finishTime: null,
+        finishIng: false,//是否开始倒计时
         activityStatus: 'NORMAL',
         buyFlag:false,
         heartNumberValue:'',
@@ -248,7 +248,8 @@ $(function() {
                     detail.finishTime = result.data.finishTime;
                     detail.activityStatus = result.data.activityStatus;
                     if(detail.finishTime){
-                    	endDate=detail.finishTime
+                    	endDate=detail.finishTime;
+                    	detail.finishIng=true;
                     	show_time();
                     }
                     //detail.activityStatus = "NORMAL"; //==============================(调适好功能后删掉这行)
