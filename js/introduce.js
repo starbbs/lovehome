@@ -132,6 +132,7 @@ $(function() {
         buyFlag:false,
         whetherJump:false,
         shareBtn:false,
+        UNFINISH:true,//活动未结束
         url:'/lovehome/html/detail.html',
         check:function(){
         		//this.value=this.value.replace(//D/g,'');
@@ -253,6 +254,11 @@ $(function() {
 			dataType : "json",
 			success : function(result) {
 				if (result.status == 200) {
+					buying.finishTime=result.data.finishTime;
+					buying.activityStatus=result.data.activityStatus;
+					if(buying.finishTime){
+						buying.UNFINISH=false;	
+					}
 					if (result.data.type == 'TRANSFER') {
 						if (!data.buy) {
 							buying.btnName = '我的爱心';
