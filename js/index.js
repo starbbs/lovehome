@@ -14,7 +14,6 @@ $(function() {
 		}
 		return data;
 	};
-
 	
 	var hgToken = $.cookie("hgToken");
 	var data=parse(window.location.href);

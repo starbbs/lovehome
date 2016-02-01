@@ -1,3 +1,5 @@
+
+
 $(function(){
 	var hgToken=$.cookie("hgToken");
 //	 hgToken = '61533c3b48ed45718aa8d3151e7799e4';

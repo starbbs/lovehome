@@ -4,6 +4,7 @@ $(function() {
 	if(!hgToken){
 		//window.location.href="/lovehome/index.html";
 	}
+	hgToken = '80ef501d08084ff6943ba5374f10819e';
 	
 	$(".buy_love_btn").on("tap",function(){
 		$(".white_box").show();
