@@ -1,10 +1,15 @@
 $(function() {
 
+	var gotoIndex = function() {
+		// return;
+		window.location.href="/lovehome/index.html";
+	};
+
 	var hgToken = $.cookie("hgToken");
 	if(!hgToken){
-		window.location.href="/lovehome/index.html";
+		gotoIndex();
 	}
-	hgToken = '80ef501d08084ff6943ba5374f10819e';
+	// hgToken = '80ef501d08084ff6943ba5374f10819e';
 	
 	$(".buy_love_btn").on("tap",function(){
 		$(".white_box").show();
@@ -226,7 +231,7 @@ $(function() {
 					var options={};
 					options.expires =0;
 					$.cookie("hgToken",null,options);
-					window.location.href="/lovehome/index.html";
+					gotoIndex();
 				}
 			}
 		});
@@ -246,7 +251,7 @@ $(function() {
 					var options={};
 					options.expires =0;
 					$.cookie("hgToken",null,options);
-					window.location.href="/lovehome/index.html";
+					gotoIndex();
 				}
 			}
 		});	
