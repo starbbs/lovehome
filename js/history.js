@@ -60,9 +60,13 @@ $(function(){
 				}
 			}
 		});	
+		
+		window.onfocus=function (){
+			init();	
+		};
 	}
 	
-	init();
+	init();	
 	
 	setTimeout(function() {
 		$(".mine").addClass('on');

@@ -284,10 +284,14 @@ $(function() {
     		options.expires =1;
     		$.cookie("shareBtn","shareBtn",options);
 		}
+		
+		window.onfocus=function (){
+			init();	
+		};
 	}
 	
-	init();
-
+	init();	
+	
 	setTimeout(function() {
 		$(".mine").addClass('on');
 	}, 100);

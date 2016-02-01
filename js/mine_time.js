@@ -195,8 +195,17 @@ $(function() {
 		});	
         
         show_time();
+        
+        window.onfocus=function (){
+			init();	
+		};
     }
-    init();
+    
+	init();	
+	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 });
 
 function callbackwithgrb(objhaha) {
