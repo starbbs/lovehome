@@ -65,10 +65,6 @@ $(function() {
             }
         },
         submit_click: function() {
-            if (!detail.whetherJump) {
-                showWarnWin("请输入购买金额", 1e3);
-                return;
-            }
             if (detail.heartNumberValue > 300) {
                 showWarnWin("最多只能购买300", 1e3);
                 detail.heartNumberValue = 300;
@@ -83,9 +79,11 @@ $(function() {
                 "heartNumber": parseInt(detail.heartNumberValue),
                 "hgToken": hgToken
             };
+            var baseUrl = "http://116.213.142.87:8080";
+            var buyUrl = baseUrl+"/hg/buy/create";
             $.ajax({
                 type: "post",
-                url: buy,
+                url: buyUrl,
                 data: JSON.stringify(param),
                 dataType: "json",
                 success: function(result) {
@@ -138,7 +136,7 @@ $(function() {
         matchNo: "00001",
         failureReason: "失败",
         BUY_PROCESSING: true, // 买入进行中
-        BUY_FAILURE: true, //购买失败  上线之后改成false
+        BUY_FAILURE: false, //购买失败  上线之后改成false
         heartStr: '已拥有爱心',
         createTime: '',
         ownerNumber: 0.00, // 已拥有爱心
@@ -247,7 +245,7 @@ $(function() {
                 if (result.status == 200) {
                     detail.finishTime = result.data.finishTime;
                     detail.activityStatus = result.data.activityStatus;
-                    detail.activityStatus = "NORMAL"; //==============================(调适好功能后删掉这行)
+                    //detail.activityStatus = "NORMAL"; //==============================(调适好功能后删掉这行)
                     if (result.data.type == 'TRANSFER') {
                         // 传递
                         detail.TRANSFER = true;
