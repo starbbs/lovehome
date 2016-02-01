@@ -64,13 +64,18 @@ $(function() {
 			}
 		}
 		
+		window.onfocus=function (){
+			init();
+		};
 	}
+	
+	init();
+	
+	setTimeout(function() {
+		$(".mine").addClass('on');
+	}, 100);
 	
 	window.onfocus=function (){
 		init();
-		
-		setTimeout(function() {
-			$(".mine").addClass('on');
-		}, 100);
 	};
 });
