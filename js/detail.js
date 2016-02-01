@@ -1,3 +1,4 @@
+var endDate;
 $(function() {
     var gotoIndex = function() {
         // return;
@@ -246,6 +247,10 @@ $(function() {
                 if (result.status == 200) {
                     detail.finishTime = result.data.finishTime;
                     detail.activityStatus = result.data.activityStatus;
+                    if(detail.finishTime){
+                    	endDate=detail.finishTime
+                    	show_time();
+                    }
                     //detail.activityStatus = "NORMAL"; //==============================(调适好功能后删掉这行)
                     if (result.data.type == 'TRANSFER') {
                         // 传递
@@ -349,3 +354,38 @@ $(function() {
         $(".mine").addClass('on');
     }, 100);
 });
+
+
+function show_time() {
+    var time_start = new Date().getTime(); //设定当前时间
+    var time_end = endDate; //设定目标时间
+    var time_distance = time_end - time_start;
+    if (time_distance < 0) {
+        time_distance = -time_distance;
+    }
+    //console.log("time_distance" + time_distance);
+    var int_day = Math.floor(time_distance / 86400000)
+    time_distance -= int_day * 86400000;
+    var int_hour = Math.floor(time_distance / 3600000)
+    time_distance -= int_hour * 3600000;
+    var int_minute = Math.floor(time_distance / 60000)
+    time_distance -= int_minute * 60000;
+    var int_second = Math.floor(time_distance / 1000)
+    if (int_day < 10) {
+        int_day = "0" + int_day;
+    }
+    if (int_hour < 10) {
+        int_hour = "0" + int_hour;
+    }
+    if (int_minute < 10) {
+        int_minute = "0" + int_minute;
+    }
+    if (int_second < 10) {
+        int_second = "0" + int_second;
+    }
+    // 显示时间 
+    var timeStr=int_day+"天 "+int_hour+"时 "+int_minute+"分 "+int_second+"秒";
+    $(".timercountdown").find("span").html(timeStr);
+    // 设置定时器
+    setTimeout("show_time()", 1000);
+}

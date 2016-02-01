@@ -273,7 +273,4 @@ function show_time() {
     $("#time_s_text").html("秒");
     // 设置定时器
     setTimeout("show_time()", 1000);
-    setTimeout(function() {
-        $(".mine").addClass('on');
-    }, 100);
 }
