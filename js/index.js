@@ -18,6 +18,7 @@ $(function() {
 	var hgToken = $.cookie("hgToken");
 	var data=parse(window.location.href);
 	var referUserId= data.state;
+	alert("referUserId:"+referUserId);
 	var init=function(){
 		if (!hgToken) {
 			// 没有登录	
@@ -35,20 +36,22 @@ $(function() {
 					dataType : 'json',
 					success : function(result) {
 						if(result.status==200){
+							var openId=result.data.openid;
 							if(result.data.hgToken){
 								//已注册
 								$.cookie("hgToken",result.data.hgToken);
 								if(referUserId && referUserId!="STATE"){
-									window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
+									window.location.href = "/lovehome/html/home.html?openId="+openId+"&referUserId="+referUserId;
 								}else{
-									window.location.href = "/lovehome/html/home.html";
-								}				
+									window.location.href = "/lovehome/html/home.html?openId="+openId;
+								}			
 							}else{
 								//未注册
-								var openId=result.data.openid;
-								//alert(result.data);
-								var url="/lovehome/html/zhuce.html?openId="+openId+"&referUserId="+referUserId;
-								window.location.href=url;
+								if(referUserId && referUserId!="STATE"){
+									window.location.href = "/lovehome/html/home.html?openId="+openId+"&referUserId="+referUserId;
+								}else{
+									window.location.href = "/lovehome/html/home.html?openId="+openId;
+								}
 							}
 						}else{
 							alert("授权失败"+result.msg);
@@ -58,7 +61,7 @@ $(function() {
 			}
 		} else {
 			if(referUserId && referUserId!="STATE"){
-				window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;	
+				window.location.href = "/lovehome/html/home.html?referUserId="+referUserId;
 			}else{
 				window.location.href = "/lovehome/html/home.html";
 			}

@@ -12,6 +12,7 @@ var weixin = {
 	type : '',
 	dataUrl : '',
 	success : function() { // 用户确认分享后执行的回调函数
+		alert(weixin.link);
 		alert('分享成功');
 	},
 	cancel : function() { // 用户取消分享后执行的回调函数
@@ -83,11 +84,13 @@ var init=function(){
 			dataType : "json",
 			success : function(data) {
 				if (data.status == 200) {
-					weixin.title='果仁宝-爱心压岁钱';
+					userId=data.data.userId;
+					weixin.title='果仁宝 爱心压岁钱';
 					weixin.desc ='我是'+data.data.nick+', 过年我带你玩爱心压岁钱,还能实现大凉山母亲的希望!';
 					weixin.link='http://www.goopal.com.cn/lovehome/index.html?referId='+data.data.userId;
 					weixin.imgUrl=data.data.photo;
 					weixin.setShare();
+					alert(weixin.link);
 				} else {
 					console.log(data);
 				}
@@ -95,6 +98,10 @@ var init=function(){
 		});
 	}
 	
+	window.onfocus=function (){
+		init();	
+	};
+
 };
 
 $.ajax({

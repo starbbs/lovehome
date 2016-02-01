@@ -35,7 +35,8 @@ $(function() {
 
 	$(".introduce-div").on("tap", function() {
 		if(!hgToken){
-			location.href="/lovehome/index.html";
+			window.location.href =buying.url;
+			alert(buying.url);
 			return;
 		}
 		location.href = '../html/introduce.html';
@@ -171,9 +172,21 @@ $(function() {
 				}
 			});
 
-		}
-		
+		}else{
+			if(data.referUserId){			
+				buying.url="http://www.goopal.com.cn/lovehome/html/zhuce.html?referUserId="+data.referUserId;
+				if(data.openId){
+					buying.url=buying.url+"&openId="+data.openId;
+				}
+			}else{
+				buying.url="http://www.goopal.com.cn/lovehome/html/zhuce.html";
+				if(data.openId){
+					buying.url=buying.url+"?openId="+data.openId;
+				}
+			}
+		}	
 		if (data.referUserId) {
+			//alert(data.referUserId);
 			var params = {
 				"referUserId":data.referUserId
 			};
@@ -186,12 +199,13 @@ $(function() {
 					if (result.status == 200) {
 						buying.photo=result.data.photo;
 						buying.nick=result.data.nick;
-						buying.shared=true;
+						buying.shared=true;					
 					} else {
 						alert(result.msg);
 					}
 				}
 			});
+			
 		}
 		
 		window.onfocus=function (){
