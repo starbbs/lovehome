@@ -18,7 +18,7 @@ $(function() {
 	var hgToken = $.cookie("hgToken");
 	var data=parse(window.location.href);
 	var referUserId= data.state;
-	alert("referUserId:"+referUserId);
+//	alert("referUserId:"+referUserId);
 	var init=function(){
 		if (!hgToken) {
 			// 没有登录	
