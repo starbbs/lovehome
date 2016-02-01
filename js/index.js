@@ -26,7 +26,7 @@ $(function() {
 				"code" : data.code
 			};
 			if(!data.code){
-				console.log(setWxUrl(window.location.href,data.referId));
+				console.log(setWxUrl(window.location.href,referUserId));
 				window.location.href=setWxUrl(window.location.href,data.referId);
 			}else{
 				$.ajax({
