@@ -2,7 +2,7 @@ var whetherClick = false;
 
 $(function() {
 	$(".main_yanzheng_get_btn").on("click",function(){
-		$(this).css("color","#6888D9");
+		//$(this).css("color","#6888D9");
         var thisObj = $(this);
         var sendCodeUrl = sendCode;
         var tel = $(".phone").val();
@@ -42,10 +42,16 @@ $(function() {
                 showWarnWin("请输入手机号", 800);
                 return false;
             }
+        } else {
+            var phone = $(".phone").val();
+            var identifyingCode = $(".identifyingCode").val();
+            var verTel = verify(phone, "tel");
+            if (verTel!=true) {
+                showWarnWin("请输入正确手机号", 800);
+                return;
+            }
         }
-	})
-	
-	
+	});
 	$(".next_btn").on("click",function(){
 		if(whetherClick) {
 			var self = $(this);
@@ -61,6 +67,10 @@ $(function() {
 	            return;
 	        }
 	        var data = parse(window.location.href);
+            if(!data.openId) {
+                showWarnWin("当前页面缺少openid", 800);
+                return;
+            }
 	        var param = {
 	            "phone": phone,
 	            "identifyingCode": identifyingCode,
@@ -83,7 +93,7 @@ $(function() {
 	                        window.location.href = "/lovehome/html/home.html";
 	                    }
 	                } else {
-	                    //showWarnWin(result.msg, 800);
+	                    showWarnWin("提交失败", 800);
 	                }
 	            }
 	        });
