@@ -48,9 +48,9 @@ html, body, .wrap {
 	margin-right: 15%;
 	color: rgba(255, 255, 255, .5);
 	border: 1px solid rgba(255, 255, 255, .15);
-	border-radius: 10px;
+	border-radius: 20px;
 	text-align: center;
-	padding: 1% 0;
+	padding: 3px 6px;
 }
 .menu_tips h3 {
 	width: 100%;
@@ -113,10 +113,13 @@ html, body, .wrap {
 }
 .history_btn {
 	border: 1px solid #fe8208;
-	border-radius: 12px;
+	border-radius: 20px;
 	color: white;
-	padding: 4px 5px;
+	padding: 3px 6px;
 	display: inline-block;
+}
+.history_btn:hover {
+	color: white;
 }
 .buy_love_btn {
 	width: 90%;
@@ -134,8 +137,14 @@ html, body, .wrap {
 .thank_wrok {
 	width: 100%;
 	text-align: center;
-	padding: 4% 0 2% 0;
-	color: #969696;
+	color: #666666;
+}
+.thank_wrok p {
+	margin-top: 10px;
+}
+.thank_wrok h4 {
+	width: 90px;
+	margin: 20px auto 0;
 }
 .thank_wrok span {
 	color: #eb484b;

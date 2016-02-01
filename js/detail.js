@@ -74,6 +74,7 @@ $(function() {
 
             } else {
                 showWarnWin("只能是10的倍数", 1e3);
+                return;
             }
             var param = {
                 "heartNumber": parseInt(detail.heartNumberValue),
