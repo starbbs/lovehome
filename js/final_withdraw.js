@@ -20,6 +20,7 @@ $(function() {
 		HISTORY:false,
 		rewardStatus:false,
 		rewardMoney:0.00,
+		activityStatus:'',
 		summary_click :function(){
 			window.location.href = "../html/summary.html";
 		}
