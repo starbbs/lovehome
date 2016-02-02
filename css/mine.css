@@ -19,6 +19,62 @@ html, body, .wrap {
 	border-bottom: 1px solid rgba(255, 255, 255, .1);
 	padding: 2% 0;
 }
+.mag {
+	padding-bottom: 10%;
+}
+.externalcircle {
+	width: 158px;
+	height: 158px;
+	border: 1px solid #f46a54;
+	border-radius: 50%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: absolute;
+	left: 6px;
+	top: 6px;
+	right: 6px;
+	bottom: 6px;
+}
+.mostexternalcircle {
+	width: 172px;
+	height: 172px;
+	border: 1px solid #f46a54;
+	border-radius: 50%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: relative;
+}
+.ding {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	display: inline;
+	position: relative;
+	top: 35px;
+	text-align: center;
+	font-size: 16px;
+	left: 15px;
+	z-index: 999;
+}
+.ding p {
+	width: 24px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+}
+.ding p span {
+	display: inline-block;
+	font-size: 16px;
+}
+.menu_content div.countdowntime {
+	text-align: center;
+	line-height: 22px;
+	padding-top: 50px;
+	color: white;
+	position: relative;
+	display: block;
+	z-index: 999;
+}
 .timercountdown {
 	color: #ffffff;
 	position: absolute;
@@ -186,20 +242,19 @@ html, body, .wrap {
 	transition: 0.3s;
 	opacity: 1;
 }
-
 .white_box {
 	position: absolute;
-    display: none;
-    top: 76px;
-    width: 96%;
-    height: 250px;
-    background-color: white;
-    z-index: 1002;
-    overflow: auto;
-    box-sizing: border-box;
-    border-radius: 6px;
-    text-align: center;
-    margin-left: 2%;
+	display: none;
+	top: 76px;
+	width: 96%;
+	height: 250px;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	box-sizing: border-box;
+	border-radius: 6px;
+	text-align: center;
+	margin-left: 2%;
 }
 .lightspan {
 	font-size: 16px;
@@ -210,38 +265,34 @@ html, body, .wrap {
 	text-align: center;
 	margin-top: 16px;
 }
-
 #light h3 {
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
 	font-size: 14px;
 	width: 90%;
-	/*border-bottom: 1px solid #ddd;*/
 	text-align: center;
 	margin: 0 auto;
 }
-
 .popupspan {
-	    display: block;
-    width: 30px;
-    height: 30px;
-    float: right;
-    position: relative;
-    top: 9px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	float: right;
+	position: relative;
+	top: 9px;
 }
 #light .input_box {
-	    height: 47px;
-    width: 90%;
-    line-height: 47px;
-    border: 1px solid #8c8c8c;
-    /* margin-left: 5%; */
-    font-size: 14px;
-    margin: 0 auto;
-    margin-top: 18px;
-    border-radius: 5px;
-    position: relative;
-    box-sizing: border-box;
+	height: 47px;
+	width: 90%;
+	line-height: 47px;
+	border: 1px solid #8c8c8c;
+	font-size: 14px;
+	margin: 0 auto;
+	margin-top: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
 }
 #light .input_box input {
 	border: 0;
@@ -266,15 +317,15 @@ html, body, .wrap {
 }
 #light .submit {
 	width: 90%;
-    height: 42px;
-    line-height: 42px;
-    background: #ccc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 0 auto;
-    text-align: center;
+	height: 42px;
+	line-height: 42px;
+	background: #ccc;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	margin: 0 auto;
+	text-align: center;
 }
 #light h6 {
 	width: 100%;
@@ -302,11 +353,11 @@ html, body, .wrap {
 }
 .popupclosebtn {
 	width: 15px;
-    height: 15px;
-    background: url(../images/popup_close.png) no-repeat center center;
-    background-size: cover;
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 8px;
+	height: 15px;
+	background: url(../images/popup_close.png) no-repeat center center;
+	background-size: cover;
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	top: 8px;
 }
