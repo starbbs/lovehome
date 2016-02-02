@@ -39,7 +39,7 @@ $(function() {
                         "color": "#ff8208"
                     });
                 }
-                if (this.value && this.value % 10 == 0) {
+                if (this.value && this.value % 10 == 0 && this.value <= 300) {
                     $(".submit").css({
                         "background": "#FF8309",
                         "color": "white"
@@ -215,19 +215,13 @@ $(function() {
 	            opacity: "0.9",
 	            "z-index": "10000"
             });
-            $(".warn_icon").css({
-                display: "block",
-                width: "32px",
-                height: "32px",
-                "text-align": "center",
-                margin: "10px auto 0",
-                "font-size": "30px"
-            });
             $(".warn_font").css({
-                display: "block",
-                "font-family": "黑体",
+                display: "inline",
                 "margin-top": "10px",
-                "font-size": "15px"
+                "font-size": "15px",
+                "font-weight":"400",
+                "width":"100%",
+                "color":"#ffffff"
             });
             setTimeout(function() {
                 $(".warnWin").remove();
@@ -254,7 +248,6 @@ $(function() {
                     	detail.finishIng=true;
                     	show_time();
                     }
-                    //detail.activityStatus = "NORMAL"; //==============================(调适好功能后删掉这行)
                     if (result.data.type == 'TRANSFER') {
                         // 传递
                         detail.TRANSFER = true;
