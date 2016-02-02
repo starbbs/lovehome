@@ -41,3 +41,25 @@ html,body{
 .list p{
 	padding-bottom: 3%;
 }
+
+h1 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+h3 {
+	font-size: 14px;
+	font-weight: 400;
+}
+p {
+	margin-bottom: 16px;
+	padding-left: 20px;
+}
+
+h3:nth-child(2) {
+	margin-top: 15px;
+}
+
+p:last-child {
+	margin-bottom:50px;
+}
