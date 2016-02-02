@@ -136,7 +136,10 @@ $(function() {
                         if (buyIng.status == 'BUY_SUCCESS') {
                             // 购买成功
                             buyIng.statusStr = "购买成功";
-                            buyIng.ownerNumber = buyIng.heartNumber.toFixed(2);
+                            if (buyIng.heartNumber) {
+                                buyIng.ownerNumber = buyIng.heartNumber;
+                            };
+                            
                             if (buyIng.successTime) {
                                 buyIng.days = parseInt(dateDiff(new Date(), new Date(buyIng.successTime)));
                             }
@@ -144,7 +147,7 @@ $(function() {
                                 buyIng.days = transferForceDay;
                             }
                             buyIng.transferTip = (buyIng.days >= transferDay ? "强制传递" : "爱心传递");
-                            buyIng.heartIncome = (buyIng.days * 0.01 * buyIng.ownerNumber).toFixed(2);
+                            buyIng.heartIncome = (buyIng.days * 0.01 * buyIng.ownerNumber);
                             endDate = buyIng.successTime;
                             console.log("开始时间" + endDate);
                             var time_start = new Date().getTime(); //设定当前时间
