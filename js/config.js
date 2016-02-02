@@ -137,3 +137,19 @@ var myUserInfo=baseUrl+"/hg/user/myInfo";
  * {"referUserId":1,hgToken:"ewwerwr32432fwefwe"}
  */
 var otherUserInfo=baseUrl+"/hg/user/info";
+
+/**
+ * 活动结束汇总
+ */
+var findalSummary=baseUrl+"/hg/summary/getInfo";
+
+/**
+ * 感谢信
+ */
+var thanksNote=baseUrl+"/hg/summary/thanksNote";
+
+
+/**
+ * 奖金提现申请
+ */
+var getReward=baseUrl+"/hg/summary/getReward";
