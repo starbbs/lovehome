@@ -6,7 +6,7 @@ $("#close").on("tap", function() {
     $(".black_box").hide();
 });
 
-$(".black_box").on('tap',function(){
+$(".black_box").on('tap', function() {
     $(".white_box").hide();
     $(".black_box").hide();
 });
@@ -18,48 +18,48 @@ var buyIng;
 var radialObj;
 
 var showWarnWin = function(mes, time) {
-        var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
-        var time = time ? time : 1e3;
-        if (!$(".warnWin").length) {
-            $("body").append(htmlStr);
-            $(".warnWin").css({
-                position: "fixed",
-                top: "40%",
-                left: "50%",
-                width: "150px",
-                height: "40px",
-                "line-height":"20px",
-                margin: "-20px 0px 0px -75px",
-                "border-radius": "5px",
-                "vertical-align":"middle",
-                background: "#000000",
-                color: "#fff",
-                "text-align": "center",
-                opacity:"0.7"
-            });
-            $(".warn_icon").css({
-                display: "block",
-                width: "32px",
-                height: "32px",
-                "text-align": "center",
-                margin: "10px auto 0",
-                "font-size": "30px"
-            });
-            $(".warn_font").css({
-                display: "block",
-                "font-family": "黑体",
-                "margin-top": "10px",
-                "font-size": "15px"
-            });
-            setTimeout(function() {
-                $(".warnWin").remove();
-            }, time);
-        }
-    };
+    var htmlStr = "<div class='warnWin'><span class='warn_font'>" + mes + "</span></div>";
+    var time = time ? time : 1e3;
+    if (!$(".warnWin").length) {
+        $("body").append(htmlStr);
+        $(".warnWin").css({
+            position: "fixed",
+            top: "40%",
+            left: "50%",
+            width: "150px",
+            height: "40px",
+            "line-height": "20px",
+            margin: "-20px 0px 0px -75px",
+            "border-radius": "5px",
+            "vertical-align": "middle",
+            background: "#000000",
+            color: "#fff",
+            "text-align": "center",
+            opacity: "0.7"
+        });
+        $(".warn_icon").css({
+            display: "block",
+            width: "32px",
+            height: "32px",
+            "text-align": "center",
+            margin: "10px auto 0",
+            "font-size": "30px"
+        });
+        $(".warn_font").css({
+            display: "block",
+            "font-family": "黑体",
+            "margin-top": "10px",
+            "font-size": "15px"
+        });
+        setTimeout(function() {
+            $(".warnWin").remove();
+        }, time);
+    }
+};
 
 $(function() {
     var hgToken = $.cookie("hgToken");
-   	//var hgToken = "80ef501d08084ff6943ba5374f10819e";
+    //var hgToken = "80ef501d08084ff6943ba5374f10819e";
     /**
      * 天数间隔
      */
@@ -83,7 +83,7 @@ $(function() {
         ownerNumber: 0.00, // 已拥有爱心
         heartIncome: 0.00, // 爱心回报
         days: 0,
-        HISTORY:false,
+        HISTORY: false,
         commit_click: function() {
             if (buyIng.days >= transferDay) {
                 $(".white_box").show();
@@ -148,12 +148,12 @@ $(function() {
                             endDate = buyIng.successTime;
                             console.log("开始时间" + endDate);
                             var time_start = new Date().getTime(); //设定当前时间
-						    console.log("当前时间" + time_start);
-						    var time_end = endDate + (1000 * 60 * 60 * 24 * (buyIng.days >= transferDay ? transferForceDay : transferDay)); //设定目标时间
-						    console.log("结束时间" + time_end);
-						    var time_distance = (time_start-endDate)/(time_end - endDate);
-						    console.log("time_distance"+time_distance);
-							callbackwithgrb(time_distance.toFixed(2));
+                            console.log("当前时间" + time_start);
+                            var time_end = endDate + (1000 * 60 * 60 * 24 * (buyIng.days >= transferDay ? transferForceDay : transferDay)); //设定目标时间
+                            console.log("结束时间" + time_end);
+                            var time_distance = (time_start - endDate) / (time_end - endDate);
+                            console.log("time_distance" + time_distance);
+                            callbackwithgrb(time_distance.toFixed(2));
                             if (buyIng.days >= transferDay) {
                                 $(".no_btn").css("background", "orange");
                                 $(".no_btn").css("opacity", "1");
@@ -164,48 +164,48 @@ $(function() {
                     // 没有购买记录
                     window.location.href = "../html/home.html";
                 } else {
-//                    showWarnWin(result.msg, 1e3);
-                	console.log(result.msg);
-                	var options={};
-            		options.expires =0;
-            		$.cookie("hgToken",null,options);
-					window.location.href="/lovehome/index.html";
+                    //                    showWarnWin(result.msg, 1e3);
+                    console.log(result.msg);
+                    var options = {};
+                    options.expires = 0;
+                    $.cookie("hgToken", null, options);
+                    window.location.href = "/lovehome/index.html";
                 }
             }
         });
 
         $.ajax({
-			type : "POST",
-			url : transferHistory,
-			data : JSON.stringify(param),
-			dataType : "json",
-			success : function(result) {
-				if(result.status==200){
-					if(result.data.list.length>0){
-						buyIng.HISTORY=true;
-					}
-				}else{
-					console.log(result.msg);
-					var options={};
-					options.expires =0;
-					$.cookie("hgToken",null,options);
-					window.location.href="/lovehome/index.html";
-				}
-			}
-		});	
-        
+            type: "POST",
+            url: transferHistory,
+            data: JSON.stringify(param),
+            dataType: "json",
+            success: function(result) {
+                if (result.status == 200) {
+                    if (result.data.list.length > 0) {
+                        buyIng.HISTORY = true;
+                    }
+                } else {
+                    console.log(result.msg);
+                    var options = {};
+                    options.expires = 0;
+                    $.cookie("hgToken", null, options);
+                    window.location.href = "/lovehome/index.html";
+                }
+            }
+        });
+
         show_time();
-        
-        window.onfocus=function (){
-			init();	
-		};
+
+        window.onfocus = function() {
+            init();
+        };
     }
-    
-	init();	
-	
-	setTimeout(function() {
-		$(".mine").addClass('on');
-	}, 100);
+
+    init();
+
+    setTimeout(function() {
+        $(".mine").addClass('on');
+    }, 100);
 });
 
 function callbackwithgrb(objhaha) {
