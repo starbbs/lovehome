@@ -204,7 +204,7 @@ $(function() {
 						buying.nick=result.data.nick;
 						buying.shared=true;					
 					} else {
-						alert(result.msg);
+						//alert(result.msg);
 					}
 				}
 			});
