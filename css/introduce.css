@@ -15,22 +15,22 @@ html, body {
 }
 .int_btn {
 	margin: 15px 5px 10px;
-	box-sizing: border-box;
-	display: -webkit-box;
-	-webkit-box-align: center;
-	-webkit-box-pack: justify;
+	overflow: hidden;
 }
 .int_btn img {
 	display: block;
 	width: 100%;
 }
 .int_btn p:nth-child(1) {
+	float: left;
 	width: 25%;
 }
 .int_btn p:nth-child(2) {
 	width: 37%;
+	margin: 0 auto -100%;
 }
 .int_btn p:nth-child(3) {
+	float: right;
 	width: 25%;
 }
 .int_con {
