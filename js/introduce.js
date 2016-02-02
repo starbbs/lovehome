@@ -143,7 +143,7 @@ $(function() {
 					} else if(this.value.length==""){
 						$(".heartNumber").css({"color":"#ff8208"});
 					}
-	        		if(this.value && this.value%10==0){
+	        		if(this.value && this.value%10==0 && this.value<=300){
 		        		$(".submit").css({
 							"background":"#FF8309",
 							"color":"white"
