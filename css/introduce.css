@@ -14,8 +14,11 @@ html, body {
 	-webkit-box-align: center;
 }
 .int_btn {
-	margin: 15px 5px 10px;
+	margin: 15px 0 10px;
 	overflow: hidden;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 5px;
 }
 .int_btn img {
 	display: block;
@@ -27,7 +30,7 @@ html, body {
 }
 .int_btn p:nth-child(2) {
 	width: 37%;
-	margin: 0 auto -100%;
+	margin: 0 auto -100px;
 }
 .int_btn p:nth-child(3) {
 	float: right;
