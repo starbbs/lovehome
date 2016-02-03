@@ -167,7 +167,7 @@ $(function() {
         },
         submit_click: function() {
             if (!buying.whetherJump) {
-                showWarnWin("请输入购买金额", 1e3);
+                showWarnWin("请输入范围内金额", 1e3);
                 return;
             }
             if (buying.heartNumber > 300) {
