@@ -10,8 +10,8 @@ html, body {
 	background-size: 100% auto;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-box-pack: justify;
-	-webkit-box-align: center;
+	/*-webkit-box-pack: justify;*/
+	/*-webkit-box-align: center;*/
 }
 .int_btn {
 	overflow: hidden;
