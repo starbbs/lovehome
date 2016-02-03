@@ -1,6 +1,8 @@
 var whetherClick = false;
+
 $(function() {
 	$(".main_yanzheng_get_btn").on("click",function(){
+		//$(this).css("color","#6888D9");
         var thisObj = $(this);
         var sendCodeUrl = sendCode;
         var tel = $(".phone").val();
@@ -11,7 +13,6 @@ $(function() {
                 var datavalue = {
                     "phone": tel
                 };
-                console.log("================");
                 if (verTel === true) {
                     isTimer = true;
                     var aj = $.ajax({
@@ -25,11 +26,7 @@ $(function() {
                                 showWarnWin("验证码已发送", 800);
                                 timer(thisObj, 60);
                             } else {
-                                showWarnWin("请求频繁，稍后再试", 800);
-                                var sendNode = $(".main_yanzheng_get_btn");
-                                sendNode.addClass("sending");
-                                $(sendNode).css("color","#6888D9");
-                                sendNode.text("获取验证码");
+                                showWarnWin("验证码已发送", 800);
                             }
                         },
                         error: function() {
@@ -228,8 +225,8 @@ function checkCode(thisObj) {
     var verCode = thisObj.value;
     var verCodeflag = verify(verCode,"verCode");
     var next_btn = $(".next_btn");
-    // console.log(verCode);
-    // console.log(verCodeflag);
+    console.log(verCode);
+    console.log(verCodeflag);
     if(flag==true&&verCodeflag==true){
     	$(".next_btn").css("color","white");
     	whetherClick = true;
