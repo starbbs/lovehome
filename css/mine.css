@@ -113,9 +113,9 @@ html, body, .wrap {
 	position: absolute;
 	bottom: 25%;
 	color: white;
-	font-size: 16px;
+	font-size: 18px;
 	text-align: center;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 	font-weight: bold;
 }
 .menu_tips h3 span {

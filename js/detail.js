@@ -29,6 +29,9 @@ $(function() {
         buyFlag:false,
         heartNumberValue:'',
         whetherJump:false,
+        summary_click :function(){
+            window.location.href = "../html/summary.html";
+        },
         check: function() {
             if (this.value) {
                 if (this.value.length > 0) {
