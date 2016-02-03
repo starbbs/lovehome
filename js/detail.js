@@ -2,10 +2,10 @@ var endDate;
 $(function() {
     var gotoIndex = function() {
         // return;
-        // window.location.href = "/lovehome/index.html";
+        window.location.href = "/lovehome/index.html";
     };
     var hgToken = $.cookie("hgToken");
-    hgToken = '80ef501d08084ff6943ba5374f10819e';
+    //hgToken = '80ef501d08084ff6943ba5374f10819e';
     if (!hgToken) {
         gotoIndex();
     }
